@@ -7,6 +7,7 @@
 //
 
 #import "WerewolvesViewController.h"
+#import "WerewolvesMessage.h"
 
 @interface WerewolvesViewController ()
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    WerewolvesMessage *msg = [[WerewolvesMessage alloc]init];
+    [msg dumpMessage:@"xxx"];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
