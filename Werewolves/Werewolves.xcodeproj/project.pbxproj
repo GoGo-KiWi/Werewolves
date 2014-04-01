@@ -22,6 +22,7 @@
 		32A55E5518EB5FC900649610 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3418EB5FC900649610 /* UIKit.framework */; };
 		32A55E5D18EB5FC900649610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32A55E5B18EB5FC900649610 /* InfoPlist.strings */; };
 		32A55E5F18EB5FC900649610 /* WerewolvesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E5E18EB5FC900649610 /* WerewolvesTests.m */; };
+		32A55E6918EB613D00649610 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E6818EB613D00649610 /* MultipeerConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		32A55E5A18EB5FC900649610 /* WerewolvesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WerewolvesTests-Info.plist"; sourceTree = "<group>"; };
 		32A55E5C18EB5FC900649610 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		32A55E5E18EB5FC900649610 /* WerewolvesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WerewolvesTests.m; sourceTree = "<group>"; };
+		32A55E6818EB613D00649610 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32A55E6918EB613D00649610 /* MultipeerConnectivity.framework in Frameworks */,
 				32A55E3318EB5FC900649610 /* CoreGraphics.framework in Frameworks */,
 				32A55E3518EB5FC900649610 /* UIKit.framework in Frameworks */,
 				32A55E3118EB5FC900649610 /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		32A55E2F18EB5FC900649610 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32A55E6818EB613D00649610 /* MultipeerConnectivity.framework */,
 				32A55E3018EB5FC900649610 /* Foundation.framework */,
 				32A55E3218EB5FC900649610 /* CoreGraphics.framework */,
 				32A55E3418EB5FC900649610 /* UIKit.framework */,
@@ -395,6 +399,7 @@
 				GCC_PREFIX_HEADER = "Werewolves/Werewolves-Prefix.pch";
 				INFOPLIST_FILE = "Werewolves/Werewolves-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -408,6 +413,7 @@
 				GCC_PREFIX_HEADER = "Werewolves/Werewolves-Prefix.pch";
 				INFOPLIST_FILE = "Werewolves/Werewolves-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
