@@ -10,5 +10,12 @@
 
 @implementation WerewolvesPlayer
 
+- (void) setDead {
+    self->alive = NO;
+}
+
+- (void) setAlive {
+    self->alive = YES;
+}
 
 @end

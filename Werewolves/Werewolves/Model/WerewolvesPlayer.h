@@ -8,8 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WerewolvesPlayer : NSObject
+enum RoleType
+{
+    Moderator, Peasant, Wolf, FortuneTeller, Witch
+};
 
+@interface WerewolvesPlayer : NSObject
+{
+@public
+    BOOL alive;
+    NSString *playerName;
+    enum RoleType role;
+    int playerId;
+}
+
+- (void) registerPlayer: (NSString*)name;
+- (void) joinRoom;
+- (void) sendMessage: (NSString*)msg;
+- (NSString*) receiveMessage;
+
+- (void) setDead;
+- (void) setAlive;
 /*
  TODO
  0. Register
@@ -17,6 +36,5 @@
  2. Send Message [Name, Vote]
  3. Receive Message
  */
-
 
 @end

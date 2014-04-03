@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WerewolvesPlayer.h"
 
 @interface WerewolvesRoom : NSObject
+{
+    NSMutableArray *playerArray; // Store the pointers of all players in this room
+}
+- (void) addPlayer:(WerewolvesPlayer*) player;
+- (void) setRole:(WerewolvesPlayer*) player :(enum RoleType) role;
+- (NSMutableArray*) getPlayers:(enum RoleType) role;
 
 @end

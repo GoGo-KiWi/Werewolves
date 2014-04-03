@@ -10,4 +10,25 @@
 
 @implementation WerewolvesRoom
 
+- (void) addPlayer:(WerewolvesPlayer*) player {
+    [playerArray addObject:player];
+}
+
+- (void) setRole:(WerewolvesPlayer*) player :(enum RoleType) role {
+    player->role = role;
+}
+
+- (NSMutableArray*) getPlayers:(enum RoleType) role {
+    NSMutableArray* result = [NSMutableArray array];
+    
+    for (WerewolvesPlayer* player in playerArray) { // Not sure, should I use * or ** here if array stores pointers?????
+        if (player->role == role) {
+            [result addObject:player];
+        }
+    }
+    
+    return result;
+}
+
+
 @end
