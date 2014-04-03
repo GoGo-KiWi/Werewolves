@@ -10,7 +10,7 @@
 
 enum RoleType
 {
-    Moderator, Peasant, Wolf, FortuneTeller, Witch
+    Moderator, Peasant, Wolf, FortuneTeller, Witch, Undefined
 };
 
 @interface WerewolvesPlayer : NSObject

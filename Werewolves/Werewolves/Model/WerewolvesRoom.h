@@ -11,8 +11,16 @@
 
 @interface WerewolvesRoom : NSObject
 {
-    NSMutableArray *playerArray; // Store the pointers of all players in this room
+    NSMutableArray *playerArray; // Store the pointers of ALL players in this room
+    
+    NSMutableArray* peasantArray;
+    NSMutableArray* wolfArray;
+    /* For function parameter type consistency, I use array for single roles. by Cary*/
+    NSMutableArray* fortuneTellerArray;
+    NSMutableArray* witchArray;
+    NSMutableArray* moderatorArray;
 }
+
 - (void) addPlayer:(WerewolvesPlayer*) player;
 - (void) setRole:(WerewolvesPlayer*) player :(enum RoleType) role;
 - (NSMutableArray*) getPlayers:(enum RoleType) role;
