@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "WerewolvesPlayer.h"
 
 enum MessageType {
-    Name, Role, Vote, VoteResult, DeathResult, Terminate
+    /*
+    SetNameRequest, SetNameResponse,
+    SetRoleRequest, SetRoleResponse,
+     */
+    SendPeopleInfoRequest, SendPeopleInfoResponse, /* Maybe using a single message to transmit all player info is clearer. by Cary*/
+    CreateVoteRequest, CreateVoteResponse,
+    SendVoteResultRequest, SendVoteResultResponse,
+    SendDeathResultReqeust, SendDeathResultResponse,
+    SendTerminateRequest, SendTerminateResponse
 };
 
 @interface WerewolvesMessage : NSObject
