@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 enum MessageType {
+    /* Maybe using a single message to transmit all player info is clearer. by Cary*/
+
     /*
     SetNameRequest, SetNameResponse,
     SetRoleRequest, SetRoleResponse,
      */
-    SendPeopleInfoRequest, SendPeopleInfoResponse, /* Maybe using a single message to transmit all player info is clearer. by Cary*/
+    SendPeopleInfoRequest, SendPeopleInfoResponse, /*All players' name, id, life status. Your name, id, role*/
     CreateVoteRequest, CreateVoteResponse,
     SendVoteResultRequest, SendVoteResultResponse,
     SendDeathResultReqeust, SendDeathResultResponse,
