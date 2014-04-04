@@ -10,5 +10,15 @@
 #import "WerewolvesPlayer.h"
 
 @interface WerewolvesModerator : WerewolvesPlayer
+{
+    WerewolvesMessage* attackedByWolf;
+}
+
+- (void) sendPeopleInfo;
+
+- (void) createVote;
+- (void) sendVoteResult;
+
+- (void) sendDeathResult;
 
 @end
