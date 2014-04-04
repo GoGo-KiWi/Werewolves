@@ -18,12 +18,12 @@
 
 - (void) setRole:(WerewolvesPlayer*) player :(enum RoleType) role {
     [self performSelector:@selector(removePlayerFromRoleArray:) withObject:player];
-    player->role = role;
+    [player setRole:role];
     [self performSelector:@selector(addPlayerIntoRoleArray:) withObject:player];
 }
 
 - (void) addPlayerIntoRoleArray:(WerewolvesPlayer*) player {
-    switch (player->role) {
+    switch ([player getRole]) {
         case Moderator:
             [moderatorArray addObject:player];
             break;
@@ -45,7 +45,7 @@
 }
 
 - (void) removePlayerFromRoleArray:(WerewolvesPlayer*) player {
-    switch (player->role) {
+    switch ([player getRole]) {
         case Moderator:
             for (WerewolvesPlayer* curPlayer in moderatorArray) {
                 if (curPlayer == player) {
@@ -90,7 +90,7 @@
     NSMutableArray* result = [NSMutableArray array];
     
     for (WerewolvesPlayer* player in playerArray) { // Not sure, should I use * or ** here if array stores pointers?????
-        if (player->role == role) {
+        if ([player getRole] == role) {
             [result addObject:player];
         }
     }

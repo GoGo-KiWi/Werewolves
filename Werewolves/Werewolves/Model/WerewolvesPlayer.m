@@ -18,4 +18,32 @@
     self->alive = YES;
 }
 
+- (BOOL) isAlve {
+    return self->alive;
+}
+
+- (void) setPlayerName: (NSString*) name {
+    self->playerName = name;
+}
+
+- (NSString*) getPlayerName {
+    return self->playerName;
+}
+
+- (void) setRole: (enum RoleType) role {
+    self->role  = role;
+}
+
+- (enum RoleType) getRole {
+    return self->role;
+}
+
+- (void) setPlayerId: (int) playerId {
+    self->playerId = playerId;
+}
+
+- (int) getPlayerId {
+    return self->playerId;
+}
+
 @end

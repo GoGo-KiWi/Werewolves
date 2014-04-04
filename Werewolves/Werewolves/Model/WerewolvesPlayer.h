@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WerewolvesMessage.h"
 
 enum RoleType
 {
@@ -15,7 +16,6 @@ enum RoleType
 
 @interface WerewolvesPlayer : NSObject
 {
-@public
     BOOL alive;
     NSString *playerName;
     enum RoleType role;
@@ -24,11 +24,22 @@ enum RoleType
 
 - (void) registerPlayer: (NSString*)name;
 - (void) joinRoom;
-- (void) sendMessage: (NSString*)msg;
-- (NSString*) receiveMessage;
+- (void) sendMessage: (WerewolvesMessage*) msg;
+- (WerewolvesMessage*) receiveMessage;
 
 - (void) setDead;
 - (void) setAlive;
+- (BOOL) isAlve;
+
+- (void) setPlayerName: (NSString*) name;
+- (NSString*) getPlayerName;
+
+- (void) setRole: (enum RoleType) role;
+- (enum RoleType) getRole;
+
+- (void) setPlayerId: (int) playerId;
+- (int) getPlayerId;
+
 /*
  TODO
  0. Register

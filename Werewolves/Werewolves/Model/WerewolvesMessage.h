@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WerewolvesPlayer.h"
+//#import "WerewolvesPlayer.h"
 
 enum MessageType {
     Name, Role, Vote, VoteResult, DeathResult, Terminate
@@ -18,8 +18,8 @@ enum MessageType {
     enum MessageType messageType;
     NSString* messageContent;
     /* Should we use player pointers or player ID to distinguish? Maybe ID is better */
-    WerewolvesPlayer* sender;
-    WerewolvesPlayer* receiver;
+    int senderId;
+    int receiverId;
 }
 
 /*
