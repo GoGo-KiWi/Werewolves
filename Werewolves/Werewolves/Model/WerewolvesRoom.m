@@ -100,5 +100,14 @@
     return result;
 }
 
+- (WerewolvesPlayer*) getPlayer:(int) playerId {
+    for (WerewolvesPlayer* player in playerArray) {
+        if ([player getPlayerId] == playerId) {
+            return player;
+        }
+    }
+    
+    return NULL;
+}
 
 @end
