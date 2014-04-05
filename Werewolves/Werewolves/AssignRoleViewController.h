@@ -10,5 +10,5 @@
 
 @interface AssignRoleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *roleTableView;
-
+ 
 @end
