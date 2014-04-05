@@ -367,7 +367,6 @@
         <!--View Controller-->
         <scene sceneID="4FC-4l-qVM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WdU-lY-If1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController modalTransitionStyle="crossDissolve" id="JOf-pj-xuq" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uYi-1u-Nn3"/>
@@ -409,6 +408,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Uw2-bQ-Zfi"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WdU-lY-If1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="557" y="-176"/>
         </scene>
