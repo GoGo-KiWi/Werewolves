@@ -29,10 +29,6 @@
 		32A55E6918EB613D00649610 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E6818EB613D00649610 /* MultipeerConnectivity.framework */; };
 		32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E6B18EB64A200649610 /* WerewolvesModerator.m */; };
 		32A55E6F18EB64B400649610 /* WerewolvesPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */; };
-		32A55E7218EB652800649610 /* WerewolvesPeasant.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7118EB652800649610 /* WerewolvesPeasant.m */; };
-		32A55E7518EB653700649610 /* WerewolvesWolf.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7418EB653700649610 /* WerewolvesWolf.m */; };
-		32A55E7818EB654C00649610 /* WerewolvesFortuneTeller.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7718EB654C00649610 /* WerewolvesFortuneTeller.m */; };
-		32A55E7B18EB655500649610 /* WerewolvesWitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7A18EB655500649610 /* WerewolvesWitch.m */; };
 		32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7D18EB668D00649610 /* WerewolvesMessage.m */; };
 		32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E8018EB681D00649610 /* WerewolvesRoom.m */; };
 /* End PBXBuildFile section */
@@ -77,14 +73,6 @@
 		32A55E6B18EB64A200649610 /* WerewolvesModerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesModerator.m; path = Model/WerewolvesModerator.m; sourceTree = "<group>"; };
 		32A55E6D18EB64B400649610 /* WerewolvesPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesPlayer.h; path = Model/WerewolvesPlayer.h; sourceTree = "<group>"; };
 		32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesPlayer.m; path = Model/WerewolvesPlayer.m; sourceTree = "<group>"; };
-		32A55E7018EB652800649610 /* WerewolvesPeasant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesPeasant.h; path = Model/WerewolvesPeasant.h; sourceTree = "<group>"; };
-		32A55E7118EB652800649610 /* WerewolvesPeasant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesPeasant.m; path = Model/WerewolvesPeasant.m; sourceTree = "<group>"; };
-		32A55E7318EB653700649610 /* WerewolvesWolf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesWolf.h; path = Model/WerewolvesWolf.h; sourceTree = "<group>"; };
-		32A55E7418EB653700649610 /* WerewolvesWolf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesWolf.m; path = Model/WerewolvesWolf.m; sourceTree = "<group>"; };
-		32A55E7618EB654C00649610 /* WerewolvesFortuneTeller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesFortuneTeller.h; path = Model/WerewolvesFortuneTeller.h; sourceTree = "<group>"; };
-		32A55E7718EB654C00649610 /* WerewolvesFortuneTeller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesFortuneTeller.m; path = Model/WerewolvesFortuneTeller.m; sourceTree = "<group>"; };
-		32A55E7918EB655500649610 /* WerewolvesWitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesWitch.h; path = Model/WerewolvesWitch.h; sourceTree = "<group>"; };
-		32A55E7A18EB655500649610 /* WerewolvesWitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesWitch.m; path = Model/WerewolvesWitch.m; sourceTree = "<group>"; };
 		32A55E7C18EB668D00649610 /* WerewolvesMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesMessage.h; path = Model/WerewolvesMessage.h; sourceTree = "<group>"; };
 		32A55E7D18EB668D00649610 /* WerewolvesMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesMessage.m; path = Model/WerewolvesMessage.m; sourceTree = "<group>"; };
 		32A55E7F18EB681D00649610 /* WerewolvesRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesRoom.h; path = Model/WerewolvesRoom.h; sourceTree = "<group>"; };
@@ -175,14 +163,6 @@
 				32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */,
 				32A55E6A18EB64A200649610 /* WerewolvesModerator.h */,
 				32A55E6B18EB64A200649610 /* WerewolvesModerator.m */,
-				32A55E7018EB652800649610 /* WerewolvesPeasant.h */,
-				32A55E7118EB652800649610 /* WerewolvesPeasant.m */,
-				32A55E7318EB653700649610 /* WerewolvesWolf.h */,
-				32A55E7418EB653700649610 /* WerewolvesWolf.m */,
-				32A55E7618EB654C00649610 /* WerewolvesFortuneTeller.h */,
-				32A55E7718EB654C00649610 /* WerewolvesFortuneTeller.m */,
-				32A55E7918EB655500649610 /* WerewolvesWitch.h */,
-				32A55E7A18EB655500649610 /* WerewolvesWitch.m */,
 				32A55E4B18EB5FC900649610 /* Images.xcassets */,
 				32A55E3718EB5FC900649610 /* Supporting Files */,
 				3288367F18F099580064428B /* Images */,
@@ -323,14 +303,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */,
-				32A55E7518EB653700649610 /* WerewolvesWolf.m in Sources */,
 				32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */,
-				32A55E7818EB654C00649610 /* WerewolvesFortuneTeller.m in Sources */,
-				32A55E7218EB652800649610 /* WerewolvesPeasant.m in Sources */,
 				32A55E4A18EB5FC900649610 /* WerewolvesViewController.m in Sources */,
 				32A55E3D18EB5FC900649610 /* main.m in Sources */,
 				32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */,
-				32A55E7B18EB655500649610 /* WerewolvesWitch.m in Sources */,
 				32A55E4118EB5FC900649610 /* WerewolvesAppDelegate.m in Sources */,
 				32A55E6F18EB64B400649610 /* WerewolvesPlayer.m in Sources */,
 			);

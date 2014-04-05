@@ -11,7 +11,7 @@
 @implementation WerewolvesMessage
 
 -(void) dumpMessage:(NSString *)msg {
-    NSLog(msg);
+    NSLog(@"%@", msg);
 }
 
 @end

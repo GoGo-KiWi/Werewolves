@@ -31,7 +31,7 @@
 }
 
 - (void) setRole: (enum RoleType) role {
-    self->role  = role;
+    self->role = role;
 }
 
 - (enum RoleType) getRole {

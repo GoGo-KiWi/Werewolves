@@ -27,7 +27,6 @@
     userName.delegate = self;
     WerewolvesMessage *msg = [[WerewolvesMessage alloc]init];
     [msg dumpMessage:@"xxx"];
-    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
