@@ -412,10 +412,10 @@
             </objects>
             <point key="canvasLocation" x="557" y="-176"/>
         </scene>
-        <!--View Controller-->
+        <!--Assign Role View Controller-->
         <scene sceneID="LXu-UH-07S">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="mUY-W2-rAO" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="mUY-W2-rAO" customClass="AssignRoleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PKb-f1-j5t"/>
                         <viewControllerLayoutGuide type="bottom" id="oO3-pF-97C"/>
@@ -448,11 +448,18 @@
                                 <rect key="frame" x="0.0" y="51" width="320" height="445"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mUY-W2-rAO" id="Emn-j2-ayN"/>
+                                    <outlet property="delegate" destination="mUY-W2-rAO" id="6cN-po-lUy"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZBq-Bm-LYe"/>
+                    <connections>
+                        <outlet property="roleTableView" destination="6jl-y0-6B7" id="ARh-VH-Qy8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFU-wo-wJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
