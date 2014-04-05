@@ -13,6 +13,7 @@
 		3288368718F099580064428B /* icon_village.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368218F099580064428B /* icon_village.png */; };
 		3288368818F099580064428B /* icon_werewolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368318F099580064428B /* icon_werewolf.png */; };
 		3288368918F099580064428B /* icon_witch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368418F099580064428B /* icon_witch.png */; };
+		3288368F18F0A4390064428B /* AssignRoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288368E18F0A4390064428B /* AssignRoleViewController.m */; };
 		32A55E3118EB5FC900649610 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3018EB5FC900649610 /* Foundation.framework */; };
 		32A55E3318EB5FC900649610 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3218EB5FC900649610 /* CoreGraphics.framework */; };
 		32A55E3518EB5FC900649610 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3418EB5FC900649610 /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 		3288368218F099580064428B /* icon_village.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_village.png; sourceTree = "<group>"; };
 		3288368318F099580064428B /* icon_werewolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_werewolf.png; sourceTree = "<group>"; };
 		3288368418F099580064428B /* icon_witch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_witch.png; sourceTree = "<group>"; };
+		3288368D18F0A4390064428B /* AssignRoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignRoleViewController.h; sourceTree = "<group>"; };
+		3288368E18F0A4390064428B /* AssignRoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignRoleViewController.m; sourceTree = "<group>"; };
 		32A55E2D18EB5FC900649610 /* Werewolves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werewolves.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A55E3018EB5FC900649610 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32A55E3218EB5FC900649610 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,18 +172,12 @@
 				32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */,
 				32A55E6A18EB64A200649610 /* WerewolvesModerator.h */,
 				32A55E6B18EB64A200649610 /* WerewolvesModerator.m */,
-				32A55E7018EB652800649610 /* WerewolvesPeasant.h */,
-				32A55E7118EB652800649610 /* WerewolvesPeasant.m */,
-				32A55E7318EB653700649610 /* WerewolvesWolf.h */,
-				32A55E7418EB653700649610 /* WerewolvesWolf.m */,
-				32A55E7618EB654C00649610 /* WerewolvesFortuneTeller.h */,
-				32A55E7718EB654C00649610 /* WerewolvesFortuneTeller.m */,
-				32A55E7918EB655500649610 /* WerewolvesWitch.h */,
-				32A55E7A18EB655500649610 /* WerewolvesWitch.m */,
 				E4D8CCC218F09FDA00C82C81 /* CreateRoomViewController.h */,
 				E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */,
 				E4D8CCC518F0A06C00C82C81 /* JoinRoomViewController.h */,
 				E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */,
+				3288368D18F0A4390064428B /* AssignRoleViewController.h */,
+				3288368E18F0A4390064428B /* AssignRoleViewController.m */,
 				32A55E4B18EB5FC900649610 /* Images.xcassets */,
 				32A55E3718EB5FC900649610 /* Supporting Files */,
 				3288367F18F099580064428B /* Images */,
@@ -322,10 +319,10 @@
 			files = (
 				32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */,
 				E4D8CCC418F09FDA00C82C81 /* CreateRoomViewController.m in Sources */,
-				32A55E7518EB653700649610 /* WerewolvesWolf.m in Sources */,
 				E4D8CCC718F0A06C00C82C81 /* JoinRoomViewController.m in Sources */,
 				32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */,
 				32A55E4A18EB5FC900649610 /* WerewolvesViewController.m in Sources */,
+				3288368F18F0A4390064428B /* AssignRoleViewController.m in Sources */,
 				32A55E3D18EB5FC900649610 /* main.m in Sources */,
 				32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */,
 				32A55E4118EB5FC900649610 /* WerewolvesAppDelegate.m in Sources */,
