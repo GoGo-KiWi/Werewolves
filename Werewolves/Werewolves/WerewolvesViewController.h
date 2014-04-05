@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WerewolvesViewController : UIViewController
+@interface WerewolvesViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *userName;
 
 @end

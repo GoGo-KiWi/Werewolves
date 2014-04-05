@@ -162,9 +162,9 @@
 		32A55E3618EB5FC900649610 /* Werewolves */ = {
 			isa = PBXGroup;
 			children = (
+				3288367D18F0991B0064428B /* Main.storyboard */,
 				32A55E3F18EB5FC900649610 /* WerewolvesAppDelegate.h */,
 				32A55E4018EB5FC900649610 /* WerewolvesAppDelegate.m */,
-				3288367D18F0991B0064428B /* Main.storyboard */,
 				32A55E4818EB5FC900649610 /* WerewolvesViewController.h */,
 				32A55E4918EB5FC900649610 /* WerewolvesViewController.m */,
 				32A55E7C18EB668D00649610 /* WerewolvesMessage.h */,
