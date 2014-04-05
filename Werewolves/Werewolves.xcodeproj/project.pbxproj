@@ -33,6 +33,9 @@
 		32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E8018EB681D00649610 /* WerewolvesRoom.m */; };
 		E4D8CCC418F09FDA00C82C81 /* CreateRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */; };
 		E4D8CCC718F0A06C00C82C81 /* JoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */; };
+		E4D8CCCA18F0A6D800C82C81 /* TurnWerewolfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC918F0A6D800C82C81 /* TurnWerewolfViewController.m */; };
+		E4D8CCCD18F0A71500C82C81 /* TurnWitchSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */; };
+		E4D8CCD018F0A73D00C82C81 /* TurnWitchKillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,12 @@
 		E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateRoomViewController.m; path = Model/CreateRoomViewController.m; sourceTree = "<group>"; };
 		E4D8CCC518F0A06C00C82C81 /* JoinRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinRoomViewController.h; path = Model/JoinRoomViewController.h; sourceTree = "<group>"; };
 		E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinRoomViewController.m; path = Model/JoinRoomViewController.m; sourceTree = "<group>"; };
+		E4D8CCC818F0A6D800C82C81 /* TurnWerewolfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurnWerewolfViewController.h; path = Model/TurnWerewolfViewController.h; sourceTree = "<group>"; };
+		E4D8CCC918F0A6D800C82C81 /* TurnWerewolfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnWerewolfViewController.m; path = Model/TurnWerewolfViewController.m; sourceTree = "<group>"; };
+		E4D8CCCB18F0A71500C82C81 /* TurnWitchSaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurnWitchSaveViewController.h; path = Model/TurnWitchSaveViewController.h; sourceTree = "<group>"; };
+		E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnWitchSaveViewController.m; path = Model/TurnWitchSaveViewController.m; sourceTree = "<group>"; };
+		E4D8CCCE18F0A73D00C82C81 /* TurnWitchKillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurnWitchKillViewController.h; path = Model/TurnWitchKillViewController.h; sourceTree = "<group>"; };
+		E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnWitchKillViewController.m; path = Model/TurnWitchKillViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,18 +178,16 @@
 				32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */,
 				32A55E6A18EB64A200649610 /* WerewolvesModerator.h */,
 				32A55E6B18EB64A200649610 /* WerewolvesModerator.m */,
-				32A55E7018EB652800649610 /* WerewolvesPeasant.h */,
-				32A55E7118EB652800649610 /* WerewolvesPeasant.m */,
-				32A55E7318EB653700649610 /* WerewolvesWolf.h */,
-				32A55E7418EB653700649610 /* WerewolvesWolf.m */,
-				32A55E7618EB654C00649610 /* WerewolvesFortuneTeller.h */,
-				32A55E7718EB654C00649610 /* WerewolvesFortuneTeller.m */,
-				32A55E7918EB655500649610 /* WerewolvesWitch.h */,
-				32A55E7A18EB655500649610 /* WerewolvesWitch.m */,
 				E4D8CCC218F09FDA00C82C81 /* CreateRoomViewController.h */,
 				E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */,
 				E4D8CCC518F0A06C00C82C81 /* JoinRoomViewController.h */,
 				E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */,
+				E4D8CCC818F0A6D800C82C81 /* TurnWerewolfViewController.h */,
+				E4D8CCC918F0A6D800C82C81 /* TurnWerewolfViewController.m */,
+				E4D8CCCB18F0A71500C82C81 /* TurnWitchSaveViewController.h */,
+				E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */,
+				E4D8CCCE18F0A73D00C82C81 /* TurnWitchKillViewController.h */,
+				E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */,
 				32A55E4B18EB5FC900649610 /* Images.xcassets */,
 				32A55E3718EB5FC900649610 /* Supporting Files */,
 				3288367F18F099580064428B /* Images */,
@@ -322,9 +329,11 @@
 			files = (
 				32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */,
 				E4D8CCC418F09FDA00C82C81 /* CreateRoomViewController.m in Sources */,
-				32A55E7518EB653700649610 /* WerewolvesWolf.m in Sources */,
 				E4D8CCC718F0A06C00C82C81 /* JoinRoomViewController.m in Sources */,
+				E4D8CCD018F0A73D00C82C81 /* TurnWitchKillViewController.m in Sources */,
 				32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */,
+				E4D8CCCD18F0A71500C82C81 /* TurnWitchSaveViewController.m in Sources */,
+				E4D8CCCA18F0A6D800C82C81 /* TurnWerewolfViewController.m in Sources */,
 				32A55E4A18EB5FC900649610 /* WerewolvesViewController.m in Sources */,
 				32A55E3D18EB5FC900649610 /* main.m in Sources */,
 				32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */,
@@ -451,6 +460,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Werewolves/Werewolves-Prefix.pch";
 				INFOPLIST_FILE = "Werewolves/Werewolves-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -465,6 +475,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Werewolves/Werewolves-Prefix.pch";
 				INFOPLIST_FILE = "Werewolves/Werewolves-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

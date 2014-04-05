@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="-372" y="223"/>
         </scene>
-        <!--View Controller-->
+        <!--Turn Werewolf View Controller-->
         <scene sceneID="MqX-WO-OKl">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="l8e-3F-cpr" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="l8e-3F-cpr" customClass="TurnWerewolfViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Gw-Yv-aOR"/>
                         <viewControllerLayoutGuide type="bottom" id="JzH-Qz-NUf"/>
@@ -209,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="146" y="1207"/>
         </scene>
-        <!--View Controller-->
+        <!--Turn Witch Save View Controller-->
         <scene sceneID="QfY-sY-KTT">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="FPN-xl-taB" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="FPN-xl-taB" customClass="TurnWitchSaveViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TXh-1A-OyB"/>
                         <viewControllerLayoutGuide type="bottom" id="AoY-yE-1Hb"/>
@@ -279,10 +279,22 @@
                                 <rect key="frame" x="-31" y="78" width="198" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sO-uT-gDd">
+                                <rect key="frame" x="20" y="357" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="W0g-Zi-urI"/>
+                    <connections>
+                        <outlet property="label" destination="4sO-uT-gDd" id="phT-XP-G3L"/>
+                        <outlet property="playerKilledInfo" destination="WtF-Km-rcv" id="uzg-A0-aUX"/>
+                        <outlet property="saveInfo" destination="4bf-ly-nsD" id="hzs-sR-QE9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9h-Fx-zjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -634,10 +646,10 @@
             </objects>
             <point key="canvasLocation" x="146" y="-176"/>
         </scene>
-        <!--View Controller-->
+        <!--Turn Witch Kill View Controller-->
         <scene sceneID="Itd-cU-Gmk">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="6bT-Qb-Gdo" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="6bT-Qb-Gdo" customClass="TurnWitchKillViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OiA-ft-Jca"/>
                         <viewControllerLayoutGuide type="bottom" id="zhC-Dg-LzU"/>
@@ -712,6 +724,10 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="x5P-0E-J6w"/>
+                    <connections>
+                        <outlet property="resetSelection" destination="dlg-7M-GOG" id="UPs-7v-leh"/>
+                        <outlet property="witchPlayerList" destination="0iQ-ki-cJ3" id="FTD-4b-S1x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvk-fD-RrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
