@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="146" y="515"/>
         </scene>
-        <!--View Controller-->
+        <!--Join Room View Controller-->
         <scene sceneID="oln-aF-FfW">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="uFW-W4-e2A" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="uFW-W4-e2A" customClass="JoinRoomViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1bz-q1-c8X"/>
                         <viewControllerLayoutGuide type="bottom" id="Fr1-Yh-wNn"/>
@@ -201,6 +201,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="roomList" destination="Mh5-63-W6Y" id="Gdb-ju-nuf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFq-CP-lXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -610,10 +613,10 @@
             </objects>
             <point key="canvasLocation" x="557" y="1207"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Room View Controller-->
         <scene sceneID="syL-ZQ-Hdh">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="iJj-J3-OF8" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="iJj-J3-OF8" customClass="CreateRoomViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pjz-Y4-ZsG"/>
                         <viewControllerLayoutGuide type="bottom" id="GfR-11-CmD"/>
@@ -666,6 +669,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="roomName" destination="Q0m-D1-5PT" id="nql-GQ-9qp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ezx-ml-su0" sceneMemberID="firstResponder"/>
             </objects>

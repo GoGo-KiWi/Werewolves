@@ -35,6 +35,8 @@
 		32A55E7B18EB655500649610 /* WerewolvesWitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7A18EB655500649610 /* WerewolvesWitch.m */; };
 		32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7D18EB668D00649610 /* WerewolvesMessage.m */; };
 		32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E8018EB681D00649610 /* WerewolvesRoom.m */; };
+		E4D8CCC418F09FDA00C82C81 /* CreateRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */; };
+		E4D8CCC718F0A06C00C82C81 /* JoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,10 @@
 		32A55E7D18EB668D00649610 /* WerewolvesMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesMessage.m; path = Model/WerewolvesMessage.m; sourceTree = "<group>"; };
 		32A55E7F18EB681D00649610 /* WerewolvesRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesRoom.h; path = Model/WerewolvesRoom.h; sourceTree = "<group>"; };
 		32A55E8018EB681D00649610 /* WerewolvesRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesRoom.m; path = Model/WerewolvesRoom.m; sourceTree = "<group>"; };
+		E4D8CCC218F09FDA00C82C81 /* CreateRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateRoomViewController.h; path = Model/CreateRoomViewController.h; sourceTree = "<group>"; };
+		E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateRoomViewController.m; path = Model/CreateRoomViewController.m; sourceTree = "<group>"; };
+		E4D8CCC518F0A06C00C82C81 /* JoinRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinRoomViewController.h; path = Model/JoinRoomViewController.h; sourceTree = "<group>"; };
+		E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinRoomViewController.m; path = Model/JoinRoomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,10 @@
 				32A55E7718EB654C00649610 /* WerewolvesFortuneTeller.m */,
 				32A55E7918EB655500649610 /* WerewolvesWitch.h */,
 				32A55E7A18EB655500649610 /* WerewolvesWitch.m */,
+				E4D8CCC218F09FDA00C82C81 /* CreateRoomViewController.h */,
+				E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */,
+				E4D8CCC518F0A06C00C82C81 /* JoinRoomViewController.h */,
+				E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */,
 				32A55E4B18EB5FC900649610 /* Images.xcassets */,
 				32A55E3718EB5FC900649610 /* Supporting Files */,
 				3288367F18F099580064428B /* Images */,
@@ -323,7 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */,
+				E4D8CCC418F09FDA00C82C81 /* CreateRoomViewController.m in Sources */,
 				32A55E7518EB653700649610 /* WerewolvesWolf.m in Sources */,
+				E4D8CCC718F0A06C00C82C81 /* JoinRoomViewController.m in Sources */,
 				32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */,
 				32A55E7818EB654C00649610 /* WerewolvesFortuneTeller.m in Sources */,
 				32A55E7218EB652800649610 /* WerewolvesPeasant.m in Sources */,
