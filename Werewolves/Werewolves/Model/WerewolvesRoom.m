@@ -12,14 +12,16 @@
 
 - (void) addPlayer:(WerewolvesPlayer*) player {
     [playerArray addObject:player];
-    
-    [self performSelector:@selector(addPlayerIntoRoleArray:) withObject:player];
+    [self addPlayerIntoRoleArray:player];
+//    [self performSelector:@selector(addPlayerIntoRoleArray:) withObject:player];
 }
 
 - (void) setRole:(WerewolvesPlayer*) player :(enum RoleType) role {
-    [self performSelector:@selector(removePlayerFromRoleArray:) withObject:player];
+//    [self performSelector:@selector(removePlayerFromRoleArray:) withObject:player];
+    [self removePlayerFromRoleArray:player];
     [player setRole:role];
-    [self performSelector:@selector(addPlayerIntoRoleArray:) withObject:player];
+    [self addPlayerIntoRoleArray:player];
+//    [self performSelector:@selector(addPlayerIntoRoleArray:) withObject:player];
 }
 
 - (void) addPlayerIntoRoleArray:(WerewolvesPlayer*) player {

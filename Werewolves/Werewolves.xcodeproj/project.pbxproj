@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3288367E18F0991B0064428B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3288367D18F0991B0064428B /* Main.storyboard */; };
+		3288368518F099580064428B /* 50-percent-gray.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3288368018F099580064428B /* 50-percent-gray.jpg */; };
+		3288368618F099580064428B /* icon_oracle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368118F099580064428B /* icon_oracle.png */; };
+		3288368718F099580064428B /* icon_village.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368218F099580064428B /* icon_village.png */; };
+		3288368818F099580064428B /* icon_werewolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368318F099580064428B /* icon_werewolf.png */; };
+		3288368918F099580064428B /* icon_witch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368418F099580064428B /* icon_witch.png */; };
 		32A55E3118EB5FC900649610 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3018EB5FC900649610 /* Foundation.framework */; };
 		32A55E3318EB5FC900649610 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3218EB5FC900649610 /* CoreGraphics.framework */; };
 		32A55E3518EB5FC900649610 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3418EB5FC900649610 /* UIKit.framework */; };
 		32A55E3B18EB5FC900649610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32A55E3918EB5FC900649610 /* InfoPlist.strings */; };
 		32A55E3D18EB5FC900649610 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E3C18EB5FC900649610 /* main.m */; };
 		32A55E4118EB5FC900649610 /* WerewolvesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E4018EB5FC900649610 /* WerewolvesAppDelegate.m */; };
-		32A55E4418EB5FC900649610 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A55E4218EB5FC900649610 /* Main_iPhone.storyboard */; };
-		32A55E4718EB5FC900649610 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A55E4518EB5FC900649610 /* Main_iPad.storyboard */; };
 		32A55E4A18EB5FC900649610 /* WerewolvesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E4918EB5FC900649610 /* WerewolvesViewController.m */; };
 		32A55E4C18EB5FC900649610 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32A55E4B18EB5FC900649610 /* Images.xcassets */; };
 		32A55E5318EB5FC900649610 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E5218EB5FC900649610 /* XCTest.framework */; };
@@ -44,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3288367D18F0991B0064428B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3288368018F099580064428B /* 50-percent-gray.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "50-percent-gray.jpg"; sourceTree = "<group>"; };
+		3288368118F099580064428B /* icon_oracle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_oracle.png; sourceTree = "<group>"; };
+		3288368218F099580064428B /* icon_village.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_village.png; sourceTree = "<group>"; };
+		3288368318F099580064428B /* icon_werewolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_werewolf.png; sourceTree = "<group>"; };
+		3288368418F099580064428B /* icon_witch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_witch.png; sourceTree = "<group>"; };
 		32A55E2D18EB5FC900649610 /* Werewolves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werewolves.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A55E3018EB5FC900649610 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32A55E3218EB5FC900649610 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,8 +64,6 @@
 		32A55E3E18EB5FC900649610 /* Werewolves-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Werewolves-Prefix.pch"; sourceTree = "<group>"; };
 		32A55E3F18EB5FC900649610 /* WerewolvesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WerewolvesAppDelegate.h; sourceTree = "<group>"; };
 		32A55E4018EB5FC900649610 /* WerewolvesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WerewolvesAppDelegate.m; sourceTree = "<group>"; };
-		32A55E4318EB5FC900649610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		32A55E4618EB5FC900649610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		32A55E4818EB5FC900649610 /* WerewolvesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WerewolvesViewController.h; sourceTree = "<group>"; };
 		32A55E4918EB5FC900649610 /* WerewolvesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WerewolvesViewController.m; sourceTree = "<group>"; };
 		32A55E4B18EB5FC900649610 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -108,6 +116,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3288367F18F099580064428B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3288368018F099580064428B /* 50-percent-gray.jpg */,
+				3288368118F099580064428B /* icon_oracle.png */,
+				3288368218F099580064428B /* icon_village.png */,
+				3288368318F099580064428B /* icon_werewolf.png */,
+				3288368418F099580064428B /* icon_witch.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		32A55E2418EB5FC900649610 = {
 			isa = PBXGroup;
 			children = (
@@ -144,8 +164,7 @@
 			children = (
 				32A55E3F18EB5FC900649610 /* WerewolvesAppDelegate.h */,
 				32A55E4018EB5FC900649610 /* WerewolvesAppDelegate.m */,
-				32A55E4218EB5FC900649610 /* Main_iPhone.storyboard */,
-				32A55E4518EB5FC900649610 /* Main_iPad.storyboard */,
+				3288367D18F0991B0064428B /* Main.storyboard */,
 				32A55E4818EB5FC900649610 /* WerewolvesViewController.h */,
 				32A55E4918EB5FC900649610 /* WerewolvesViewController.m */,
 				32A55E7C18EB668D00649610 /* WerewolvesMessage.h */,
@@ -166,6 +185,7 @@
 				32A55E7A18EB655500649610 /* WerewolvesWitch.m */,
 				32A55E4B18EB5FC900649610 /* Images.xcassets */,
 				32A55E3718EB5FC900649610 /* Supporting Files */,
+				3288367F18F099580064428B /* Images */,
 			);
 			path = Werewolves;
 			sourceTree = "<group>";
@@ -276,9 +296,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32A55E4718EB5FC900649610 /* Main_iPad.storyboard in Resources */,
+				3288368918F099580064428B /* icon_witch.png in Resources */,
+				3288367E18F0991B0064428B /* Main.storyboard in Resources */,
+				3288368518F099580064428B /* 50-percent-gray.jpg in Resources */,
+				3288368618F099580064428B /* icon_oracle.png in Resources */,
+				3288368718F099580064428B /* icon_village.png in Resources */,
 				32A55E4C18EB5FC900649610 /* Images.xcassets in Resources */,
-				32A55E4418EB5FC900649610 /* Main_iPhone.storyboard in Resources */,
+				3288368818F099580064428B /* icon_werewolf.png in Resources */,
 				32A55E3B18EB5FC900649610 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,22 +361,6 @@
 				32A55E3A18EB5FC900649610 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		32A55E4218EB5FC900649610 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32A55E4318EB5FC900649610 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		32A55E4518EB5FC900649610 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32A55E4618EB5FC900649610 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		32A55E5B18EB5FC900649610 /* InfoPlist.strings */ = {
@@ -525,6 +533,7 @@
 				32A55E6418EB5FC900649610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32A55E6518EB5FC900649610 /* Build configuration list for PBXNativeTarget "WerewolvesTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +542,7 @@
 				32A55E6718EB5FC900649610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
