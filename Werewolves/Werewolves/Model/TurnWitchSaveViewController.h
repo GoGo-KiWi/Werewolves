@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TurnWerewolfViewController.h"
 
-@interface TurnWitchSaveViewController : UIViewController
+@interface TurnWitchSaveViewController : UIViewController <playerKilledDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *playerKilledInfo;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *saveInfo;
-@property (weak, nonatomic) IBOutlet UILabel *label;
+//@property (weak, nonatomic) IBOutlet UILabel *label;
+
 @end

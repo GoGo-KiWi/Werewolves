@@ -73,7 +73,7 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="userName" destination="WR9-pr-8cI" id="GZi-Nv-mAL"/>
+                        <outlet property="userName" destination="WR9-pr-8cI" id="kb9-z7-bMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -120,10 +120,6 @@
                                 <rect key="frame" x="-5" y="201" width="325" height="317"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="l8e-3F-cpr" id="iMU-Mo-QW1"/>
-                                    <outlet property="delegate" destination="l8e-3F-cpr" id="fic-FX-xjg"/>
-                                </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xd4-kK-dha">
                                 <rect key="frame" x="0.0" y="180" width="320" height="22"/>
@@ -142,7 +138,6 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playerSelected" destination="l8e-3F-cpr" eventType="editingChanged" id="Eat-Al-Nuy"/>
                                     <segue destination="FPN-xl-taB" kind="modal" id="q9m-zO-X4l"/>
                                 </connections>
                             </button>
@@ -155,17 +150,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="163-KN-1Rh"/>
                     <connections>
-                        <outlet property="killList" destination="Gdf-JM-rtg" id="iDq-fC-yqd"/>
+                        <outlet property="killList" destination="Gdf-JM-rtg" id="XSB-oD-oIe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxM-PB-P0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="146" y="515"/>
         </scene>
-        <!--Join Room View Controller-->
+        <!--View Controller-->
         <scene sceneID="oln-aF-FfW">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="uFW-W4-e2A" customClass="JoinRoomViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="uFW-W4-e2A" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1bz-q1-c8X"/>
                         <viewControllerLayoutGuide type="bottom" id="Fr1-Yh-wNn"/>
@@ -209,18 +204,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="roomList" destination="Mh5-63-W6Y" id="Gdb-ju-nuf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFq-CP-lXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="146" y="1207"/>
         </scene>
-        <!--Turn Witch Save View Controller-->
+        <!--View Controller-->
         <scene sceneID="QfY-sY-KTT">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="FPN-xl-taB" customClass="TurnWitchSaveViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="FPN-xl-taB" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TXh-1A-OyB"/>
                         <viewControllerLayoutGuide type="bottom" id="AoY-yE-1Hb"/>
@@ -263,7 +255,7 @@
                                 </segments>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtF-Km-rcv">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player1 is Killed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtF-Km-rcv">
                                 <rect key="frame" x="20" y="200" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -291,10 +283,6 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="W0g-Zi-urI"/>
-                    <connections>
-                        <outlet property="playerKilledInfo" destination="WtF-Km-rcv" id="uzg-A0-aUX"/>
-                        <outlet property="saveInfo" destination="4bf-ly-nsD" id="hzs-sR-QE9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9h-Fx-zjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,12 +311,12 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uFX-r4-0qf">
-                                <rect key="frame" x="0.0" y="92" width="320" height="383"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voting Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGl-eN-Vb8">
-                                <rect key="frame" x="0.0" y="70" width="320" height="22"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -412,10 +400,10 @@
             </objects>
             <point key="canvasLocation" x="557" y="-176"/>
         </scene>
-        <!--Assign Role View Controller-->
+        <!--View Controller-->
         <scene sceneID="LXu-UH-07S">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="mUY-W2-rAO" customClass="AssignRoleViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="mUY-W2-rAO" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PKb-f1-j5t"/>
                         <viewControllerLayoutGuide type="bottom" id="oO3-pF-97C"/>
@@ -424,6 +412,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kgf-43-mqq">
+                                <rect key="frame" x="0.0" y="51" width="320" height="122"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Werewolf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYd-CW-g8g">
+                                <rect key="frame" x="0.0" y="29" width="320" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-rN-GHn">
+                                <rect key="frame" x="0.0" y="193" width="324" height="120"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Townfolk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-oV-N8g">
+                                <rect key="frame" x="0.0" y="171" width="320" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oracle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAB-Hx-rdo">
+                                <rect key="frame" x="0.0" y="313" width="320" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="JGs-Bh-fYO">
+                                <rect key="frame" x="0.0" y="412" width="320" height="54"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="qH4-f1-7NE">
+                                <rect key="frame" x="0.0" y="335" width="320" height="54"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Witch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U37-1S-KY2">
+                                <rect key="frame" x="0.0" y="390" width="320" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujv-Ji-aY5">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -436,28 +480,10 @@
                                     <segue destination="l8e-3F-cpr" kind="modal" id="ojg-Qk-98Z"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g83-ID-LQu">
-                                <rect key="frame" x="0.0" y="20" width="320" height="502"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="40" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="6jl-y0-6B7">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="502"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="mUY-W2-rAO" id="Emn-j2-ayN"/>
-                                            <outlet property="delegate" destination="mUY-W2-rAO" id="6cN-po-lUy"/>
-                                        </connections>
-                                    </tableView>
-                                </subviews>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZBq-Bm-LYe"/>
-                    <connections>
-                        <outlet property="roleTableView" destination="6jl-y0-6B7" id="ARh-VH-Qy8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFU-wo-wJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -643,18 +669,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="roomName" destination="Q0m-D1-5PT" id="nql-GQ-9qp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ezx-ml-su0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="146" y="-176"/>
         </scene>
-        <!--Turn Witch Kill View Controller-->
+        <!--View Controller-->
         <scene sceneID="Itd-cU-Gmk">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="6bT-Qb-Gdo" customClass="TurnWitchKillViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="6bT-Qb-Gdo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OiA-ft-Jca"/>
                         <viewControllerLayoutGuide type="bottom" id="zhC-Dg-LzU"/>
@@ -716,10 +739,6 @@
                                 <rect key="frame" x="-5" y="216" width="325" height="302"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="6bT-Qb-Gdo" id="7bc-Xk-fbJ"/>
-                                    <outlet property="delegate" destination="6bT-Qb-Gdo" id="qs9-Ne-MYn"/>
-                                </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg2-f6-hJP">
                                 <rect key="frame" x="0.0" y="195" width="320" height="22"/>
@@ -733,19 +752,15 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="x5P-0E-J6w"/>
-                    <connections>
-                        <outlet property="resetSelection" destination="dlg-7M-GOG" id="UPs-7v-leh"/>
-                        <outlet property="witchPlayerList" destination="0iQ-ki-cJ3" id="FTD-4b-S1x"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvk-fD-RrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="971" y="515"/>
         </scene>
-        <!--Turn Oracle View Controller-->
+        <!--View Controller-->
         <scene sceneID="MOJ-wk-Akc">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="TSK-ab-P4O" customClass="TurnOracleViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="TSK-ab-P4O" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rzB-21-8R0"/>
                         <viewControllerLayoutGuide type="bottom" id="t9D-Dp-e50"/>
@@ -794,10 +809,6 @@
                                 <rect key="frame" x="-5" y="216" width="325" height="302"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="TSK-ab-P4O" id="5sJ-fj-GSp"/>
-                                    <outlet property="delegate" destination="TSK-ab-P4O" id="7o0-TD-aef"/>
-                                </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm9-Ef-Iyi">
                                 <rect key="frame" x="0.0" y="195" width="320" height="22"/>
@@ -815,9 +826,6 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="nNg-O6-wWG"/>
-                    <connections>
-                        <outlet property="playerList" destination="SU6-ct-FxF" id="niG-BA-joR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXa-OR-nIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

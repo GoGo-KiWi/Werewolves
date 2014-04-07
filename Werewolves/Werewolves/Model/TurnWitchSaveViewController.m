@@ -13,26 +13,40 @@
 @end
 
 @implementation TurnWitchSaveViewController
-@synthesize playerKilledInfo, saveInfo, label;
+@synthesize playerKilledInfo, saveInfo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        TurnWerewolfViewController *viewController = [[TurnWerewolfViewController alloc] init];
+        // assign delegate
+        viewController.delegate = self;
     }
     return self;
+}
+
+-(void)playerKilled:(NSString*)playerName{
+    playerKilledInfo.text = [NSString stringWithFormat:@"%@ is killed.", playerName];
+    [self.view addSubview:playerKilledInfo];
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Success" message:@"success!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // Display Alert Message
+    [messageAlert show];
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //label = [[UILabel alloc] init];
-    label.frame = CGRectMake(10, 10, 300, 40);
-    [self.view addSubview:label];
-    [saveInfo addTarget:self
+    //playerKilledInfo.frame = CGRectMake(10, 10, 300, 40);
+    //[self.view addSubview:playerKilledInfo];
+    /*[saveInfo addTarget:self
             action:@selector(pickOne:)
-            forControlEvents:UIControlEventValueChanged];
+            forControlEvents:UIControlEventValueChanged];*/
 	[self.view addSubview:saveInfo];
     // Do any additional setup after loading the view.
 }
@@ -43,10 +57,12 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) pickOne:(id)sender{
+/*-(void) pickOne:(id)sender{
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-    label.text = [segmentedControl titleForSegmentAtIndex: [segmentedControl selectedSegmentIndex]];
-}
+    playerKilledInfo.text = [segmentedControl titleForSegmentAtIndex: [segmentedControl selectedSegmentIndex]];
+}*/
+
+
 
 /*
 #pragma mark - Navigation

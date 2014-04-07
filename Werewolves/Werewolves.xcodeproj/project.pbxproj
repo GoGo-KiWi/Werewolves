@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3288367E18F0991B0064428B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3288367D18F0991B0064428B /* Main.storyboard */; };
 		3288368518F099580064428B /* 50-percent-gray.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3288368018F099580064428B /* 50-percent-gray.jpg */; };
 		3288368618F099580064428B /* icon_oracle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368118F099580064428B /* icon_oracle.png */; };
 		3288368718F099580064428B /* icon_village.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368218F099580064428B /* icon_village.png */; };
 		3288368818F099580064428B /* icon_werewolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368318F099580064428B /* icon_werewolf.png */; };
 		3288368918F099580064428B /* icon_witch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3288368418F099580064428B /* icon_witch.png */; };
-		3288368F18F0A4390064428B /* AssignRoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288368E18F0A4390064428B /* AssignRoleViewController.m */; };
 		32A55E3118EB5FC900649610 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3018EB5FC900649610 /* Foundation.framework */; };
 		32A55E3318EB5FC900649610 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3218EB5FC900649610 /* CoreGraphics.framework */; };
 		32A55E3518EB5FC900649610 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3418EB5FC900649610 /* UIKit.framework */; };
@@ -39,6 +37,10 @@
 		E4D8CCCA18F0A6D800C82C81 /* TurnWerewolfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC918F0A6D800C82C81 /* TurnWerewolfViewController.m */; };
 		E4D8CCCD18F0A71500C82C81 /* TurnWitchSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */; };
 		E4D8CCD018F0A73D00C82C81 /* TurnWitchKillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */; };
+		E4D8CCD618F0B01B00C82C81 /* AssignRoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCD518F0B01B00C82C81 /* AssignRoleViewController.m */; };
+		E4D8CCDA18F2297B00C82C81 /* PlayerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */; };
+		E4D8CCDF18F22DDE00C82C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */; };
+		E4D8CCE218F2487500C82C81 /* TurnOracleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCE118F2487500C82C81 /* TurnOracleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3288367D18F0991B0064428B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3288368018F099580064428B /* 50-percent-gray.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "50-percent-gray.jpg"; sourceTree = "<group>"; };
 		3288368118F099580064428B /* icon_oracle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_oracle.png; sourceTree = "<group>"; };
 		3288368218F099580064428B /* icon_village.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_village.png; sourceTree = "<group>"; };
 		3288368318F099580064428B /* icon_werewolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_werewolf.png; sourceTree = "<group>"; };
 		3288368418F099580064428B /* icon_witch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_witch.png; sourceTree = "<group>"; };
-		3288368D18F0A4390064428B /* AssignRoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignRoleViewController.h; sourceTree = "<group>"; };
-		3288368E18F0A4390064428B /* AssignRoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignRoleViewController.m; sourceTree = "<group>"; };
 		32A55E2D18EB5FC900649610 /* Werewolves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werewolves.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A55E3018EB5FC900649610 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32A55E3218EB5FC900649610 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +102,13 @@
 		E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnWitchSaveViewController.m; path = Model/TurnWitchSaveViewController.m; sourceTree = "<group>"; };
 		E4D8CCCE18F0A73D00C82C81 /* TurnWitchKillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurnWitchKillViewController.h; path = Model/TurnWitchKillViewController.h; sourceTree = "<group>"; };
 		E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnWitchKillViewController.m; path = Model/TurnWitchKillViewController.m; sourceTree = "<group>"; };
+		E4D8CCD418F0B01B00C82C81 /* AssignRoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignRoleViewController.h; sourceTree = "<group>"; };
+		E4D8CCD518F0B01B00C82C81 /* AssignRoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignRoleViewController.m; sourceTree = "<group>"; };
+		E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListCell.h; sourceTree = "<group>"; };
+		E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListCell.m; sourceTree = "<group>"; };
+		E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E4D8CCE018F2487500C82C81 /* TurnOracleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnOracleViewController.h; sourceTree = "<group>"; };
+		E4D8CCE118F2487500C82C81 /* TurnOracleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnOracleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,11 +184,11 @@
 		32A55E3618EB5FC900649610 /* Werewolves */ = {
 			isa = PBXGroup;
 			children = (
+				E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */,
 				388D444818F0A6960067BEA2 /* Peer.h */,
 				388D444918F0A6960067BEA2 /* Peer.m */,
 				388D444A18F0A6960067BEA2 /* PeerHelper.h */,
 				388D444B18F0A6960067BEA2 /* PeerHelper.m */,
-				3288367D18F0991B0064428B /* Main.storyboard */,
 				32A55E3F18EB5FC900649610 /* WerewolvesAppDelegate.h */,
 				32A55E4018EB5FC900649610 /* WerewolvesAppDelegate.m */,
 				32A55E4818EB5FC900649610 /* WerewolvesViewController.h */,
@@ -199,12 +205,18 @@
 				E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */,
 				E4D8CCC518F0A06C00C82C81 /* JoinRoomViewController.h */,
 				E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */,
+				E4D8CCD418F0B01B00C82C81 /* AssignRoleViewController.h */,
+				E4D8CCD518F0B01B00C82C81 /* AssignRoleViewController.m */,
 				E4D8CCC818F0A6D800C82C81 /* TurnWerewolfViewController.h */,
 				E4D8CCC918F0A6D800C82C81 /* TurnWerewolfViewController.m */,
 				E4D8CCCB18F0A71500C82C81 /* TurnWitchSaveViewController.h */,
 				E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */,
 				E4D8CCCE18F0A73D00C82C81 /* TurnWitchKillViewController.h */,
 				E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */,
+				E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */,
+				E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */,
+				E4D8CCE018F2487500C82C81 /* TurnOracleViewController.h */,
+				E4D8CCE118F2487500C82C81 /* TurnOracleViewController.m */,
 				32A55E4B18EB5FC900649610 /* Images.xcassets */,
 				32A55E3718EB5FC900649610 /* Supporting Files */,
 				3288367F18F099580064428B /* Images */,
@@ -320,9 +332,9 @@
 			files = (
 				3288368918F099580064428B /* icon_witch.png in Resources */,
 				9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */,
-				3288367E18F0991B0064428B /* Main.storyboard in Resources */,
 				3288368518F099580064428B /* 50-percent-gray.jpg in Resources */,
 				3288368618F099580064428B /* icon_oracle.png in Resources */,
+				E4D8CCDF18F22DDE00C82C81 /* Main.storyboard in Resources */,
 				3288368718F099580064428B /* icon_village.png in Resources */,
 				32A55E4C18EB5FC900649610 /* Images.xcassets in Resources */,
 				3288368818F099580064428B /* icon_werewolf.png in Resources */,
@@ -346,19 +358,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D8CCD618F0B01B00C82C81 /* AssignRoleViewController.m in Sources */,
 				32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */,
 				E4D8CCC418F09FDA00C82C81 /* CreateRoomViewController.m in Sources */,
 				E4D8CCC718F0A06C00C82C81 /* JoinRoomViewController.m in Sources */,
+				E4D8CCDA18F2297B00C82C81 /* PlayerListCell.m in Sources */,
 				E4D8CCD018F0A73D00C82C81 /* TurnWitchKillViewController.m in Sources */,
 				32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */,
 				E4D8CCCD18F0A71500C82C81 /* TurnWitchSaveViewController.m in Sources */,
 				E4D8CCCA18F0A6D800C82C81 /* TurnWerewolfViewController.m in Sources */,
 				32A55E4A18EB5FC900649610 /* WerewolvesViewController.m in Sources */,
-				3288368F18F0A4390064428B /* AssignRoleViewController.m in Sources */,
 				32A55E3D18EB5FC900649610 /* main.m in Sources */,
 				32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */,
 				32A55E4118EB5FC900649610 /* WerewolvesAppDelegate.m in Sources */,
 				32A55E6F18EB64B400649610 /* WerewolvesPlayer.m in Sources */,
+				E4D8CCE218F2487500C82C81 /* TurnOracleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

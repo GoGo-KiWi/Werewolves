@@ -35,6 +35,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 7;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    cell.textLabel.text = [NSString stringWithFormat:@"# %ld", (long)[indexPath row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
+    switch ([indexPath row]){
+        case 2: cell.imageView.image = [UIImage imageNamed:@"icon_oracle.png"]; break;
+        case 4:case 6: cell.imageView.image = [UIImage imageNamed:@"icon_werewolf.png"]; break;
+        default: cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
+            
+    }
+    //cell.textLabel.tag = [(NSInteger) [indexPath row]];
+    return cell;
+}
+
 /*
 #pragma mark - Navigation
 
