@@ -104,8 +104,6 @@
 		388D444B18F0A6960067BEA2 /* PeerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerHelper.m; sourceTree = "<group>"; };
 		9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app120x120.png; sourceTree = "<group>"; };
 		9F7AD35118F0AC27002BBB98 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
-		E4D8CCD418F0B01B00C82C81 /* AssignRoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignRoleViewController.h; sourceTree = "<group>"; };
-		E4D8CCD518F0B01B00C82C81 /* AssignRoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignRoleViewController.m; sourceTree = "<group>"; };
 		E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListCell.h; sourceTree = "<group>"; };
 		E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListCell.m; sourceTree = "<group>"; };
 		E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -201,12 +199,12 @@
 				32A55E4018EB5FC900649610 /* WerewolvesAppDelegate.m */,
 				32A55E4818EB5FC900649610 /* WerewolvesViewController.h */,
 				32A55E4918EB5FC900649610 /* WerewolvesViewController.m */,
-				32498DD818F38B5C00D6D2BD /* AssignRoleViewController.h */,
-				32498DD918F38B5C00D6D2BD /* AssignRoleViewController.m */,
 				32C11E0E18F3E0F700A59141 /* CreateRoomViewController.h */,
 				32C11E0F18F3E0F700A59141 /* CreateRoomViewController.m */,
 				32C11E1418F3E16800A59141 /* PlayerListViewController.h */,
 				32C11E1518F3E16800A59141 /* PlayerListViewController.m */,
+				32498DD818F38B5C00D6D2BD /* AssignRoleViewController.h */,
+				32498DD918F38B5C00D6D2BD /* AssignRoleViewController.m */,
 				32C11E1018F3E0F700A59141 /* JoinRoomViewController.h */,
 				32C11E1118F3E0F700A59141 /* JoinRoomViewController.m */,
 				3259F13E18F22EC200982752 /* WerewolvesUtility.h */,
@@ -219,18 +217,16 @@
 				32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */,
 				32A55E6A18EB64A200649610 /* WerewolvesModerator.h */,
 				32A55E6B18EB64A200649610 /* WerewolvesModerator.m */,
-				E4D8CCD418F0B01B00C82C81 /* AssignRoleViewController.h */,
-				E4D8CCD518F0B01B00C82C81 /* AssignRoleViewController.m */,
 				E4D8CD3018F3A85600C82C81 /* TurnWerewolfViewController.h */,
 				E4D8CD3118F3A85600C82C81 /* TurnWerewolfViewController.m */,
 				E4D8CD3218F3A85600C82C81 /* TurnWitchKillViewController.h */,
 				E4D8CD3318F3A85600C82C81 /* TurnWitchKillViewController.m */,
 				E4D8CD3418F3A85600C82C81 /* TurnWitchSaveViewController.h */,
 				E4D8CD3518F3A85600C82C81 /* TurnWitchSaveViewController.m */,
-				E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */,
-				E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */,
 				E4D8CCE018F2487500C82C81 /* TurnOracleViewController.h */,
 				E4D8CCE118F2487500C82C81 /* TurnOracleViewController.m */,
+				E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */,
+				E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */,
 				32A55E4B18EB5FC900649610 /* Images.xcassets */,
 				32A55E3718EB5FC900649610 /* Supporting Files */,
 				3288367F18F099580064428B /* Images */,

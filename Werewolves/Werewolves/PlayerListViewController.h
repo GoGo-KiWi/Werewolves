@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PlayerListViewController : UIViewController <UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *roomName;
+
+@property (strong, nonatomic) NSString *roomNameText;
+@property (weak, nonatomic) IBOutlet UITableView *playerList;
 
 @end

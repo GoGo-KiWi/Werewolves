@@ -7,12 +7,15 @@
 //
 
 #import "PlayerListViewController.h"
+#import "WerewolvesUtility.h"
 
 @interface PlayerListViewController ()
 
 @end
 
 @implementation PlayerListViewController
+
+@synthesize roomNameText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = self.roomNameText;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,5 +49,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 8;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    NSString *name = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
+    cell = [WerewolvesUtility createCellFor:Undefined WithName:name];
+    return cell;
+}
 
 @end
