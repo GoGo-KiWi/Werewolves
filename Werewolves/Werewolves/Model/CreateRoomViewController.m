@@ -8,10 +8,16 @@
 
 #import "CreateRoomViewController.h"
 #import "WerewolvesUtility.h"
+#import "WerewolvesAppDelegate.h"
 
 @interface CreateRoomViewController ()
 
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
+@property (nonatomic, strong) NSMutableArray *arrConnectedDevices;
+
+-(void)peerDidChangeStateWithNotification:(NSNotification *)notification;
 @end
+
 
 @implementation CreateRoomViewController
 
@@ -23,6 +29,7 @@
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
