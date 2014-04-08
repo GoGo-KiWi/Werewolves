@@ -31,6 +31,7 @@
 		32A55E6F18EB64B400649610 /* WerewolvesPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */; };
 		32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7D18EB668D00649610 /* WerewolvesMessage.m */; };
 		32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E8018EB681D00649610 /* WerewolvesRoom.m */; };
+		3832B9CE18F42B0200AEEB76 /* PeerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444B18F0A6960067BEA2 /* PeerHelper.m */; };
 		3898FBB218F3BEBA0043ADC0 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E6818EB613D00649610 /* MultipeerConnectivity.framework */; };
 		3898FBB318F3BF480043ADC0 /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444918F0A6960067BEA2 /* Peer.m */; };
 		9F6C40A118F0AD27005D3FFC /* icon_app120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */; };
@@ -372,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3832B9CE18F42B0200AEEB76 /* PeerHelper.m in Sources */,
 				3898FBB318F3BF480043ADC0 /* Peer.m in Sources */,
 				E4D8CD3918F3AB1D00C82C81 /* AssignRoleViewController.m in Sources */,
 				32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */,

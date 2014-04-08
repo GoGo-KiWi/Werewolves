@@ -1,78 +1,70 @@
-//
-//  PeerHelper.m
-//  EasyCards
-//
-//  Created by Mohammad Azam on 12/3/13.
-//  Copyright (c) 2013 Mohammad Azam. All rights reserved.
-//
-
 #import "PeerHelper.h"
+#import "WerewolvesAppDelegate.h"
 
-@interface PeerHelper()
+@interface PeerHelper ()
+
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
+
+-(void)sendMyMessage:(NSString*) str;
+-(void)didReceiveDataWithNotification:(NSNotification *)notification;
 
 @end
 
 @implementation PeerHelper
 
-+(PeerHelper *) sharedHelper
-{
-    static PeerHelper *sharedInstance = nil;
-    static dispatch_once_t once;
+-(id)init{
+	// Do any additional setup after loading the view, typically from a nib.
     
-    dispatch_once(&once,^{
-    
-        sharedInstance = [[self alloc] init];
-        
-    });
-    
-    return sharedInstance;
+    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
+    return self;
 }
 
--(void) sendData
-{
-    /*
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[Card cardFromArchive]];
-    
+
+#pragma mark - IBAction method implementation
+
+- (IBAction)sendMessage:(id)sender :(NSString*) Str {
+    [self sendMyMessage:@"Str"];
+}
+
+
+#pragma mark - Private method implementation
+
+-(void)sendMyMessage:(NSString*) str{
+    NSData *dataToSend = [ @"str" dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;
     
-    [self.peer.session sendData:data toPeers:self.peer.session.connectedPeers withMode:MCSessionSendDataReliable error:&error];
+    [_appDelegate.peer.session sendData:dataToSend
+                                     toPeers:allPeers
+                                    withMode:MCSessionSendDataReliable
+                                       error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    
+    /*
+    [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I wrote:\n%@\n\n", _txtMessage.text]]];
+    [_txtMessage setText:@""];
+    [_txtMessage resignFirstResponder];
      */
 }
 
--(void) start
-{
-    [self.peer.assistant start];
-}
 
--(void) stop
-{
-    [self.peer.assistant stop];
-}
-
--(void) restart
-{
-    [self stop];
-    [self initialize];
-    [self start];
-}
-
--(void) initialize
-{
-    /*
-    WerewolvesPlayer *card = [WerewolvesPlayer cardFromArchive];
-    NSString *peerName = [[UIDevice currentDevice] name];
+-(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSString *peerDisplayName = peerID.displayName;
     
-    if(card)
-    {
-        peerName = card.name.length > 0 ? card.name : peerName;
-    }
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
-    self.peer = [[Peer alloc] init];
-    self.peer.peerId = [[MCPeerID alloc] initWithDisplayName:peerName];
-    self.peer.session = [[MCSession alloc]  initWithPeer:self.peer.peerId];
-    self.peer.session.delegate = self.peer;
     /*
-    self.peer.assistant = [[MCAdvertiserAssistant alloc] initWithServiceType:kServiceType discoveryInfo:nil session:self.peer.session];
+    [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ wrote:\n%@\n\n", peerDisplayName, receivedText]] waitUntilDone:NO];
      */
 }
 
