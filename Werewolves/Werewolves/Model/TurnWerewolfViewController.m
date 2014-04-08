@@ -50,7 +50,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
-    cell.textLabel.text = [NSString stringWithFormat:@"# %ld", (long)[indexPath row]];
+    //cell.textLabel.text = [NSString stringWithFormat:@"# %ld", (long)[indexPath row]];
     cell.textLabel.text = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
     switch ([indexPath row]){
         case 2: cell.imageView.image = [UIImage imageNamed:@"icon_oracle.png"]; break;
