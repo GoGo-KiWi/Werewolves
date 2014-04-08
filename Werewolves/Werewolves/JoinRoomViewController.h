@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JoinRoomViewController : UIViewController
+@interface JoinRoomViewController : UIViewController <UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *roomList;
 
 @end
