@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WerewolvesMessage.h"
-
-enum RoleType
-{
-    Moderator, Peasant, Wolf, FortuneTeller, Witch, Undefined
-};
+#import "WerewolvesUtility.h"
 
 @interface WerewolvesPlayer : NSObject
 {

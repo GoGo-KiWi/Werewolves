@@ -7,6 +7,7 @@
 //
 
 #import "CreateRoomViewController.h"
+#import "WerewolvesUtility.h"
 
 @interface CreateRoomViewController ()
 
@@ -27,6 +28,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.roomName.placeholder = @"Your Name";
+    self.roomName.backgroundColor = [UIColor lightGrayColor];
+    self.roomName.returnKeyType = UIReturnKeyDone;
+    self.roomName.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.view addSubview:self.roomName];
+    self.roomName.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,5 +52,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [WerewolvesUtility animateTextField:textField forView:self.view up:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [WerewolvesUtility animateTextField:textField forView:self.view up:NO];
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AssignRoleViewController.h"
+#import "WerewolvesUtility.h"
 
 @interface AssignRoleViewController ()
 
@@ -71,9 +72,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    UITableViewCell *cell;
     NSString *headerTitle = [self tableView:tableView titleForHeaderInSection:indexPath.section];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %ld", headerTitle, (long)[indexPath row]];
+    NSString *name = [NSString stringWithFormat:@"%@ %ld", headerTitle, (long)[indexPath row]];
+    switch (indexPath.section) {
+        case 0:
+            cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
+            break;
+        case 1:
+            cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
+            break;
+        case 2:
+            cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
+            break;
+        case 3:
+            cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
+            break;
+        default:
+            break;
+    }
     return cell;
 }
  
