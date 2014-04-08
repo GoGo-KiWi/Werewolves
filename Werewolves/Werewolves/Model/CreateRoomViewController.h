@@ -9,13 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface CreateRoomViewController : UIViewController <UITextFieldDelegate,MCBrowserViewControllerDelegate>
+@interface CreateRoomViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *roomName;
 
 
-- (IBAction)browseForDevices:(id)sender;
-- (IBAction)toggleVisibility:(id)sender;
-- (IBAction)disconnect:(id)sender;
 
 @end

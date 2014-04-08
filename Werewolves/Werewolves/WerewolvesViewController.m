@@ -8,9 +8,10 @@
 
 #import "WerewolvesViewController.h"
 #import "WerewolvesUtility.h"
+#import "WerewolvesAppDelegate.h"
 
 @interface WerewolvesViewController ()
-
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 @end
 
 @implementation WerewolvesViewController
@@ -25,6 +26,9 @@
     userName.clearButtonMode = UITextFieldViewModeWhileEditing;
     [self.view addSubview:userName];
     userName.delegate = self;
+
+    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[_appDelegate peer] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +49,17 @@
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    _appDelegate.peer.peerID = nil;
+    _appDelegate.peer.session = nil;
+    _appDelegate.peer.browser = nil;
+    
+    [_appDelegate.peer.advertiser stop];
+    _appDelegate.peer.advertiser = nil;
+
+    [_appDelegate.peer setupPeerAndSessionWithDisplayName:userName.text];
+    [_appDelegate.peer setupMCBrowser];
+    [_appDelegate.peer advertiseSelf: true];
+
     return YES;
 }
 

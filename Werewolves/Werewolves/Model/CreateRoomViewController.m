@@ -12,10 +12,6 @@
 
 @interface CreateRoomViewController ()
 
-@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
-@property (nonatomic, strong) NSMutableArray *arrConnectedDevices;
-
--(void)peerDidChangeStateWithNotification:(NSNotification *)notification;
 @end
 
 
