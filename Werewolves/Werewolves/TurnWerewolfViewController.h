@@ -16,6 +16,7 @@
     id<playerKilledDelegate> delegate;
 }
 @property (weak, nonatomic) IBOutlet UITableView *killList;
+@property (strong, nonatomic) NSString *killedName;
 
 @property(nonatomic,assign)id delegate;
 
