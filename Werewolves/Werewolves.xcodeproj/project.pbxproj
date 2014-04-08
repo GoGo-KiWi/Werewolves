@@ -34,13 +34,13 @@
 		9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F7AD35118F0AC27002BBB98 /* icon_app.png */; };
 		E4D8CCC418F09FDA00C82C81 /* CreateRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */; };
 		E4D8CCC718F0A06C00C82C81 /* JoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */; };
-		E4D8CCCA18F0A6D800C82C81 /* TurnWerewolfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCC918F0A6D800C82C81 /* TurnWerewolfViewController.m */; };
-		E4D8CCCD18F0A71500C82C81 /* TurnWitchSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */; };
-		E4D8CCD018F0A73D00C82C81 /* TurnWitchKillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */; };
 		E4D8CCD618F0B01B00C82C81 /* AssignRoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCD518F0B01B00C82C81 /* AssignRoleViewController.m */; };
 		E4D8CCDA18F2297B00C82C81 /* PlayerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */; };
 		E4D8CCDF18F22DDE00C82C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */; };
 		E4D8CCE218F2487500C82C81 /* TurnOracleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCE118F2487500C82C81 /* TurnOracleViewController.m */; };
+		E4D8CD3618F3A85600C82C81 /* TurnWerewolfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CD3118F3A85600C82C81 /* TurnWerewolfViewController.m */; };
+		E4D8CD3718F3A85600C82C81 /* TurnWitchKillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CD3318F3A85600C82C81 /* TurnWitchKillViewController.m */; };
+		E4D8CD3818F3A85600C82C81 /* TurnWitchSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CD3518F3A85600C82C81 /* TurnWitchSaveViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,12 +96,6 @@
 		E4D8CCC318F09FDA00C82C81 /* CreateRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateRoomViewController.m; path = Model/CreateRoomViewController.m; sourceTree = "<group>"; };
 		E4D8CCC518F0A06C00C82C81 /* JoinRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinRoomViewController.h; path = Model/JoinRoomViewController.h; sourceTree = "<group>"; };
 		E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinRoomViewController.m; path = Model/JoinRoomViewController.m; sourceTree = "<group>"; };
-		E4D8CCC818F0A6D800C82C81 /* TurnWerewolfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurnWerewolfViewController.h; path = Model/TurnWerewolfViewController.h; sourceTree = "<group>"; };
-		E4D8CCC918F0A6D800C82C81 /* TurnWerewolfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnWerewolfViewController.m; path = Model/TurnWerewolfViewController.m; sourceTree = "<group>"; };
-		E4D8CCCB18F0A71500C82C81 /* TurnWitchSaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurnWitchSaveViewController.h; path = Model/TurnWitchSaveViewController.h; sourceTree = "<group>"; };
-		E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnWitchSaveViewController.m; path = Model/TurnWitchSaveViewController.m; sourceTree = "<group>"; };
-		E4D8CCCE18F0A73D00C82C81 /* TurnWitchKillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurnWitchKillViewController.h; path = Model/TurnWitchKillViewController.h; sourceTree = "<group>"; };
-		E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurnWitchKillViewController.m; path = Model/TurnWitchKillViewController.m; sourceTree = "<group>"; };
 		E4D8CCD418F0B01B00C82C81 /* AssignRoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignRoleViewController.h; sourceTree = "<group>"; };
 		E4D8CCD518F0B01B00C82C81 /* AssignRoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignRoleViewController.m; sourceTree = "<group>"; };
 		E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListCell.h; sourceTree = "<group>"; };
@@ -109,6 +103,12 @@
 		E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E4D8CCE018F2487500C82C81 /* TurnOracleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnOracleViewController.h; sourceTree = "<group>"; };
 		E4D8CCE118F2487500C82C81 /* TurnOracleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnOracleViewController.m; sourceTree = "<group>"; };
+		E4D8CD3018F3A85600C82C81 /* TurnWerewolfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnWerewolfViewController.h; sourceTree = "<group>"; };
+		E4D8CD3118F3A85600C82C81 /* TurnWerewolfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnWerewolfViewController.m; sourceTree = "<group>"; };
+		E4D8CD3218F3A85600C82C81 /* TurnWitchKillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnWitchKillViewController.h; sourceTree = "<group>"; };
+		E4D8CD3318F3A85600C82C81 /* TurnWitchKillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnWitchKillViewController.m; sourceTree = "<group>"; };
+		E4D8CD3418F3A85600C82C81 /* TurnWitchSaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnWitchSaveViewController.h; sourceTree = "<group>"; };
+		E4D8CD3518F3A85600C82C81 /* TurnWitchSaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnWitchSaveViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,12 +207,12 @@
 				E4D8CCC618F0A06C00C82C81 /* JoinRoomViewController.m */,
 				E4D8CCD418F0B01B00C82C81 /* AssignRoleViewController.h */,
 				E4D8CCD518F0B01B00C82C81 /* AssignRoleViewController.m */,
-				E4D8CCC818F0A6D800C82C81 /* TurnWerewolfViewController.h */,
-				E4D8CCC918F0A6D800C82C81 /* TurnWerewolfViewController.m */,
-				E4D8CCCB18F0A71500C82C81 /* TurnWitchSaveViewController.h */,
-				E4D8CCCC18F0A71500C82C81 /* TurnWitchSaveViewController.m */,
-				E4D8CCCE18F0A73D00C82C81 /* TurnWitchKillViewController.h */,
-				E4D8CCCF18F0A73D00C82C81 /* TurnWitchKillViewController.m */,
+				E4D8CD3018F3A85600C82C81 /* TurnWerewolfViewController.h */,
+				E4D8CD3118F3A85600C82C81 /* TurnWerewolfViewController.m */,
+				E4D8CD3218F3A85600C82C81 /* TurnWitchKillViewController.h */,
+				E4D8CD3318F3A85600C82C81 /* TurnWitchKillViewController.m */,
+				E4D8CD3418F3A85600C82C81 /* TurnWitchSaveViewController.h */,
+				E4D8CD3518F3A85600C82C81 /* TurnWitchSaveViewController.m */,
 				E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */,
 				E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */,
 				E4D8CCE018F2487500C82C81 /* TurnOracleViewController.h */,
@@ -362,17 +362,17 @@
 				32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */,
 				E4D8CCC418F09FDA00C82C81 /* CreateRoomViewController.m in Sources */,
 				E4D8CCC718F0A06C00C82C81 /* JoinRoomViewController.m in Sources */,
+				E4D8CD3618F3A85600C82C81 /* TurnWerewolfViewController.m in Sources */,
 				E4D8CCDA18F2297B00C82C81 /* PlayerListCell.m in Sources */,
-				E4D8CCD018F0A73D00C82C81 /* TurnWitchKillViewController.m in Sources */,
 				32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */,
-				E4D8CCCD18F0A71500C82C81 /* TurnWitchSaveViewController.m in Sources */,
-				E4D8CCCA18F0A6D800C82C81 /* TurnWerewolfViewController.m in Sources */,
 				32A55E4A18EB5FC900649610 /* WerewolvesViewController.m in Sources */,
 				32A55E3D18EB5FC900649610 /* main.m in Sources */,
 				32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */,
 				32A55E4118EB5FC900649610 /* WerewolvesAppDelegate.m in Sources */,
+				E4D8CD3818F3A85600C82C81 /* TurnWitchSaveViewController.m in Sources */,
 				32A55E6F18EB64B400649610 /* WerewolvesPlayer.m in Sources */,
 				E4D8CCE218F2487500C82C81 /* TurnOracleViewController.m in Sources */,
+				E4D8CD3718F3A85600C82C81 /* TurnWitchKillViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
