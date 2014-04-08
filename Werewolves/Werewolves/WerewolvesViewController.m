@@ -7,7 +7,7 @@
 //
 
 #import "WerewolvesViewController.h"
-#import "WerewolvesMessage.h"
+#import "WerewolvesUtility.h"
 
 @interface WerewolvesViewController ()
 
@@ -25,9 +25,6 @@
     userName.clearButtonMode = UITextFieldViewModeWhileEditing;
     [self.view addSubview:userName];
     userName.delegate = self;
-    WerewolvesMessage *msg = [[WerewolvesMessage alloc]init];
-    [msg dumpMessage:@"xxx"];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,9 +33,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [WerewolvesUtility animateTextField:textField forView:self.view up:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [WerewolvesUtility animateTextField:textField forView:self.view up:NO];
+}
+
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
+
 
 @end
