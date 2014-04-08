@@ -1,15 +1,16 @@
 
 #import <Foundation/Foundation.h>
-@import MultipeerConnectivity;
-#import "WerewolvesPlayer.h"
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface Peer : NSObject
-{
-    
-}
+@interface Peer : NSObject <MCSessionDelegate>
 
-@property (nonatomic,strong) MCPeerID *peerId;
-@property (nonatomic,strong) MCSession *session;
-@property (nonatomic,strong) MCAdvertiserAssistant *assistant;
+@property (nonatomic, strong) MCPeerID *peerID;
+@property (nonatomic, strong) MCSession *session;
+@property (nonatomic, strong) MCBrowserViewController *browser;
+@property (nonatomic, strong) MCAdvertiserAssistant *advertiser;
+
+-(void)setupPeerAndSessionWithDisplayName:(NSString *)displayName;
+-(void)setupMCBrowser;
+-(void)advertiseSelf:(BOOL)shouldAdvertise;
 
 @end
