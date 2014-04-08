@@ -24,5 +24,28 @@
     [UIView commitAnimations];
 }
 
++ (UITableViewCell *) createCellFor: (enum RoleType) role WithName: (NSString *) name
+{
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    cell.textLabel.text = name;
+    switch (role) {
+        case Peasant:
+            cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
+            break;
+        case Wolf:
+            cell.imageView.image = [UIImage imageNamed:@"icon_werewolf.png"];
+            break;
+        case Witch:
+            cell.imageView.image = [UIImage imageNamed:@"icon_witch.png"];
+            break;
+        case FortuneTeller:
+            cell.imageView.image = [UIImage imageNamed:@"icon_oracle.png"];
+            break;
+        default:
+            break;
+    }
+    return cell;
+}
+
 
 @end
