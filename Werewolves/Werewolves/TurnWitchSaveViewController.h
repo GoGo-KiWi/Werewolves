@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *playerKilledInfo;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *saveInfo;
 //@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) NSString *killedPlayerName;
 
 @end

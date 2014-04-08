@@ -46,4 +46,17 @@
 }
 */
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    NSString *name = [NSString stringWithFormat:@"Room %ld", (long)[indexPath row]];
+    cell.textLabel.text = name;
+    return cell;
+}
+
 @end

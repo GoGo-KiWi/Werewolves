@@ -80,13 +80,13 @@
             cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
             break;
         case 1:
-            cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
+            cell = [WerewolvesUtility createCellFor:Wolf WithName:name];
             break;
         case 2:
-            cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
+            cell = [WerewolvesUtility createCellFor:FortuneTeller WithName:name];
             break;
         case 3:
-            cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
+            cell = [WerewolvesUtility createCellFor:Witch WithName:name];
             break;
         default:
             break;
