@@ -7,9 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface WerewolvesUtility : NSObject
 
+enum RoleType
+{
+    Moderator, Peasant, Wolf, FortuneTeller, Witch, Undefined
+};
+
 + (void) animateTextField: (UITextField*) textField forView: (UIView *) view up: (BOOL) up;
++ (UITableViewCell *) createCellFor: (enum RoleType) role WithName: (NSString *) name;
 
 @end
