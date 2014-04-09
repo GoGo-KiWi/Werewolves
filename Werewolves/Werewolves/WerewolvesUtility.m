@@ -41,6 +41,9 @@
         case FortuneTeller:
             cell.imageView.image = [UIImage imageNamed:@"icon_oracle.png"];
             break;
+        case Undefined:
+            cell.imageView.image = [UIImage imageNamed:@"icon_app.png"];
+            break;
         default:
             break;
     }

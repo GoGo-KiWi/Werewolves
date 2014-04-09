@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.playerKilledInfo.text = self.killedPlayerName;
     //label = [[UILabel alloc] init];
     //playerKilledInfo.frame = CGRectMake(10, 10, 300, 40);
     //[self.view addSubview:playerKilledInfo];

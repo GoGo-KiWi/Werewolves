@@ -7,6 +7,7 @@
 //
 
 #import "TurnWerewolfViewController.h"
+#import "TurnWitchSaveViewController.h"
 
 @interface TurnWerewolfViewController ()
 
@@ -65,6 +66,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
+    self.killedName = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
 
 }
 
@@ -83,7 +85,7 @@
     //}
     
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -91,7 +93,12 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"WitchSaveSegue"]){
+        if ([segue.destinationViewController isMemberOfClass:[TurnWitchSaveViewController class]]) {
+            TurnWitchSaveViewController *controller = (TurnWitchSaveViewController *)segue.destinationViewController;
+            controller.killedPlayerName = self.killedName;
+        }
+    }
 }
-*/
 
 @end
