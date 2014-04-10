@@ -10,6 +10,16 @@
 
 @implementation WerewolvesRoom
 
+- (void) initArray {
+    playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
+    
+    peasantArray = [NSMutableArray array];
+    wolfArray = [NSMutableArray array];
+    fortuneTellerArray = [NSMutableArray array];
+    witchArray = [NSMutableArray array];
+    moderatorArray = [NSMutableArray array];
+}
+
 - (void) addPlayer:(WerewolvesPlayer*) player {
     [playerArray addObject:player];
     [self addPlayerIntoRoleArray:player];
@@ -108,6 +118,53 @@
     }
     
     return NULL;
+}
+
+- (int) generateRandomRoles {
+    /* This function randomly generate roles for players and update their array. Return -1 on failure and 0 on success */
+    int numPlayer = (int)[playerArray count];
+    
+    if (numPlayer < 5) {
+        // Too few player, cannot proceed
+        return -1;
+    }
+    int numModerator = 1;
+    int numFortuneTeller = 1;
+    int numWitch = 1;
+    int numWolf = (numPlayer - numModerator - numFortuneTeller - numWitch)/2;
+    int numPeasant = numPlayer - numModerator - numFortuneTeller - numWitch - numWolf;
+    
+    
+    int* tempArray = malloc(numPlayer*sizeof(int));
+    
+    for (int i = 0; i < numPlayer; i++) {
+        tempArray[i] = i;
+    }
+    
+    // Suppose index 0 correspons to moderator and we do not need to modify or initlize moderator. We do not change this role
+    // Shuffle position from 1 to last elements
+    for (int i = 2; i < numPlayer; i++) {
+        int swapPos = arc4random() % (i - 1) + 1;
+        int tempValue = tempArray[i];
+        tempArray[i] = tempArray[swapPos];
+        tempArray[swapPos] = tempValue;
+    }
+    
+    // Assign in order for different roles excpet for the moderator, whose role should already be initlized
+    [self setRole:playerArray[numModerator + numFortuneTeller - 1] :FortuneTeller];
+    [self setRole:playerArray[numModerator + numFortuneTeller + numWitch - 1] :Witch];
+    
+    for (int i = numModerator + numFortuneTeller + numWitch; i < numModerator + numFortuneTeller + numWitch + numWolf; i++) {
+        [self setRole:playerArray[i] :Wolf];
+    }
+    
+    for (int i = numModerator + numFortuneTeller + numWitch + numWolf; i < numModerator + numFortuneTeller + numWitch + numWolf + numPeasant; i++) {
+        [self setRole:playerArray[i] :Peasant];
+    }
+    
+    free(tempArray);
+    
+    return 0;
 }
 
 @end
