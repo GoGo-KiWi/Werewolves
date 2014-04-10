@@ -21,6 +21,8 @@
     NSMutableArray* moderatorArray;
 }
 
+- (WerewolvesRoom*) init;
+
 - (void) initArray;
 - (void) addPlayer:(WerewolvesPlayer*) player;
 - (void) setRole:(WerewolvesPlayer*) player :(enum RoleType) role;

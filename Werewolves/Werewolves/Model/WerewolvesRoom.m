@@ -10,7 +10,9 @@
 
 @implementation WerewolvesRoom
 
-- (void) initArray {
+- (WerewolvesRoom*) init {
+    self = [super init];
+    
     playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
     
     peasantArray = [NSMutableArray array];
@@ -18,6 +20,8 @@
     fortuneTellerArray = [NSMutableArray array];
     witchArray = [NSMutableArray array];
     moderatorArray = [NSMutableArray array];
+    
+    return self;
 }
 
 - (void) addPlayer:(WerewolvesPlayer*) player {
