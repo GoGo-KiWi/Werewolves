@@ -33,6 +33,7 @@
 		32C11E1218F3E0F700A59141 /* CreateRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E0F18F3E0F700A59141 /* CreateRoomViewController.m */; };
 		32C11E1318F3E0F700A59141 /* JoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E1118F3E0F700A59141 /* JoinRoomViewController.m */; };
 		32C11E1618F3E16800A59141 /* PlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E1518F3E16800A59141 /* PlayerListViewController.m */; };
+		3859307118F7270000447089 /* testsendmessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3859307018F7270000447089 /* testsendmessageViewController.m */; };
 		389BCED118F5F4B70099B87E /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444918F0A6960067BEA2 /* Peer.m */; };
 		389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444B18F0A6960067BEA2 /* PeerHelper.m */; };
 		9F6C40A118F0AD27005D3FFC /* icon_app120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */; };
@@ -99,6 +100,8 @@
 		32C11E1118F3E0F700A59141 /* JoinRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinRoomViewController.m; sourceTree = "<group>"; };
 		32C11E1418F3E16800A59141 /* PlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListViewController.h; sourceTree = "<group>"; };
 		32C11E1518F3E16800A59141 /* PlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListViewController.m; sourceTree = "<group>"; };
+		3859306F18F7270000447089 /* testsendmessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testsendmessageViewController.h; sourceTree = "<group>"; };
+		3859307018F7270000447089 /* testsendmessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testsendmessageViewController.m; sourceTree = "<group>"; };
 		388D444818F0A6960067BEA2 /* Peer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peer.h; sourceTree = "<group>"; };
 		388D444918F0A6960067BEA2 /* Peer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peer.m; sourceTree = "<group>"; };
 		388D444A18F0A6960067BEA2 /* PeerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerHelper.h; sourceTree = "<group>"; };
@@ -190,6 +193,8 @@
 		32A55E3618EB5FC900649610 /* Werewolves */ = {
 			isa = PBXGroup;
 			children = (
+				3859306F18F7270000447089 /* testsendmessageViewController.h */,
+				3859307018F7270000447089 /* testsendmessageViewController.m */,
 				E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */,
 				388D444818F0A6960067BEA2 /* Peer.h */,
 				388D444918F0A6960067BEA2 /* Peer.m */,
@@ -368,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3859307118F7270000447089 /* testsendmessageViewController.m in Sources */,
 				389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */,
 				389BCED118F5F4B70099B87E /* Peer.m in Sources */,
 				E4D8CD3918F3AB1D00C82C81 /* AssignRoleViewController.m in Sources */,

@@ -12,6 +12,7 @@
 @interface JoinRoomViewController : UIViewController <MCBrowserViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *roomList;
+@property (weak, nonatomic) IBOutlet UIButton *test;
 
 - (IBAction)browseForDevices:(id)sender;
 
