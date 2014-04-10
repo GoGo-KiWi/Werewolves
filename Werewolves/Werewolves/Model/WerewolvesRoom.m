@@ -10,6 +10,16 @@
 
 @implementation WerewolvesRoom
 
+- (void) initArray {
+    playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
+    
+    peasantArray = [NSMutableArray array];
+    wolfArray = [NSMutableArray array];
+    fortuneTellerArray = [NSMutableArray array];
+    witchArray = [NSMutableArray array];
+    moderatorArray = [NSMutableArray array];
+}
+
 - (void) addPlayer:(WerewolvesPlayer*) player {
     [playerArray addObject:player];
     [self addPlayerIntoRoleArray:player];
@@ -108,6 +118,24 @@
     }
     
     return NULL;
+}
+
+- (void) generateRandomRoles {
+    int numPlayer = (int)[playerArray count];
+    int numModerator = 1;
+    int numFortuneTeller = 1;
+    int numWitch = 1;
+    int numWolf = (numPlayer - numModerator - numFortuneTeller - numWitch)/2;
+    int numPeasant = numPlayer - numModerator - numFortuneTeller - numWitch - numWolf;
+    
+    /*
+    NSMutableArray* tempArray = [NSMutableArray arrayWithCapacity:numPlayer];
+    
+    for (NSInteger i = 0; i < numPlayer; i++) {
+        [tempArray addObject:i];
+    }
+    */
+    
 }
 
 @end
