@@ -26,6 +26,6 @@
 - (void) setRole:(WerewolvesPlayer*) player :(enum RoleType) role;
 - (NSMutableArray*) getPlayers:(enum RoleType) role;
 - (WerewolvesPlayer*) getPlayer:(int) playerId;
-- (void) generateRandomRoles;
+- (int) generateRandomRoles;
 
 @end
