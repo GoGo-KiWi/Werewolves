@@ -9,17 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "WerewolvesPlayer.h"
 
+
+
 @interface WerewolvesRoom : NSObject
 {
+    
     NSMutableArray *playerArray; // Store the pointers of ALL players in this room
     
     NSMutableArray* peasantArray;
     NSMutableArray* wolfArray;
     /* For function parameter type consistency, I use array for single roles. by Cary*/
-    NSMutableArray* fortuneTellerArray;
+    NSMutableArray* oracleArray;
     NSMutableArray* witchArray;
     NSMutableArray* moderatorArray;
 }
+
++ (WerewolvesRoom*) getInstance;
 
 - (WerewolvesRoom*) init;
 
@@ -30,4 +35,19 @@
 - (WerewolvesPlayer*) getPlayer:(int) playerId;
 - (int) generateRandomRoles;
 
+/*Message send methods*/
+- (void) sendPeopleInfo;
+
+- (void) createVote;
+- (void) sendVoteResult;
+
+- (void) sendDeathResult;
+- (void) sendTerminateResult;
+
+/*Message receive methods*/
+- (void) receiveMsg;
+
+
 @end
+
+static WerewolvesRoom* instance = nil;

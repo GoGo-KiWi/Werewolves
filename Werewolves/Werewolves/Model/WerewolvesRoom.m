@@ -10,21 +10,34 @@
 
 @implementation WerewolvesRoom
 
++ (WerewolvesRoom*) getInstance {
+    if (instance == nil) {
+        instance = [[WerewolvesRoom alloc] init];
+    }
+    return instance;
+}
+
 - (WerewolvesRoom*) init {
     self = [super init];
+    instance = self;
     
     playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
     
     peasantArray = [NSMutableArray array];
     wolfArray = [NSMutableArray array];
-    fortuneTellerArray = [NSMutableArray array];
+    oracleArray = [NSMutableArray array];
     witchArray = [NSMutableArray array];
     moderatorArray = [NSMutableArray array];
     
+    /*init a moderator*/
+    WerewolvesPlayer* moderatorPtr = [[WerewolvesPlayer alloc] init];
+    [moderatorPtr setRole:Moderator];
+    [self addPlayer:moderatorPtr];
     return self;
 }
 
 - (void) addPlayer:(WerewolvesPlayer*) player {
+    [player setPlayerId:(int)[playerArray count]];
     [playerArray addObject:player];
     [self addPlayerIntoRoleArray:player];
 //    [self performSelector:@selector(addPlayerIntoRoleArray:) withObject:player];
@@ -39,7 +52,7 @@
 }
 
 - (void) addPlayerIntoRoleArray:(WerewolvesPlayer*) player {
-    switch ([player getRole]) {
+    switch ([player role]) {
         case Moderator:
             [moderatorArray addObject:player];
             break;
@@ -49,8 +62,8 @@
         case Wolf:
             [wolfArray addObject:player];
             break;
-        case FortuneTeller:
-            [fortuneTellerArray addObject:player];
+        case Oracle:
+            [oracleArray addObject:player];
             break;
         case Witch:
             [witchArray addObject:player];
@@ -61,7 +74,7 @@
 }
 
 - (void) removePlayerFromRoleArray:(WerewolvesPlayer*) player {
-    switch ([player getRole]) {
+    switch ([player role]) {
         case Moderator:
             for (WerewolvesPlayer* curPlayer in moderatorArray) {
                 if (curPlayer == player) {
@@ -83,10 +96,10 @@
                 }
             }
             break;
-        case FortuneTeller:
-            for (WerewolvesPlayer* curPlayer in fortuneTellerArray) {
+        case Oracle:
+            for (WerewolvesPlayer* curPlayer in oracleArray) {
                 if (curPlayer == player) {
-                    [fortuneTellerArray removeObject:curPlayer];
+                    [oracleArray removeObject:curPlayer];
                 }
             }
             break;
@@ -106,7 +119,7 @@
     NSMutableArray* result = [NSMutableArray array];
     
     for (WerewolvesPlayer* player in playerArray) { // Not sure, should I use * or ** here if array stores pointers?????
-        if ([player getRole] == role) {
+        if ([player role] == role) {
             [result addObject:player];
         }
     }
@@ -116,7 +129,7 @@
 
 - (WerewolvesPlayer*) getPlayer:(int) playerId {
     for (WerewolvesPlayer* player in playerArray) {
-        if ([player getPlayerId] == playerId) {
+        if ([player playerId] == playerId) {
             return player;
         }
     }
@@ -133,10 +146,10 @@
         return -1;
     }
     int numModerator = 1;
-    int numFortuneTeller = 1;
+    int numOracle = 1;
     int numWitch = 1;
-    int numWolf = (numPlayer - numModerator - numFortuneTeller - numWitch)/2;
-    int numPeasant = numPlayer - numModerator - numFortuneTeller - numWitch - numWolf;
+    int numWolf = (numPlayer - numModerator - numOracle - numWitch)/2;
+    int numPeasant = numPlayer - numModerator - numOracle - numWitch - numWolf;
     
     
     int* tempArray = malloc(numPlayer*sizeof(int));
@@ -155,20 +168,59 @@
     }
     
     // Assign in order for different roles excpet for the moderator, whose role should already be initlized
-    [self setRole:playerArray[numModerator + numFortuneTeller - 1] :FortuneTeller];
-    [self setRole:playerArray[numModerator + numFortuneTeller + numWitch - 1] :Witch];
+    [self setRole:playerArray[numModerator + numOracle - 1] :Oracle];
+    [self setRole:playerArray[numModerator + numOracle + numWitch - 1] :Witch];
     
-    for (int i = numModerator + numFortuneTeller + numWitch; i < numModerator + numFortuneTeller + numWitch + numWolf; i++) {
+    for (int i = numModerator + numOracle + numWitch; i < numModerator + numOracle + numWitch + numWolf; i++) {
         [self setRole:playerArray[i] :Wolf];
     }
     
-    for (int i = numModerator + numFortuneTeller + numWitch + numWolf; i < numModerator + numFortuneTeller + numWitch + numWolf + numPeasant; i++) {
+    for (int i = numModerator + numOracle + numWitch + numWolf; i < numModerator + numOracle + numWitch + numWolf + numPeasant; i++) {
         [self setRole:playerArray[i] :Peasant];
     }
     
     free(tempArray);
     
     return 0;
+}
+
+
+- (void) sendPeopleInfo {
+    /*Send enum*/
+    enum MessageType messageType = SendPlayerInfo;
+    
+    /*Send player info by sending playerArray*/
+}
+
+- (void) createVote {
+    /*Send enum*/
+    enum MessageType messageType = CreateVote;
+}
+
+- (void) sendVoteResult {
+    /*Send enum*/
+    enum MessageType messageType = SendVoteResult;
+    
+    /*Send NSMutableArray of vote action*/
+}
+
+- (void) sendDeathResult {
+    /*Send enum*/
+    enum MessageType messageType = SendVoteResult;
+    
+    /*send death playerObject*/
+}
+
+- (void) sendTerminateResult {
+    /*Send enum*/
+    enum MessageType messageType = SendTerminateResult;
+    
+    /*send BOOL about who win*/
+}
+
+- (void) receiveMsg {
+    /*receive player's vote dominate*/
+    // check if received "SendVoteNominate"
 }
 
 @end

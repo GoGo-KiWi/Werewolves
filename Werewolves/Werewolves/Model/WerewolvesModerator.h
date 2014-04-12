@@ -14,11 +14,4 @@
     WerewolvesMessage* attackedByWolf;
 }
 
-- (void) sendPeopleInfo;
-
-- (void) createVote;
-- (void) sendVoteResult;
-
-- (void) sendDeathResult;
-
 @end

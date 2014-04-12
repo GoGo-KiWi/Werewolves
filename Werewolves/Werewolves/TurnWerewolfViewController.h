@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol playerKilledDelegate <NSObject>
+/*@protocol playerKilledDelegate <NSObject>
     -(void)playerKilled:(NSString*)playerName;
-@end
+@end*/
 
 @interface TurnWerewolfViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     NSInteger selectedRow;
-    id<playerKilledDelegate> delegate;
+    //id<playerKilledDelegate> delegate;
 }
 @property (weak, nonatomic) IBOutlet UITableView *killList;
 @property (strong, nonatomic) NSString *killedName;
 
-@property(nonatomic,assign)id delegate;
+//@property(nonatomic,assign)id delegate;
 
--(IBAction)playerSelected;
+//-(IBAction)playerSelected;
 
 @end

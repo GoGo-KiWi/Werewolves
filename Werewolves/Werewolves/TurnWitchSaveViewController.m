@@ -7,6 +7,7 @@
 //
 
 #import "TurnWitchSaveViewController.h"
+#import "TurnWitchKillViewController.h"
 
 @interface TurnWitchSaveViewController ()
 
@@ -14,29 +15,6 @@
 
 @implementation TurnWitchSaveViewController
 @synthesize playerKilledInfo, saveInfo;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        TurnWerewolfViewController *viewController = [[TurnWerewolfViewController alloc] init];
-        // assign delegate
-        viewController.delegate = self;
-    }
-    return self;
-}
-
--(void)playerKilled:(NSString*)playerName{
-    playerKilledInfo.text = [NSString stringWithFormat:@"%@ is killed.", playerName];
-    [self.view addSubview:playerKilledInfo];
-    UIAlertView *messageAlert = [[UIAlertView alloc]
-                                 initWithTitle:@"Success" message:@"success!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
-    // Display Alert Message
-    [messageAlert show];
-
-}
 
 - (void)viewDidLoad
 {
@@ -58,12 +36,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*-(void) pickOne:(id)sender{
-    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-    playerKilledInfo.text = [segmentedControl titleForSegmentAtIndex: [segmentedControl selectedSegmentIndex]];
-}*/
 
+- (IBAction)saveAction:(id)sender
+{
+    if(saveInfo.selectedSegmentIndex == 0){
+        self.killedPlayerName = @"None is killed";
+	}
+    else{
+        self.killedPlayerName = playerKilledInfo.text;
+    }
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if(saveInfo.selectedSegmentIndex == 0){
+        saveInfo.enabled = FALSE;
+    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"WitchKillSegue"]){
+        if ([segue.destinationViewController isMemberOfClass:[TurnWitchKillViewController class]]) {
+            TurnWitchKillViewController *controller = (TurnWitchKillViewController *)segue.destinationViewController;
+            controller.killedPlayer1 = self.killedPlayerName;
+        }
+    }
+}
 
 /*
 #pragma mark - Navigation

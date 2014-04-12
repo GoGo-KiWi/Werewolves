@@ -83,7 +83,7 @@
             cell = [WerewolvesUtility createCellFor:Wolf WithName:name];
             break;
         case 2:
-            cell = [WerewolvesUtility createCellFor:FortuneTeller WithName:name];
+            cell = [WerewolvesUtility createCellFor:Oracle WithName:name];
             break;
         case 3:
             cell = [WerewolvesUtility createCellFor:Witch WithName:name];
@@ -104,7 +104,7 @@
             return @"Werewolf";
             break;
         case 2:
-            return @"Fortune Teller";
+            return @"Oracle";
             break;
         case 3:
             return @"Witch";
