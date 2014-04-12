@@ -631,7 +631,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JOf-pj-xuq" kind="push" identifier="CreateRoomSegue" id="8Md-Zq-hzB"/>
+                                    <segue destination="JOf-pj-xuq" kind="push" identifier="NewRoomSegue" id="8Md-Zq-hzB"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0m-D1-5PT">

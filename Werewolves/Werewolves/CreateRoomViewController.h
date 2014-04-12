@@ -12,7 +12,6 @@
 @interface CreateRoomViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *roomName;
-
-
+@property (strong, nonatomic) NSString *userName;
 
 @end

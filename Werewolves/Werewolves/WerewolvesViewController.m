@@ -9,6 +9,8 @@
 #import "WerewolvesViewController.h"
 #import "WerewolvesUtility.h"
 #import "WerewolvesAppDelegate.h"
+#import "CreateRoomViewController.h"
+#import "JoinRoomViewController.h"
 
 @interface WerewolvesViewController ()
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
@@ -35,6 +37,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"CreateRoomSegue"]){
+        if ([segue.destinationViewController isMemberOfClass:[CreateRoomViewController class]]) {
+            CreateRoomViewController *controller = (CreateRoomViewController *)segue.destinationViewController;
+            controller.userName = self.userName.text;
+        }
+    } else if([segue.identifier isEqualToString:@"JoinRoomSegue"]){
+        if ([segue.destinationViewController isMemberOfClass:[JoinRoomViewController class]]) {
+            JoinRoomViewController *controller = (JoinRoomViewController *)segue.destinationViewController;
+            controller.userName = self.userName.text;
+        }
+    }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField

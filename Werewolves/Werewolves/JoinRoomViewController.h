@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *roomList;
 @property (weak, nonatomic) IBOutlet UIButton *test;
+@property (strong, nonatomic) NSString *userName;
 
 - (IBAction)browseForDevices:(id)sender;
 
