@@ -38,7 +38,7 @@
         case Witch:
             cell.imageView.image = [UIImage imageNamed:@"icon_witch.png"];
             break;
-        case FortuneTeller:
+        case Oracle:
             cell.imageView.image = [UIImage imageNamed:@"icon_oracle.png"];
             break;
         case UndefinedRole:
