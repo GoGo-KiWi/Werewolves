@@ -34,6 +34,7 @@
     WerewolvesPlayer* moderatorPtr = [[WerewolvesPlayer alloc] init];
     [moderatorPtr setRole:Moderator];
     [self addPlayer:moderatorPtr];
+    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     return self;
 }
 
@@ -187,10 +188,32 @@
 
 
 - (void) sendPeopleInfo {
+     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
+     NSError *error;
+    
     /*Send enum*/
     enum MessageType messageType = SendPlayerInfo;
+    NSNumber* messageTypePtr = [[NSNumber alloc] initWithInt:(int)messageType];
+    NSData *dataPart1 = [NSKeyedArchiver archivedDataWithRootObject:messageTypePtr];
+    [_appDelegate.peer.session sendData:dataPart1
+                                toPeers:allPeers
+                                withMode:MCSessionSendDataReliable
+                                error:&error];
     
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+
     /*Send player info by sending playerArray*/
+    NSData *dataPart2 = [NSKeyedArchiver archivedDataWithRootObject:_playerArray];
+    [_appDelegate.peer.session sendData:dataPart2
+                                toPeers:allPeers
+                               withMode:MCSessionSendDataReliable
+                                  error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
 }
 
 - (void) createVote {

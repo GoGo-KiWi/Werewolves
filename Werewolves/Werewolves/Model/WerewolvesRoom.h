@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WerewolvesPlayer.h"
-
+#import "WerewolvesAppDelegate.h"
 
 
 @interface WerewolvesRoom : NSObject
@@ -19,6 +19,7 @@
 @property NSMutableArray* oracleArray;
 @property NSMutableArray* witchArray;
 @property NSMutableArray* moderatorArray;
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 
 + (WerewolvesRoom*) getInstance;
 
