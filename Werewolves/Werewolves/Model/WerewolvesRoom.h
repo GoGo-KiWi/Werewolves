@@ -12,17 +12,13 @@
 
 
 @interface WerewolvesRoom : NSObject
-{
-    
-    NSMutableArray *playerArray; // Store the pointers of ALL players in this room
-    
-    NSMutableArray* peasantArray;
-    NSMutableArray* wolfArray;
-    /* For function parameter type consistency, I use array for single roles. by Cary*/
-    NSMutableArray* oracleArray;
-    NSMutableArray* witchArray;
-    NSMutableArray* moderatorArray;
-}
+@property NSMutableArray *playerArray; // Store the pointers of ALL players in this room
+@property NSMutableArray* peasantArray;
+@property NSMutableArray* wolfArray;
+/* For function parameter type consistency, I use array for single roles. by Cary*/
+@property NSMutableArray* oracleArray;
+@property NSMutableArray* witchArray;
+@property NSMutableArray* moderatorArray;
 
 + (WerewolvesRoom*) getInstance;
 
@@ -35,6 +31,21 @@
 - (WerewolvesPlayer*) getPlayer:(int) playerId;
 - (int) generateRandomRoles;
 
+/*Message send methods*/
+- (void) sendPeopleInfo;
+
+- (void) createVote;
+- (void) sendVoteResult;
+
+- (void) sendDeathResult;
+- (void) sendTerminateResult;
+
+/*Message receive methods*/
+- (void) receiveMsg;
+
+/*For DEBUG*/
+/*Print all player list*/
+- (void) printPlayers;
 @end
 
 static WerewolvesRoom* instance = nil;

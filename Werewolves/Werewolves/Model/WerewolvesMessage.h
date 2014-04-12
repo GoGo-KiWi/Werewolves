@@ -10,16 +10,16 @@
 
 enum MessageType {
     /* Maybe using a single message to transmit all player info is clearer. by Cary*/
-
-    /*
-    SetNameRequest, SetNameResponse,
-    SetRoleRequest, SetRoleResponse,
-     */
+    
+    /*From moderator to player*/
     SendPlayerInfo, /*All players' name, id, life status. Your name, id, role*/
     CreateVote, /*No follwing info*/
     SendVoteResult, /*Players' ID and their choosing result*/
     SendDeathResult, /*Death person's ID*/
-    SendTerminateResult /*Which side won*/
+    SendTerminateResult, /*Which side won*/
+    
+    /*From player to moderator*/
+    SendVoteNominate
 };
 
 @interface WerewolvesMessage : NSObject
