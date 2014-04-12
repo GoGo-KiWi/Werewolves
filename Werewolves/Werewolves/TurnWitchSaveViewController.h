@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "TurnWerewolfViewController.h"
 
-@interface TurnWitchSaveViewController : UIViewController <playerKilledDelegate>
+@interface TurnWitchSaveViewController : UIViewController //<playerKilledDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *playerKilledInfo;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *saveInfo;
 //@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (strong, nonatomic) NSString *killedPlayerName;
 
+- (IBAction)saveAction:(id)sender;
 @end

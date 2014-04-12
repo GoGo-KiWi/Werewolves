@@ -12,4 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *resetSelection;
 @property (weak, nonatomic) IBOutlet UITableView *witchPlayerList;
+@property (strong, nonatomic) NSString *killedPlayer1;
+@property (strong, nonatomic) NSString *killedPlayer2;
+
 @end

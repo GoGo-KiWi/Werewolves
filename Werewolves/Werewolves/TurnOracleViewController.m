@@ -7,7 +7,7 @@
 //
 
 #import "TurnOracleViewController.h"
-
+#import "TurnResultViewController.h"
 @interface TurnOracleViewController ()
 
 @end
@@ -58,6 +58,19 @@
     }
     //cell.textLabel.tag = [(NSInteger) [indexPath row]];
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"ResultTurnSegue"]){
+        if ([segue.destinationViewController isMemberOfClass:[TurnResultViewController class]]) {
+            TurnResultViewController *controller = (TurnResultViewController *)segue.destinationViewController;
+            controller.killedPlayer1 = self.killedPlayer1;
+            controller.killedPlayer2 = self.killedPlayer2;
+        }
+    }
 }
 
 /*

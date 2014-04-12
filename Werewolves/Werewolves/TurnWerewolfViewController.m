@@ -65,25 +65,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
+    //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
     self.killedName = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
 
-}
-
--(IBAction)playerSelected
-{
-    //Is anyone listening
-    //if([delegate respondsToSelector:@selector(playerKilled:)])
-    //{
-        //send the delegate function with the amount entered by the user
-        [delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) selectedRow]];
-        UIAlertView *messageAlert = [[UIAlertView alloc]
-                                     initWithTitle:@"Success" message:@"success!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
-        // Display Alert Message
-        [messageAlert show];
-    //}
-    
 }
 
 #pragma mark - Navigation
