@@ -8,6 +8,7 @@
 
 #import "TurnWerewolfViewController.h"
 #import "TurnWitchSaveViewController.h"
+#import "WerewolvesRoom.h"
 
 @interface TurnWerewolfViewController ()
 
@@ -59,6 +60,9 @@
         default: cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
 
     }
+    
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    //int count = [room
     //cell.textLabel.tag = [(NSInteger) [indexPath row]];
     return cell;
 }
