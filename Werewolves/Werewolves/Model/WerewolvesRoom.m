@@ -29,10 +29,15 @@
     witchArray = [NSMutableArray array];
     moderatorArray = [NSMutableArray array];
     
+    /*init a moderator*/
+    WerewolvesPlayer* moderatorPtr = [[WerewolvesPlayer alloc] init];
+    [moderatorPtr setRole:Moderator];
+    [self addPlayer:moderatorPtr];
     return self;
 }
 
 - (void) addPlayer:(WerewolvesPlayer*) player {
+    [player setPlayerId:(int)[playerArray count]];
     [playerArray addObject:player];
     [self addPlayerIntoRoleArray:player];
 //    [self performSelector:@selector(addPlayerIntoRoleArray:) withObject:player];
