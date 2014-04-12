@@ -15,11 +15,11 @@ enum MessageType {
     SetNameRequest, SetNameResponse,
     SetRoleRequest, SetRoleResponse,
      */
-    SendPeopleInfoRequest, SendPeopleInfoResponse, /*All players' name, id, life status. Your name, id, role*/
-    CreateVoteRequest, CreateVoteResponse,
-    SendVoteResultRequest, SendVoteResultResponse,
-    SendDeathResultReqeust, SendDeathResultResponse,
-    SendTerminateRequest, SendTerminateResponse
+    SendPlayerInfo, /*All players' name, id, life status. Your name, id, role*/
+    CreateVote, /*No follwing info*/
+    SendVoteResult, /*Players' ID and their choosing result*/
+    SendDeathResult, /*Death person's ID*/
+    SendTerminateResult /*Which side won*/
 };
 
 @interface WerewolvesMessage : NSObject
@@ -29,6 +29,7 @@ enum MessageType {
     /* Should we use player pointers or player ID to distinguish? Maybe ID is better */
     int senderId;
     int receiverId;
+    NSMutableArray* playerInfo;
 }
 
 /*

@@ -13,7 +13,7 @@
 
 enum RoleType
 {
-    Moderator, Peasant, Wolf, FortuneTeller, Witch, UndefinedRole
+    Moderator, Peasant, Wolf, Oracle, Witch, UndefinedRole
 };
 
 + (void) animateTextField: (UITextField*) textField forView: (UIView *) view up: (BOOL) up;
