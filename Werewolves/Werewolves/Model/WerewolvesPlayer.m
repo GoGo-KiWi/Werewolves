@@ -10,6 +10,17 @@
 
 @implementation WerewolvesPlayer
 
+- (WerewolvesPlayer*) init {
+    self =[super init];
+    
+    alive = YES;
+    playerName = [[NSString alloc] init];
+    role = UndefinedRole;
+    playerId = -1;
+    
+    return  self;
+}
+
 - (void) setDead {
     self->alive = NO;
 }

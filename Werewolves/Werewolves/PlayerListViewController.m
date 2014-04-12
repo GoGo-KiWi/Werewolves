@@ -59,7 +59,7 @@
 {
     UITableViewCell *cell;
     NSString *name = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
-    cell = [WerewolvesUtility createCellFor:Undefined WithName:name];
+    cell = [WerewolvesUtility createCellFor:UndefinedRole WithName:name];
     return cell;
 }
 

@@ -1,41 +1,70 @@
-#import "PeerHelper.h"
+//
+//  FirstViewController.m
+//  MCDemo
+//
+//  Created by Gabriel Theodoropoulos on 1/6/14.
+//  Copyright (c) 2014 Appcoda. All rights reserved.
+//
+
+#import "testsendmessageViewController.h"
 #import "WerewolvesAppDelegate.h"
 
-@interface PeerHelper ()
+@interface FirstViewController ()
 
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 
--(void)sendMyMessage:(NSString*) str;
+-(void)sendMyMessage;
 -(void)didReceiveDataWithNotification:(NSNotification *)notification;
 
 @end
 
-@implementation PeerHelper
+@implementation FirstViewController
 
--(id)init{
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
-
+    
+    _txtMessage.delegate = self;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
-    return self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - UITextField Delegate method implementation
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self sendMyMessage];
+    return YES;
 }
 
 
 #pragma mark - IBAction method implementation
 
-- (IBAction)sendMessage:(id)sender :(NSString*) Str {
-    [self sendMyMessage:@"Str"];
+- (IBAction)sendMessage:(id)sender {
+    [self sendMyMessage];
+}
+
+- (IBAction)cancelMessage:(id)sender {
+    [_txtMessage resignFirstResponder];
 }
 
 
 #pragma mark - Private method implementation
 
--(void)sendMyMessage:(NSString*) str{
-    NSData *dataToSend = [ @"str" dataUsingEncoding:NSUTF8StringEncoding];
+-(void)sendMyMessage{
+    NSData *dataToSend = [_txtMessage.text dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;
     
@@ -48,11 +77,9 @@
         NSLog(@"%@", [error localizedDescription]);
     }
     
-    /*
     [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I wrote:\n%@\n\n", _txtMessage.text]]];
     [_txtMessage setText:@""];
     [_txtMessage resignFirstResponder];
-     */
 }
 
 
@@ -63,9 +90,7 @@
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
-    /*
     [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ wrote:\n%@\n\n", peerDisplayName, receivedText]] waitUntilDone:NO];
-     */
 }
 
 @end

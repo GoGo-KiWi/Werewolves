@@ -16,8 +16,11 @@
     NSString *playerName;
     enum RoleType role;
     int playerId;
+    
+    NSMutableArray* playerArray;
 }
 
+- (WerewolvesPlayer*) init;
 - (void) registerPlayer: (NSString*)name;
 - (void) joinRoom;
 - (void) sendMessage: (WerewolvesMessage*) msg;

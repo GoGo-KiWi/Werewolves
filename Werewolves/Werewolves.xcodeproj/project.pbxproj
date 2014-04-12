@@ -26,7 +26,6 @@
 		32A55E5518EB5FC900649610 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E3418EB5FC900649610 /* UIKit.framework */; };
 		32A55E5D18EB5FC900649610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32A55E5B18EB5FC900649610 /* InfoPlist.strings */; };
 		32A55E5F18EB5FC900649610 /* WerewolvesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E5E18EB5FC900649610 /* WerewolvesTests.m */; };
-		32A55E6918EB613D00649610 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A55E6818EB613D00649610 /* MultipeerConnectivity.framework */; };
 		32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E6B18EB64A200649610 /* WerewolvesModerator.m */; };
 		32A55E6F18EB64B400649610 /* WerewolvesPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */; };
 		32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A55E7D18EB668D00649610 /* WerewolvesMessage.m */; };
@@ -34,6 +33,9 @@
 		32C11E1218F3E0F700A59141 /* CreateRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E0F18F3E0F700A59141 /* CreateRoomViewController.m */; };
 		32C11E1318F3E0F700A59141 /* JoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E1118F3E0F700A59141 /* JoinRoomViewController.m */; };
 		32C11E1618F3E16800A59141 /* PlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E1518F3E16800A59141 /* PlayerListViewController.m */; };
+		3859307118F7270000447089 /* testsendmessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3859307018F7270000447089 /* testsendmessageViewController.m */; };
+		389BCED118F5F4B70099B87E /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444918F0A6960067BEA2 /* Peer.m */; };
+		389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444B18F0A6960067BEA2 /* PeerHelper.m */; };
 		9F6C40A118F0AD27005D3FFC /* icon_app120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */; };
 		9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F7AD35118F0AC27002BBB98 /* icon_app.png */; };
 		E4D8CCDA18F2297B00C82C81 /* PlayerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */; };
@@ -98,6 +100,8 @@
 		32C11E1118F3E0F700A59141 /* JoinRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinRoomViewController.m; sourceTree = "<group>"; };
 		32C11E1418F3E16800A59141 /* PlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListViewController.h; sourceTree = "<group>"; };
 		32C11E1518F3E16800A59141 /* PlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListViewController.m; sourceTree = "<group>"; };
+		3859306F18F7270000447089 /* testsendmessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testsendmessageViewController.h; sourceTree = "<group>"; };
+		3859307018F7270000447089 /* testsendmessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testsendmessageViewController.m; sourceTree = "<group>"; };
 		388D444818F0A6960067BEA2 /* Peer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peer.h; sourceTree = "<group>"; };
 		388D444918F0A6960067BEA2 /* Peer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peer.m; sourceTree = "<group>"; };
 		388D444A18F0A6960067BEA2 /* PeerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerHelper.h; sourceTree = "<group>"; };
@@ -122,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32A55E6918EB613D00649610 /* MultipeerConnectivity.framework in Frameworks */,
 				32A55E3318EB5FC900649610 /* CoreGraphics.framework in Frameworks */,
 				32A55E3518EB5FC900649610 /* UIKit.framework in Frameworks */,
 				32A55E3118EB5FC900649610 /* Foundation.framework in Frameworks */,
@@ -190,6 +193,8 @@
 		32A55E3618EB5FC900649610 /* Werewolves */ = {
 			isa = PBXGroup;
 			children = (
+				3859306F18F7270000447089 /* testsendmessageViewController.h */,
+				3859307018F7270000447089 /* testsendmessageViewController.m */,
 				E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */,
 				388D444818F0A6960067BEA2 /* Peer.h */,
 				388D444918F0A6960067BEA2 /* Peer.m */,
@@ -368,6 +373,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3859307118F7270000447089 /* testsendmessageViewController.m in Sources */,
+				389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */,
+				389BCED118F5F4B70099B87E /* Peer.m in Sources */,
 				E4D8CD3918F3AB1D00C82C81 /* AssignRoleViewController.m in Sources */,
 				32A55E6C18EB64A200649610 /* WerewolvesModerator.m in Sources */,
 				E4D8CD3618F3A85600C82C81 /* TurnWerewolfViewController.m in Sources */,
@@ -506,7 +514,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Werewolves/Werewolves-Prefix.pch";
 				INFOPLIST_FILE = "Werewolves/Werewolves-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -521,7 +529,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Werewolves/Werewolves-Prefix.pch";
 				INFOPLIST_FILE = "Werewolves/Werewolves-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

@@ -21,9 +21,13 @@
     NSMutableArray* moderatorArray;
 }
 
+- (WerewolvesRoom*) init;
+
+- (void) initArray;
 - (void) addPlayer:(WerewolvesPlayer*) player;
 - (void) setRole:(WerewolvesPlayer*) player :(enum RoleType) role;
 - (NSMutableArray*) getPlayers:(enum RoleType) role;
 - (WerewolvesPlayer*) getPlayer:(int) playerId;
+- (int) generateRandomRoles;
 
 @end

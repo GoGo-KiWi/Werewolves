@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface JoinRoomViewController : UIViewController <UITableViewDelegate>
+@interface JoinRoomViewController : UIViewController <MCBrowserViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *roomList;
+@property (weak, nonatomic) IBOutlet UIButton *test;
+
+- (IBAction)browseForDevices:(id)sender;
 
 @end
