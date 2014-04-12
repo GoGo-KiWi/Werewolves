@@ -96,7 +96,7 @@
     if([segue.identifier isEqualToString:@"WitchSaveSegue"]){
         if ([segue.destinationViewController isMemberOfClass:[TurnWitchSaveViewController class]]) {
             TurnWitchSaveViewController *controller = (TurnWitchSaveViewController *)segue.destinationViewController;
-            controller.killedPlayerName = self.killedName;
+            controller.killedPlayerName = [NSString stringWithFormat:@"%@ is killed.", self.killedName];
         }
     }
 }
