@@ -35,6 +35,19 @@
 - (WerewolvesPlayer*) getPlayer:(int) playerId;
 - (int) generateRandomRoles;
 
+/*Message send methods*/
+- (void) sendPeopleInfo;
+
+- (void) createVote;
+- (void) sendVoteResult;
+
+- (void) sendDeathResult;
+- (void) sendTerminateResult;
+
+/*Message receive methods*/
+- (void) receiveMsg;
+
+
 @end
 
 static WerewolvesRoom* instance = nil;

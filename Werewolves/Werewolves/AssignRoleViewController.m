@@ -104,7 +104,7 @@
             return @"Werewolf";
             break;
         case 2:
-            return @"Fortune Teller";
+            return @"Oracle";
             break;
         case 3:
             return @"Witch";

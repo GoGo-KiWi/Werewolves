@@ -12,13 +12,23 @@
 
 @interface WerewolvesPlayer : NSObject
 {
+    /*
     BOOL alive;
     NSString *playerName;
     enum RoleType role;
     int playerId;
+    int peerId;
     
     NSMutableArray* playerArray;
+     */
 }
+@property BOOL alive;
+@property NSString* playerName;
+@property enum RoleType role;
+@property int playerId;
+@property int peerId;
+@property int voteNominate; /* playerId dominated by this player*/
+@property NSMutableArray* playerArray;
 
 - (WerewolvesPlayer*) init;
 - (void) registerPlayer: (NSString*)name;
@@ -26,6 +36,7 @@
 - (void) sendMessage: (WerewolvesMessage*) msg;
 - (WerewolvesMessage*) receiveMessage;
 
+/*
 - (void) setDead;
 - (void) setAlive;
 - (BOOL) isAlve;
@@ -38,7 +49,7 @@
 
 - (void) setPlayerId: (int) playerId;
 - (int) getPlayerId;
-
+*/
 /*
  TODO
  0. Register

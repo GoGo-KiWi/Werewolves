@@ -47,7 +47,7 @@
 }
 
 - (void) addPlayerIntoRoleArray:(WerewolvesPlayer*) player {
-    switch ([player getRole]) {
+    switch ([player role]) {
         case Moderator:
             [moderatorArray addObject:player];
             break;
@@ -69,7 +69,7 @@
 }
 
 - (void) removePlayerFromRoleArray:(WerewolvesPlayer*) player {
-    switch ([player getRole]) {
+    switch ([player role]) {
         case Moderator:
             for (WerewolvesPlayer* curPlayer in moderatorArray) {
                 if (curPlayer == player) {
@@ -114,7 +114,7 @@
     NSMutableArray* result = [NSMutableArray array];
     
     for (WerewolvesPlayer* player in playerArray) { // Not sure, should I use * or ** here if array stores pointers?????
-        if ([player getRole] == role) {
+        if ([player role] == role) {
             [result addObject:player];
         }
     }
@@ -124,7 +124,7 @@
 
 - (WerewolvesPlayer*) getPlayer:(int) playerId {
     for (WerewolvesPlayer* player in playerArray) {
-        if ([player getPlayerId] == playerId) {
+        if ([player playerId] == playerId) {
             return player;
         }
     }
@@ -177,6 +177,45 @@
     free(tempArray);
     
     return 0;
+}
+
+
+- (void) sendPeopleInfo {
+    /*Send enum*/
+    enum MessageType messageType = SendPlayerInfo;
+    
+    /*Send player info by sending playerArray*/
+}
+
+- (void) createVote {
+    /*Send enum*/
+    enum MessageType messageType = CreateVote;
+}
+
+- (void) sendVoteResult {
+    /*Send enum*/
+    enum MessageType messageType = SendVoteResult;
+    
+    /*Send NSMutableArray of vote action*/
+}
+
+- (void) sendDeathResult {
+    /*Send enum*/
+    enum MessageType messageType = SendVoteResult;
+    
+    /*send death playerObject*/
+}
+
+- (void) sendTerminateResult {
+    /*Send enum*/
+    enum MessageType messageType = SendTerminateResult;
+    
+    /*send BOOL about who win*/
+}
+
+- (void) receiveMsg {
+    /*receive player's vote dominate*/
+    // check if received "SendVoteNominate"
 }
 
 @end

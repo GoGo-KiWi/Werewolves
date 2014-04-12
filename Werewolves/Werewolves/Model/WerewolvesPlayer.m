@@ -13,14 +13,15 @@
 - (WerewolvesPlayer*) init {
     self =[super init];
     
-    alive = YES;
-    playerName = [[NSString alloc] init];
-    role = UndefinedRole;
-    playerId = -1;
+    _alive = YES;
+    _playerName = [[NSString alloc] init];
+    _role = UndefinedRole;
+    _playerId = -1;
+    _voteNominate = -1;
     
     return  self;
 }
-
+/*
 - (void) setDead {
     self->alive = NO;
 }
@@ -56,5 +57,5 @@
 - (int) getPlayerId {
     return self->playerId;
 }
-
+*/
 @end
