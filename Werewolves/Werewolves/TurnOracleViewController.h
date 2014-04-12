@@ -10,5 +10,6 @@
 
 @interface TurnOracleViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *playerList;
-
+@property (strong, nonatomic) NSString *killedPlayer1;
+@property (strong, nonatomic) NSString *killedPlayer2;
 @end

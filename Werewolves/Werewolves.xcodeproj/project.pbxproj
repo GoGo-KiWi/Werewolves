@@ -38,6 +38,7 @@
 		389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444B18F0A6960067BEA2 /* PeerHelper.m */; };
 		9F6C40A118F0AD27005D3FFC /* icon_app120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */; };
 		9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F7AD35118F0AC27002BBB98 /* icon_app.png */; };
+		E4535BCB18F9C29B000C6F09 /* TurnResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */; };
 		E4D8CCDA18F2297B00C82C81 /* PlayerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */; };
 		E4D8CCDF18F22DDE00C82C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */; };
 		E4D8CCE218F2487500C82C81 /* TurnOracleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8CCE118F2487500C82C81 /* TurnOracleViewController.m */; };
@@ -108,6 +109,8 @@
 		388D444B18F0A6960067BEA2 /* PeerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerHelper.m; sourceTree = "<group>"; };
 		9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app120x120.png; sourceTree = "<group>"; };
 		9F7AD35118F0AC27002BBB98 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
+		E4535BC918F9C29B000C6F09 /* TurnResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnResultViewController.h; sourceTree = "<group>"; };
+		E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnResultViewController.m; sourceTree = "<group>"; };
 		E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListCell.h; sourceTree = "<group>"; };
 		E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListCell.m; sourceTree = "<group>"; };
 		E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				E4D8CD3318F3A85600C82C81 /* TurnWitchKillViewController.m */,
 				E4D8CCE018F2487500C82C81 /* TurnOracleViewController.h */,
 				E4D8CCE118F2487500C82C81 /* TurnOracleViewController.m */,
+				E4535BC918F9C29B000C6F09 /* TurnResultViewController.h */,
+				E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */,
 				E4D8CCD818F2297B00C82C81 /* PlayerListCell.h */,
 				E4D8CCD918F2297B00C82C81 /* PlayerListCell.m */,
 				32A55E4B18EB5FC900649610 /* Images.xcassets */,
@@ -373,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4535BCB18F9C29B000C6F09 /* TurnResultViewController.m in Sources */,
 				3859307118F7270000447089 /* testsendmessageViewController.m in Sources */,
 				389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */,
 				389BCED118F5F4B70099B87E /* Peer.m in Sources */,

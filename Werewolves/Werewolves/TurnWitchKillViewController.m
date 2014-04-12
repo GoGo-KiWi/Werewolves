@@ -7,12 +7,14 @@
 //
 
 #import "TurnWitchKillViewController.h"
+#import "TurnOracleViewController.h"
 
 @interface TurnWitchKillViewController ()
 
 @end
 
 @implementation TurnWitchKillViewController
+@synthesize witchPlayerList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -60,6 +62,33 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
+    self.killedPlayer2 = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    if (self.killedPlayer2 == nil){
+        self.killedPlayer2 = @"None";
+    }
+}
+
+- (IBAction)resetSelection:(id)sender {
+    //[super viewDidDisappear:animated];
+    [self.witchPlayerList deselectRowAtIndexPath:[self.witchPlayerList indexPathForSelectedRow] animated:NO];
+    self.killedPlayer2 = @"None";
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"OracleTurnSegue"]){
+        if ([segue.destinationViewController isMemberOfClass:[TurnOracleViewController class]]) {
+            TurnOracleViewController *controller = (TurnOracleViewController *)segue.destinationViewController;
+            controller.killedPlayer1 = self.killedPlayer1;
+            controller.killedPlayer2 = [NSString stringWithFormat:@"%@ is killed.", self.killedPlayer2];
+        }
+    }
+}
 /*
 #pragma mark - Navigation
 
