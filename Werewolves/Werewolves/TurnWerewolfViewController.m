@@ -62,7 +62,8 @@
     }
     
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    //int count = [room
+    int count = [[room playerArray] count];
+    
     //cell.textLabel.tag = [(NSInteger) [indexPath row]];
     return cell;
 }
