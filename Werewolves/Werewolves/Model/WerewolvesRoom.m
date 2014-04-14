@@ -200,6 +200,47 @@
     return 0;
 }
 
+- (int) getVoteResult {
+    /* Return vote result player's Id. Return -1 on tie or no result*/
+    int resultPlayerId = -1;
+    int resultCount = -1;
+    BOOL isTie = NO;
+    
+    for (WerewolvesPlayer* candidatePlayer in _playerArray) {
+        int candidateCount = 0;
+        
+        if ([candidatePlayer role] == Moderator) {
+            continue;
+        }
+        
+        for (WerewolvesPlayer* currentPlayer in _playerArray) {
+            if ([currentPlayer role] == Moderator) {
+                continue;
+            }
+            else {
+                if ([currentPlayer voteNominate] == [candidatePlayer playerId]) {
+                    candidateCount++;
+                }
+            }
+        }
+        
+        if (candidateCount == resultCount) {
+            isTie = YES;
+        }
+        else if (candidateCount > resultCount) {
+            isTie = NO;
+            resultPlayerId = [candidatePlayer playerId];
+            resultCount = candidateCount;
+        }
+    }
+    
+    if (isTie) {
+        return -1;
+    }
+    else {
+        return resultPlayerId;
+    }
+}
 
 - (void) sendPeopleInfo {
      NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
