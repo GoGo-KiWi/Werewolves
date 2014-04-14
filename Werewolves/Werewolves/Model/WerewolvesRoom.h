@@ -32,6 +32,7 @@
 - (NSMutableArray*) getPlayers:(enum RoleType) role;
 - (WerewolvesPlayer*) getPlayer:(int) playerId;
 - (int) generateRandomRoles;
+- (int) getVoteResult;
 
 /*Message send methods*/
 - (void) sendPeopleInfo;

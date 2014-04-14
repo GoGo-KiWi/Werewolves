@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kyy-hh-yPr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kyy-hh-yPr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -33,11 +34,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNQ-ts-eCo">
-                                <rect key="frame" x="0.0" y="466" width="320" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNQ-ts-eCo">
+                                <rect key="frame" x="0.0" y="517" width="160" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="ox3-q1-vLa"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Create a Room" backgroundImage="50-percent-gray.jpg">
+                                <state key="normal" title="Create" backgroundImage="50-percent-gray.jpg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
@@ -45,11 +49,14 @@
                                     <segue destination="iJj-J3-OF8" kind="push" identifier="CreateRoomSegue" id="HQg-46-1rG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GG6-GG-kJ4">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GG6-GG-kJ4">
+                                <rect key="frame" x="160" y="517" width="160" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="rLC-q6-KgN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Join a Room" backgroundImage="50-percent-gray.jpg">
+                                <state key="normal" title="Join" backgroundImage="50-percent-gray.jpg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
@@ -57,37 +64,53 @@
                                     <segue destination="uFW-W4-e2A" kind="push" identifier="JoinRoomSegue" id="Hhr-AO-UeT"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-pr-8cI">
-                                <rect key="frame" x="20" y="394" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-pr-8cI">
+                                <rect key="frame" x="40" y="376" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nyC-38-0GI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_werewolf.png" translatesAutoresizingMaskIntoConstraints="NO" id="dAa-ZY-EVd">
-                                <rect key="frame" x="46" y="65" width="113" height="128"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-2F-BzR">
+                                <rect key="frame" x="93" y="343" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_village.png" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-uG-X0C">
-                                <rect key="frame" x="99" y="65" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_oracle.png" translatesAutoresizingMaskIntoConstraints="NO" id="wdE-bV-vwz">
-                                <rect key="frame" x="-18" y="201" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_witch.png" translatesAutoresizingMaskIntoConstraints="NO" id="pay-Y9-RQp">
-                                <rect key="frame" x="99" y="201" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Your Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-2F-BzR">
-                                <rect key="frame" x="93" y="356" width="135" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8lW-NP-wyz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frontPage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zmd-9c-dRK">
+                                <rect key="frame" x="40" y="73" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="LCI-jq-oxc"/>
+                                    <constraint firstAttribute="width" constant="240" id="V7d-28-BKK"/>
+                                    <constraint firstAttribute="width" secondItem="Zmd-9c-dRK" secondAttribute="height" multiplier="1:1" id="nfN-Xy-IYe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TNQ-ts-eCo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="05K-vA-vce"/>
+                            <constraint firstAttribute="trailing" secondItem="GG6-GG-kJ4" secondAttribute="trailing" id="1Gh-dQ-Rdw"/>
+                            <constraint firstItem="Zmd-9c-dRK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="9" id="4yT-aM-iKO"/>
+                            <constraint firstItem="WR9-pr-8cI" firstAttribute="top" secondItem="fgO-2F-BzR" secondAttribute="bottom" constant="3" id="9Q8-cJ-BrJ"/>
+                            <constraint firstItem="WR9-pr-8cI" firstAttribute="centerX" secondItem="fgO-2F-BzR" secondAttribute="centerX" id="E3o-Ph-0kf"/>
+                            <constraint firstItem="fgO-2F-BzR" firstAttribute="top" secondItem="Zmd-9c-dRK" secondAttribute="bottom" constant="30" id="FRe-hS-K04"/>
+                            <constraint firstItem="WR9-pr-8cI" firstAttribute="width" secondItem="Zmd-9c-dRK" secondAttribute="width" id="Hnf-4i-OJU"/>
+                            <constraint firstItem="WR9-pr-8cI" firstAttribute="height" secondItem="fgO-2F-BzR" secondAttribute="height" id="P0H-QL-9Ue"/>
+                            <constraint firstItem="Zmd-9c-dRK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="40" id="RXk-95-Lq6"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TNQ-ts-eCo" secondAttribute="bottom" id="XhP-Gk-qkS"/>
+                            <constraint firstItem="TNQ-ts-eCo" firstAttribute="width" secondItem="GG6-GG-kJ4" secondAttribute="width" id="ldt-He-PnZ"/>
+                            <constraint firstItem="TNQ-ts-eCo" firstAttribute="width" secondItem="GG6-GG-kJ4" secondAttribute="height" multiplier="160:51" id="r1d-hn-CZu"/>
+                            <constraint firstItem="TNQ-ts-eCo" firstAttribute="height" secondItem="GG6-GG-kJ4" secondAttribute="height" id="rud-4X-Jgf"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="GG6-GG-kJ4" secondAttribute="bottom" id="rvK-xf-iJJ"/>
+                            <constraint firstItem="WR9-pr-8cI" firstAttribute="leading" secondItem="Zmd-9c-dRK" secondAttribute="leading" id="soD-LO-gva"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="md8-iX-3lj"/>
                     <connections>
@@ -647,49 +670,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHa-7d-Ynl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHa-7d-Ynl">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="uDR-sf-xOa"/>
+                                    <constraint firstAttribute="height" constant="50" id="vPW-Zg-Oji"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Done" backgroundImage="50-percent-gray.jpg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JOf-pj-xuq" kind="push" identifier="CreateRoomSegue" id="8Md-Zq-hzB"/>
+                                    <segue destination="JOf-pj-xuq" kind="push" identifier="NewRoomSegue" id="8Md-Zq-hzB"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0m-D1-5PT">
-                                <rect key="frame" x="20" y="394" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0m-D1-5PT">
+                                <rect key="frame" x="40" y="376" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xcS-0i-kN3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_werewolf.png" translatesAutoresizingMaskIntoConstraints="NO" id="wpr-X6-rHq">
-                                <rect key="frame" x="46" y="64" width="113" height="128"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Your Room:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1U-3A-Bso">
+                                <rect key="frame" x="90" y="343" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_village.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Wd-k2-d5f">
-                                <rect key="frame" x="99" y="64" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_oracle.png" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-aS-T0q">
-                                <rect key="frame" x="-18" y="200" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_witch.png" translatesAutoresizingMaskIntoConstraints="NO" id="SUe-kY-beu">
-                                <rect key="frame" x="99" y="200" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Your Room:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1U-3A-Bso">
-                                <rect key="frame" x="90" y="355" width="140" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="t00-Jq-OaD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frontPage.png" translatesAutoresizingMaskIntoConstraints="NO" id="9aM-p3-vM0">
+                                <rect key="frame" x="40" y="73" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="UEJ-EB-7c9"/>
+                                    <constraint firstAttribute="width" secondItem="9aM-p3-vM0" secondAttribute="height" multiplier="1:1" id="o4g-nc-a3c"/>
+                                    <constraint firstAttribute="width" constant="240" id="pT5-eh-iBd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PHa-7d-Ynl" firstAttribute="centerX" secondItem="Q0m-D1-5PT" secondAttribute="centerX" id="4iZ-Wc-dXN"/>
+                            <constraint firstAttribute="trailing" secondItem="W1U-3A-Bso" secondAttribute="trailing" constant="90" id="7tu-57-rVl"/>
+                            <constraint firstItem="Q0m-D1-5PT" firstAttribute="top" secondItem="W1U-3A-Bso" secondAttribute="bottom" constant="3" id="8VF-gw-qqT"/>
+                            <constraint firstItem="Q0m-D1-5PT" firstAttribute="leading" secondItem="Qnh-9S-igD" secondAttribute="leading" constant="40" id="KcN-Kg-vKV"/>
+                            <constraint firstAttribute="trailing" secondItem="9aM-p3-vM0" secondAttribute="trailing" constant="40" id="TC6-qA-Q4r"/>
+                            <constraint firstAttribute="trailing" secondItem="Q0m-D1-5PT" secondAttribute="trailing" constant="40" id="URJ-Wt-s53"/>
+                            <constraint firstItem="9aM-p3-vM0" firstAttribute="top" secondItem="pjz-Y4-ZsG" secondAttribute="bottom" constant="9" id="Vsx-I6-pJh"/>
+                            <constraint firstItem="9aM-p3-vM0" firstAttribute="leading" secondItem="Qnh-9S-igD" secondAttribute="leading" constant="40" id="Zna-Jg-eYZ"/>
+                            <constraint firstItem="Q0m-D1-5PT" firstAttribute="width" secondItem="9aM-p3-vM0" secondAttribute="width" id="inr-Zu-Bb3"/>
+                            <constraint firstItem="W1U-3A-Bso" firstAttribute="leading" secondItem="Qnh-9S-igD" secondAttribute="leading" constant="90" id="mPh-Ui-aEC"/>
+                            <constraint firstItem="W1U-3A-Bso" firstAttribute="top" secondItem="9aM-p3-vM0" secondAttribute="bottom" constant="30" id="qgr-2u-x1x"/>
+                            <constraint firstItem="Q0m-D1-5PT" firstAttribute="height" secondItem="W1U-3A-Bso" secondAttribute="height" id="rle-xi-IYU"/>
+                            <constraint firstItem="GfR-11-CmD" firstAttribute="top" secondItem="PHa-7d-Ynl" secondAttribute="bottom" id="y0k-ja-JOA"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="roomName" destination="Q0m-D1-5PT" id="nql-GQ-9qp"/>
@@ -1022,6 +1063,7 @@
     <resources>
         <image name="50-percent-gray.jpg" width="900" height="600"/>
         <image name="first" width="900" height="600"/>
+        <image name="frontPage.png" width="480" height="480"/>
         <image name="icon_oracle.png" width="131" height="151"/>
         <image name="icon_village.png" width="131" height="151"/>
         <image name="icon_werewolf.png" width="131" height="151"/>

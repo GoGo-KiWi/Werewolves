@@ -20,31 +20,27 @@
 - (WerewolvesRoom*) init {
     self = [super init];
     instance = self;
-    _playerArray = [[NSMutableArray alloc] init];
-    /*
-    playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
-    
     _playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
-    
     _peasantArray = [NSMutableArray array];
     _wolfArray = [NSMutableArray array];
     _oracleArray = [NSMutableArray array];
     _witchArray = [NSMutableArray array];
     _moderatorArray = [NSMutableArray array];
-    
-    
-    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
     /*init a moderator*/
     WerewolvesPlayer* moderatorPtr = [[WerewolvesPlayer alloc] init];
     [moderatorPtr setRole:Moderator];
     [self addPlayer:moderatorPtr];
     
     /*For DEBUG*/
-    WerewolvesPlayer* witchPtr = [[WerewolvesPlayer alloc] init];
-    [witchPtr setRole:Witch];
-    [self addPlayer:witchPtr];
+    /*
+    WerewolvesPlayer* undefinePtr1 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr1];
+    WerewolvesPlayer* undefinePtr2 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr2];
+    WerewolvesPlayer* undefinePtr3 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr3];
     [self printPlayers];
+     */
     return self;
 }
 
@@ -196,6 +192,47 @@
     return 0;
 }
 
+- (int) getVoteResult {
+    /* Return vote result player's Id. Return -1 on tie or no result*/
+    int resultPlayerId = -1;
+    int resultCount = -1;
+    BOOL isTie = NO;
+    
+    for (WerewolvesPlayer* candidatePlayer in _playerArray) {
+        int candidateCount = 0;
+        
+        if ([candidatePlayer role] == Moderator) {
+            continue;
+        }
+        
+        for (WerewolvesPlayer* currentPlayer in _playerArray) {
+            if ([currentPlayer role] == Moderator) {
+                continue;
+            }
+            else {
+                if ([currentPlayer voteNominate] == [candidatePlayer playerId]) {
+                    candidateCount++;
+                }
+            }
+        }
+        
+        if (candidateCount == resultCount) {
+            isTie = YES;
+        }
+        else if (candidateCount > resultCount) {
+            isTie = NO;
+            resultPlayerId = [candidatePlayer playerId];
+            resultCount = candidateCount;
+        }
+    }
+    
+    if (isTie) {
+        return -1;
+    }
+    else {
+        return resultPlayerId;
+    }
+}
 
 - (void) sendPeopleInfo {
      NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
@@ -259,7 +296,7 @@
 
 /*For DEBUG*/
 - (void) printPlayers {
-    NSLog(@"Total Player number=%d\n", [_playerArray count]);
+    NSLog(@"hhh");
     for (WerewolvesPlayer* playerPtr in _playerArray) {
         NSLog(@"Player#%d %@ with role:", [playerPtr playerId], [playerPtr playerName]);
         switch ([playerPtr role]) {

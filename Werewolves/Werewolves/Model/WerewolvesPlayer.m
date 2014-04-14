@@ -23,6 +23,11 @@
     
     return  self;
 }
+
+- (void) registerPlayer: (NSString*)name {
+    self.playerName = name;
+}
+
 /*
 - (void) setDead {
 @property (nonatomic)  (nonato >alive = NO;

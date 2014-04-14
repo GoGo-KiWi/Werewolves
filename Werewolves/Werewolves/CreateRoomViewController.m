@@ -9,6 +9,8 @@
 #import "CreateRoomViewController.h"
 #import "WerewolvesUtility.h"
 #import "WerewolvesAppDelegate.h"
+#import "PlayerListViewController.h"
+#import "WerewolvesRoom.h"
 
 @interface CreateRoomViewController ()
 
@@ -51,16 +53,14 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [WerewolvesUtility createPlayerList:8];
-
-    /*
-    if([segue.identifier isEqualToString:@"CreateRoomSegue"]){
+    if([segue.identifier isEqualToString:@"NewRoomSegue"]){
         if ([segue.destinationViewController isMemberOfClass:[PlayerListViewController class]]) {
             PlayerListViewController *controller = (PlayerListViewController *)segue.destinationViewController;
-            controller.roomNameText = self.roomName.text;
+            controller.roomNameText = [NSString stringWithFormat: @"Room %@", self.roomName.text];
+            WerewolvesRoom *newRoom = [WerewolvesRoom getInstance];
+            [newRoom printPlayers];
         }
-    }
-     */
+    }    
 }
 
 

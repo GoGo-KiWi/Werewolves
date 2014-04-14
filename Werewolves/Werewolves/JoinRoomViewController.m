@@ -8,6 +8,7 @@
 
 #import "JoinRoomViewController.h"
 #import "WerewolvesAppDelegate.h"
+#import "WerewolvesPlayer.h"
 
 @interface JoinRoomViewController ()
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
@@ -22,6 +23,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        WerewolvesPlayer *curPlayer = [[WerewolvesPlayer alloc]init];
+        [curPlayer registerPlayer:self.userName];
     }
     return self;
 }

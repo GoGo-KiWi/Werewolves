@@ -33,6 +33,7 @@
 		32C11E1218F3E0F700A59141 /* CreateRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E0F18F3E0F700A59141 /* CreateRoomViewController.m */; };
 		32C11E1318F3E0F700A59141 /* JoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E1118F3E0F700A59141 /* JoinRoomViewController.m */; };
 		32C11E1618F3E16800A59141 /* PlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C11E1518F3E16800A59141 /* PlayerListViewController.m */; };
+		32D17C6818FC695100F874C6 /* frontPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 32D17C6718FC695000F874C6 /* frontPage.png */; };
 		3859307118F7270000447089 /* testsendmessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3859307018F7270000447089 /* testsendmessageViewController.m */; };
 		389BCED118F5F4B70099B87E /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444918F0A6960067BEA2 /* Peer.m */; };
 		389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444B18F0A6960067BEA2 /* PeerHelper.m */; };
@@ -103,6 +104,7 @@
 		32C11E1118F3E0F700A59141 /* JoinRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinRoomViewController.m; sourceTree = "<group>"; };
 		32C11E1418F3E16800A59141 /* PlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListViewController.h; sourceTree = "<group>"; };
 		32C11E1518F3E16800A59141 /* PlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListViewController.m; sourceTree = "<group>"; };
+		32D17C6718FC695000F874C6 /* frontPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontPage.png; sourceTree = "<group>"; };
 		3859306F18F7270000447089 /* testsendmessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testsendmessageViewController.h; sourceTree = "<group>"; };
 		3859307018F7270000447089 /* testsendmessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testsendmessageViewController.m; sourceTree = "<group>"; };
 		388D444818F0A6960067BEA2 /* Peer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peer.h; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		3288367F18F099580064428B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				32D17C6718FC695000F874C6 /* frontPage.png */,
 				9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */,
 				9F7AD35118F0AC27002BBB98 /* icon_app.png */,
 				3288368018F099580064428B /* 50-percent-gray.jpg */,
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3288368918F099580064428B /* icon_witch.png in Resources */,
+				32D17C6818FC695100F874C6 /* frontPage.png in Resources */,
 				9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */,
 				3288368518F099580064428B /* 50-percent-gray.jpg in Resources */,
 				3288368618F099580064428B /* icon_oracle.png in Resources */,
