@@ -20,12 +20,11 @@
 - (WerewolvesRoom*) init {
     self = [super init];
     instance = self;
-    _playerArray = [[NSMutableArray alloc] init];
-    /*
-    playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
+    //_playerArray = [[NSMutableArray alloc] init];
+    
+    //playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
     
     _playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
-    
     _peasantArray = [NSMutableArray array];
     _wolfArray = [NSMutableArray array];
     _oracleArray = [NSMutableArray array];
@@ -41,9 +40,12 @@
     [self addPlayer:moderatorPtr];
     
     /*For DEBUG*/
-    WerewolvesPlayer* witchPtr = [[WerewolvesPlayer alloc] init];
-    [witchPtr setRole:Witch];
-    [self addPlayer:witchPtr];
+    WerewolvesPlayer* undefinePtr1 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr1];
+    WerewolvesPlayer* undefinePtr2 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr2];
+    WerewolvesPlayer* undefinePtr3 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr3];
     [self printPlayers];
     return self;
 }
