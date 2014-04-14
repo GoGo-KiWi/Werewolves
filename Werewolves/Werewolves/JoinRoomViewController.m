@@ -24,7 +24,7 @@
     if (self) {
         // Custom initialization
         WerewolvesPlayer *curPlayer = [[WerewolvesPlayer alloc]init];
-//        [curPlayer registerPlayer:self.userName];
+        [curPlayer registerPlayer:self.userName];
     }
     return self;
 }

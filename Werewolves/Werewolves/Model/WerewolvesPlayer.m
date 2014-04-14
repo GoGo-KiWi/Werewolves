@@ -21,6 +21,11 @@
     
     return  self;
 }
+
+- (void) registerPlayer: (NSString*)name {
+    self.playerName = name;
+}
+
 /*
 - (void) setDead {
     self->alive = NO;

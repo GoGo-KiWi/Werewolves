@@ -58,6 +58,7 @@
             PlayerListViewController *controller = (PlayerListViewController *)segue.destinationViewController;
             controller.roomNameText = [NSString stringWithFormat: @"Room %@", self.roomName.text];
             WerewolvesRoom *newRoom = [WerewolvesRoom getInstance];
+            [newRoom printPlayers];
         }
     }    
 }

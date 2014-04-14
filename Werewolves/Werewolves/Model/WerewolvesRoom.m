@@ -20,16 +20,12 @@
 - (WerewolvesRoom*) init {
     self = [super init];
     instance = self;
-    /*
-    playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
-    
-    peasantArray = [NSMutableArray array];
-    wolfArray = [NSMutableArray array];
-    oracleArray = [NSMutableArray array];
-    witchArray = [NSMutableArray array];
-    moderatorArray = [NSMutableArray array];
-    */
-    
+    _playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
+    _peasantArray = [NSMutableArray array];
+    _wolfArray = [NSMutableArray array];
+    _oracleArray = [NSMutableArray array];
+    _witchArray = [NSMutableArray array];
+    _moderatorArray = [NSMutableArray array];
     /*init a moderator*/
     WerewolvesPlayer* moderatorPtr = [[WerewolvesPlayer alloc] init];
     [moderatorPtr setRole:Moderator];
@@ -226,6 +222,7 @@
 
 /*For DEBUG*/
 - (void) printPlayers {
+    NSLog(@"hhh");
     for (WerewolvesPlayer* playerPtr in _playerArray) {
         NSLog(@"Player#%d %@ with role:", [playerPtr playerId], [playerPtr playerName]);
         switch ([playerPtr role]) {
