@@ -8,6 +8,7 @@
 
 #import "PlayerListViewController.h"
 #import "WerewolvesUtility.h"
+#import "WerewolvesRoom.h"
 
 @interface PlayerListViewController ()
 
@@ -31,6 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = self.roomNameText;
+    // init a room object
+    [WerewolvesRoom getInstance];
 }
 
 - (void)didReceiveMemoryWarning
