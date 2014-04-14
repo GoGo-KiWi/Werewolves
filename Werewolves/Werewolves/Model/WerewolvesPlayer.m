@@ -10,6 +10,8 @@
 
 @implementation WerewolvesPlayer
 
+@synthesize playerName = _playerName;    // Optional for Xcode 4.4+
+
 - (WerewolvesPlayer*) init {
     self =[super init];
     
@@ -23,7 +25,7 @@
 }
 /*
 - (void) setDead {
-    self->alive = NO;
+@property (nonatomic)  (nonato >alive = NO;
 }
 
 - (void) setAlive {
@@ -33,13 +35,13 @@
 - (BOOL) isAlve {
     return self->alive;
 }
-
+*/
 - (void) setPlayerName: (NSString*) name {
-    self->playerName = name;
+    _playerName = name;
 }
 
-- (NSString*) getPlayerName {
-    return self->playerName;
+/*- (NSString*) getPlayerName {
+    return self->_playerName;
 }
 
 - (void) setRole: (enum RoleType) role {
@@ -49,11 +51,11 @@
 - (enum RoleType) getRole {
     return self->role;
 }
-
+*/
 - (void) setPlayerId: (int) playerId {
-    self->playerId = playerId;
+    _playerId = playerId;
 }
-
+/*
 - (int) getPlayerId {
     return self->playerId;
 }

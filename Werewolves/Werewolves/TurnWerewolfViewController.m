@@ -8,6 +8,7 @@
 
 #import "TurnWerewolfViewController.h"
 #import "TurnWitchSaveViewController.h"
+#import "WerewolvesUtility.h"
 #import "WerewolvesRoom.h"
 
 @interface TurnWerewolfViewController ()
@@ -46,25 +47,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     //cell.textLabel.text = [NSString stringWithFormat:@"# %ld", (long)[indexPath row]];
-    cell.textLabel.text = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
+    /*cell.textLabel.text = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
     switch ([indexPath row]){
         case 2: cell.imageView.image = [UIImage imageNamed:@"icon_oracle.png"]; break;
         case 4: cell.imageView.image = [UIImage imageNamed:@"icon_witch.png"]; break;
         default: cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
 
-    }
-    
+    }*/
+    int idx = [indexPath row] + 1;
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    int count = [[room playerArray] count];
-    
-    //cell.textLabel.tag = [(NSInteger) [indexPath row]];
+    NSMutableArray *playerList = [room playerArray];
+    cell = [WerewolvesUtility createCellFor:playerList[idx]];
+    if ([playerList[idx] role] == Wolf){
+        [cell setTextColor:[UIColor grayColor]];
+        [cell setUserInteractionEnabled:NO];
+    }
     return cell;
 }
 

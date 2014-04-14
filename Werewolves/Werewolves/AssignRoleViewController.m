@@ -8,7 +8,7 @@
 
 #import "AssignRoleViewController.h"
 #import "WerewolvesUtility.h"
-
+#import "WerewolvesRoom.h"
 @interface AssignRoleViewController ()
 
 @end
@@ -73,24 +73,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
-    NSString *headerTitle = [self tableView:tableView titleForHeaderInSection:indexPath.section];
-    NSString *name = [NSString stringWithFormat:@"%@ %ld", headerTitle, (long)[indexPath row]];
+    //NSString *headerTitle = [self tableView:tableView titleForHeaderInSection:indexPath.section];
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList;
+    WerewolvesPlayer * player;
+
+    //NSString *name = [NSString stringWithFormat:@"%@ %ld", headerTitle, (long)[indexPath row]];
     switch (indexPath.section) {
         case 0:
-            cell = [WerewolvesUtility createCellFor:Peasant WithName:name];
+            playerList = [room getPlayers:Peasant];
             break;
         case 1:
-            cell = [WerewolvesUtility createCellFor:Wolf WithName:name];
+            playerList = [room getPlayers:Wolf];
             break;
         case 2:
-            cell = [WerewolvesUtility createCellFor:Oracle WithName:name];
+            playerList = [room getPlayers:Oracle];
             break;
         case 3:
-            cell = [WerewolvesUtility createCellFor:Witch WithName:name];
+            playerList = [room getPlayers:Witch];
             break;
         default:
             break;
     }
+    
+    player = playerList[[indexPath row]];
+    cell = [WerewolvesUtility createCellFor:player];
     return cell;
 }
  

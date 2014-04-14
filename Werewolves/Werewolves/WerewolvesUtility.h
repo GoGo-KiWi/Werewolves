@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "WerewolvesRoom.h"
+@class WerewolvesPlayer;
 
 @interface WerewolvesUtility : NSObject
 
@@ -17,6 +19,8 @@ enum RoleType
 };
 
 + (void) animateTextField: (UITextField*) textField forView: (UIView *) view up: (BOOL) up;
-+ (UITableViewCell *) createCellFor: (enum RoleType) role WithName: (NSString *) name;
+//+ (UITableViewCell *) createCellFor: (enum RoleType) role WithName: (NSString *) name;
++ (UITableViewCell *) createCellFor: (WerewolvesPlayer *) player;
++ (void) createPlayerList: (int) number;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "TurnWitchKillViewController.h"
 #import "TurnOracleViewController.h"
+#import "WerewolvesRoom.h"
 
 @interface TurnWitchKillViewController ()
 
@@ -50,13 +51,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
-    cell.textLabel.text = [NSString stringWithFormat:@"# %ld", (long)[indexPath row]];
-    cell.textLabel.text = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
-    switch ([indexPath row]){
-        case 2: cell.imageView.image = [UIImage imageNamed:@"icon_oracle.png"]; break;
-        case 4:case 6: cell.imageView.image = [UIImage imageNamed:@"icon_werewolf.png"]; break;
-        default: cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
-            
+    int idx = [indexPath row] + 1;
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
+    cell = [WerewolvesUtility createCellFor:playerList[idx]];
+    if ([playerList[idx] role] == Witch){
+        [cell setTextColor:[UIColor grayColor]];
+        [cell setUserInteractionEnabled:NO];
     }
     //cell.textLabel.tag = [(NSInteger) [indexPath row]];
     return cell;
@@ -66,9 +67,6 @@
 {
     //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
     self.killedPlayer2 = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    if (self.killedPlayer2 == nil){
-        self.killedPlayer2 = @"None";
-    }
 }
 
 - (IBAction)resetSelection:(id)sender {
@@ -85,6 +83,9 @@
         if ([segue.destinationViewController isMemberOfClass:[TurnOracleViewController class]]) {
             TurnOracleViewController *controller = (TurnOracleViewController *)segue.destinationViewController;
             controller.killedPlayer1 = self.killedPlayer1;
+            if ([self.killedPlayer2 length] == 0){
+                self.killedPlayer2 = @"None";
+            }
             controller.killedPlayer2 = [NSString stringWithFormat:@"%@ is killed.", self.killedPlayer2];
         }
     }

@@ -8,6 +8,7 @@
 
 #import "PlayerListViewController.h"
 #import "WerewolvesUtility.h"
+#import "WerewolvesRoom.h"
 
 @interface PlayerListViewController ()
 
@@ -58,9 +59,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
-    NSString *name = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
-    cell = [WerewolvesUtility createCellFor:UndefinedRole WithName:name];
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"A" message:[NSString stringWithFormat:@"%d", [playerList count]] delegate:self cancelButtonTitle:@"Delete" otherButtonTitles:@"Cancel", nil];
+    //[alert show];
+    int idx = [indexPath row] + 1;
+    cell = [WerewolvesUtility createCellFor:playerList[idx]];
     return cell;
+}
+
+- (IBAction)assignRoles:(id)sender {
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    [room generateRandomRoles];
 }
 
 /*

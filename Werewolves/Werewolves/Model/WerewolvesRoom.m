@@ -20,6 +20,7 @@
 - (WerewolvesRoom*) init {
     self = [super init];
     instance = self;
+    _playerArray = [[NSMutableArray alloc] init];
     /*
     playerArray = [NSMutableArray array]; // Store the pointers of ALL players in this room
     

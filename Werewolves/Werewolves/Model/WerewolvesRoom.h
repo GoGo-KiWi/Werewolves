@@ -10,6 +10,7 @@
 #import "WerewolvesPlayer.h"
 #import "WerewolvesAppDelegate.h"
 
+@class WerewolvesPlayer;
 
 @interface WerewolvesRoom : NSObject
 @property NSMutableArray *playerArray; // Store the pointers of ALL players in this room

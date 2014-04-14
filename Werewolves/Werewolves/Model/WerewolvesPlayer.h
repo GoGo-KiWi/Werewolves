@@ -40,16 +40,16 @@
 - (void) setDead;
 - (void) setAlive;
 - (BOOL) isAlve;
-
+*/
 - (void) setPlayerName: (NSString*) name;
-- (NSString*) getPlayerName;
-
+//- (NSString*) getPlayerName;
+/*
 - (void) setRole: (enum RoleType) role;
 - (enum RoleType) getRole;
-
-- (void) setPlayerId: (int) playerId;
-- (int) getPlayerId;
 */
+- (void) setPlayerId: (int) playerId;
+//- (int) getPlayerId;
+
 /*
  TODO
  0. Register

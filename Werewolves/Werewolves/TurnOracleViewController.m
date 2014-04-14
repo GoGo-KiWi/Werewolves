@@ -8,6 +8,8 @@
 
 #import "TurnOracleViewController.h"
 #import "TurnResultViewController.h"
+#import "WerewolvesRoom.h"
+
 @interface TurnOracleViewController ()
 
 @end
@@ -48,14 +50,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
-    cell.textLabel.text = [NSString stringWithFormat:@"# %ld", (long)[indexPath row]];
+    /*cell.textLabel.text = [NSString stringWithFormat:@"# %ld", (long)[indexPath row]];
     cell.textLabel.text = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
     switch ([indexPath row]){
         case 2: cell.imageView.image = [UIImage imageNamed:@"icon_witch.png"]; break;
         case 4:case 6: cell.imageView.image = [UIImage imageNamed:@"icon_werewolf.png"]; break;
         default: cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
             
-    }
+    }*/
+    int idx = [indexPath row] + 1;
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
+    
+    cell = [WerewolvesUtility createCellFor:playerList[idx]];
     //cell.textLabel.tag = [(NSInteger) [indexPath row]];
     return cell;
 }
