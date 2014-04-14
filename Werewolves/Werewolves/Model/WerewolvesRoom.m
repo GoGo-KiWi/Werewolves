@@ -40,6 +40,7 @@
     [self addPlayer:moderatorPtr];
     
     /*For DEBUG*/
+    /*
     WerewolvesPlayer* undefinePtr1 = [[WerewolvesPlayer alloc] init];
     [self addPlayer:undefinePtr1];
     WerewolvesPlayer* undefinePtr2 = [[WerewolvesPlayer alloc] init];
@@ -47,6 +48,7 @@
     WerewolvesPlayer* undefinePtr3 = [[WerewolvesPlayer alloc] init];
     [self addPlayer:undefinePtr3];
     [self printPlayers];
+     */
     return self;
 }
 
