@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "WerewolvesPlayer.h"
+#import "WerewolvesAppDelegate.h"
 
-
+@class WerewolvesPlayer;
 
 @interface WerewolvesRoom : NSObject
 @property NSMutableArray *playerArray; // Store the pointers of ALL players in this room
@@ -19,6 +20,7 @@
 @property NSMutableArray* oracleArray;
 @property NSMutableArray* witchArray;
 @property NSMutableArray* moderatorArray;
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 
 + (WerewolvesRoom*) getInstance;
 
@@ -30,6 +32,7 @@
 - (NSMutableArray*) getPlayers:(enum RoleType) role;
 - (WerewolvesPlayer*) getPlayer:(int) playerId;
 - (int) generateRandomRoles;
+- (int) getVoteResult;
 
 /*Message send methods*/
 - (void) sendPeopleInfo;

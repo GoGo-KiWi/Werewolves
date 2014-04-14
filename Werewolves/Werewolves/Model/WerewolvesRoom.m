@@ -30,6 +30,17 @@
     WerewolvesPlayer* moderatorPtr = [[WerewolvesPlayer alloc] init];
     [moderatorPtr setRole:Moderator];
     [self addPlayer:moderatorPtr];
+    
+    /*For DEBUG*/
+    /*
+    WerewolvesPlayer* undefinePtr1 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr1];
+    WerewolvesPlayer* undefinePtr2 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr2];
+    WerewolvesPlayer* undefinePtr3 = [[WerewolvesPlayer alloc] init];
+    [self addPlayer:undefinePtr3];
+    [self printPlayers];
+     */
     return self;
 }
 
@@ -181,12 +192,75 @@
     return 0;
 }
 
+- (int) getVoteResult {
+    /* Return vote result player's Id. Return -1 on tie or no result*/
+    int resultPlayerId = -1;
+    int resultCount = -1;
+    BOOL isTie = NO;
+    
+    for (WerewolvesPlayer* candidatePlayer in _playerArray) {
+        int candidateCount = 0;
+        
+        if ([candidatePlayer role] == Moderator) {
+            continue;
+        }
+        
+        for (WerewolvesPlayer* currentPlayer in _playerArray) {
+            if ([currentPlayer role] == Moderator) {
+                continue;
+            }
+            else {
+                if ([currentPlayer voteNominate] == [candidatePlayer playerId]) {
+                    candidateCount++;
+                }
+            }
+        }
+        
+        if (candidateCount == resultCount) {
+            isTie = YES;
+        }
+        else if (candidateCount > resultCount) {
+            isTie = NO;
+            resultPlayerId = [candidatePlayer playerId];
+            resultCount = candidateCount;
+        }
+    }
+    
+    if (isTie) {
+        return -1;
+    }
+    else {
+        return resultPlayerId;
+    }
+}
 
 - (void) sendPeopleInfo {
+     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
+     NSError *error;
+    
     /*Send enum*/
     enum MessageType messageType = SendPlayerInfo;
+    NSNumber* messageTypePtr = [[NSNumber alloc] initWithInt:(int)messageType];
+    NSData *dataPart1 = [NSKeyedArchiver archivedDataWithRootObject:messageTypePtr];
+    [_appDelegate.peer.session sendData:dataPart1
+                                toPeers:allPeers
+                                withMode:MCSessionSendDataReliable
+                                error:&error];
     
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+
     /*Send player info by sending playerArray*/
+    NSData *dataPart2 = [NSKeyedArchiver archivedDataWithRootObject:_playerArray];
+    [_appDelegate.peer.session sendData:dataPart2
+                                toPeers:allPeers
+                               withMode:MCSessionSendDataReliable
+                                  error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
 }
 
 - (void) createVote {

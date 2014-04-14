@@ -24,11 +24,11 @@
     [UIView commitAnimations];
 }
 
-+ (UITableViewCell *) createCellFor: (enum RoleType) role WithName: (NSString *) name
++ (UITableViewCell *) createCellFor: (WerewolvesPlayer *) player
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
-    cell.textLabel.text = name;
-    switch (role) {
+    cell.textLabel.text = [NSString stringWithFormat:@"#%d %@", [player playerId], [player playerName]];
+    switch ([player role]) {
         case Peasant:
             cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
             break;
@@ -50,5 +50,19 @@
     return cell;
 }
 
+// Just for test
++ (void) createPlayerList: (int) number
+{
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    for (int i = 0; i < number; i ++){
+        WerewolvesPlayer * tempPlayer = [[WerewolvesPlayer alloc] init];
+        NSString * tempName = [[NSString alloc] initWithFormat:@"Player %d", i];
+        //[tempPlayer setPlayerName:tempName];
+        [tempPlayer setPlayerName:tempName];
+        //[tempPlayer setPlayerId:i];
+        [room addPlayer:tempPlayer];
+    }
 
+    //[room generateRandomRoles];
+}
 @end
