@@ -335,10 +335,10 @@
             </objects>
             <point key="canvasLocation" x="557" y="515"/>
         </scene>
-        <!--View Controller-->
+        <!--Vote Result View Controller-->
         <scene sceneID="Dlh-OD-zAG">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="ndT-S9-a7V" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="ndT-S9-a7V" customClass="VoteResultViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EyK-CV-gfe"/>
                         <viewControllerLayoutGuide type="bottom" id="c7I-vj-bzZ"/>
@@ -358,9 +358,13 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uFX-r4-0qf">
-                                <rect key="frame" x="0.0" y="92" width="320" height="426"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="384"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ndT-S9-a7V" id="Tg3-N7-0YL"/>
+                                    <outlet property="delegate" destination="ndT-S9-a7V" id="rOD-EO-U27"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voting Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGl-eN-Vb8">
                                 <rect key="frame" x="0.0" y="65" width="320" height="27"/>
@@ -398,6 +402,9 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="rBe-J2-8Y8"/>
+                    <connections>
+                        <outlet property="voteResult" destination="uFX-r4-0qf" id="RUM-i4-82H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8S-Gl-Pvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -494,10 +501,10 @@
             </objects>
             <point key="canvasLocation" x="971" y="-176"/>
         </scene>
-        <!--View Controller-->
+        <!--Player Vote View Controller-->
         <scene sceneID="vVm-1x-vmu">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="sjY-F3-U0h" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="sjY-F3-U0h" customClass="PlayerVoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="See-yf-eBc"/>
                         <viewControllerLayoutGuide type="bottom" id="1Q7-JX-0Gs"/>
@@ -520,6 +527,10 @@
                                 <rect key="frame" x="0.0" y="91" width="320" height="430"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sjY-F3-U0h" id="9hc-cn-Mdn"/>
+                                    <outlet property="delegate" destination="sjY-F3-U0h" id="dmK-0f-19U"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clv-ij-nvN">
                                 <rect key="frame" x="0.0" y="64" width="320" height="26"/>
@@ -539,10 +550,16 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="voteAction:" destination="sjY-F3-U0h" eventType="touchUpInside" id="EVl-Ic-0qd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="voteList" destination="Rhl-aj-lMl" id="p8Q-ee-YSW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAQ-Ya-gmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

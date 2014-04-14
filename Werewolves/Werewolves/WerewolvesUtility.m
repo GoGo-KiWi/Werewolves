@@ -24,9 +24,17 @@
     [UIView commitAnimations];
 }
 
-+ (UITableViewCell *) createCellFor: (WerewolvesPlayer *) player
++ (UITableViewCell *) createCellFor: (WerewolvesPlayer *) player forVote: (BOOL) vote
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    UITableViewCell *cell;
+    if (vote){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                                               reuseIdentifier:@"voteIdentifier"];
+    }
+    else{
+        cell = [[UITableViewCell alloc]init];
+    }
+    
     cell.textLabel.text = [NSString stringWithFormat:@"#%d %@", [player playerId], [player playerName]];
     switch ([player role]) {
         case Peasant:
@@ -47,6 +55,10 @@
         default:
             break;
     }
+    
+    if (vote){
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"-> %d",[player voteNominate]];
+    }
     return cell;
 }
 
@@ -59,6 +71,7 @@
         NSString * tempName = [[NSString alloc] initWithFormat:@"Player %d", i];
         //[tempPlayer setPlayerName:tempName];
         [tempPlayer setPlayerName:tempName];
+        [tempPlayer setVoteNominate:3];
         //[tempPlayer setPlayerId:i];
         [room addPlayer:tempPlayer];
     }

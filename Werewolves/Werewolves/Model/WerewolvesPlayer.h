@@ -35,7 +35,7 @@
 - (void) joinRoom;
 - (void) sendMessage: (WerewolvesMessage*) msg;
 - (WerewolvesMessage*) receiveMessage;
-
+- (void) setVoteNominate:(int) playerID;
 /*
 - (void) setDead;
 - (void) setAlive;

@@ -60,4 +60,9 @@
     return self->playerId;
 }
 */
+
+- (void) setVoteNominate:(int) playerID{
+    _voteNominate = playerID;
+}
+
 @end

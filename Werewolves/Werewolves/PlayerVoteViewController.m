@@ -1,20 +1,19 @@
 //
-//  TurnOracleViewController.m
+//  PlayerVoteViewController.m
 //  Werewolves
 //
-//  Created by Fiona Yang on 4/6/14.
+//  Created by Fiona Yang on 4/14/14.
 //  Copyright (c) 2014 GoGo-KiWi. All rights reserved.
 //
 
-#import "TurnOracleViewController.h"
-#import "TurnResultViewController.h"
+#import "PlayerVoteViewController.h"
+#import "WerewolvesUtility.h"
 #import "WerewolvesRoom.h"
-
-@interface TurnOracleViewController ()
+@interface PlayerVoteViewController ()
 
 @end
 
-@implementation TurnOracleViewController
+@implementation PlayerVoteViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +36,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)voteAction:(id)sender {
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -44,40 +46,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
-    /*cell.textLabel.text = [NSString stringWithFormat:@"# %ld", (long)[indexPath row]];
-    cell.textLabel.text = [NSString stringWithFormat:@"Player %ld", (long)[indexPath row]];
-    switch ([indexPath row]){
-        case 2: cell.imageView.image = [UIImage imageNamed:@"icon_witch.png"]; break;
-        case 4:case 6: cell.imageView.image = [UIImage imageNamed:@"icon_werewolf.png"]; break;
-        default: cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
-            
-    }*/
     int idx = [indexPath row] + 1;
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
-    
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO];
-    //cell.textLabel.tag = [(NSInteger) [indexPath row]];
+    if ([playerList[idx] role] == Wolf){
+        [cell setTextColor:[UIColor grayColor]];
+        [cell setUserInteractionEnabled:NO];
+    }
     return cell;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if([segue.identifier isEqualToString:@"ResultTurnSegue"]){
-        if ([segue.destinationViewController isMemberOfClass:[TurnResultViewController class]]) {
-            TurnResultViewController *controller = (TurnResultViewController *)segue.destinationViewController;
-            controller.killedPlayer1 = self.killedPlayer1;
-            controller.killedPlayer2 = self.killedPlayer2;
-        }
-    }
+    //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
+    self.votedPlayer = [indexPath row];
+    
 }
 
 /*
