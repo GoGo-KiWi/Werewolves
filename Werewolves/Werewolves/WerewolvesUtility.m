@@ -50,7 +50,7 @@
             cell.imageView.image = [UIImage imageNamed:@"icon_oracle.png"];
             break;
         case UndefinedRole:
-            cell.imageView.image = [UIImage imageNamed:@"icon_app.png"];
+            cell.imageView.image = [UIImage imageNamed:@"icon_undefined.png"];
             break;
         default:
             break;
@@ -68,7 +68,7 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     for (int i = 0; i < number; i ++){
         WerewolvesPlayer * tempPlayer = [[WerewolvesPlayer alloc] init];
-        NSString * tempName = [[NSString alloc] initWithFormat:@"Player %d", i];
+        NSString * tempName = [[NSString alloc] initWithFormat:@"Player %d", i + 1];
         //[tempPlayer setPlayerName:tempName];
         [tempPlayer setPlayerName:tempName];
         [tempPlayer setVoteNominate:3];
