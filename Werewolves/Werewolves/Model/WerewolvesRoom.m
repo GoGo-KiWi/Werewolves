@@ -270,6 +270,16 @@
     }
 }
 
+- (void) resetVoteNominate {
+    for (WerewolvesPlayer* playerPtr in _playerArray) {
+        [playerPtr setVoteNominate:-1];
+    }
+}
+
+- (void) setVoteNominate:(WerewolvesPlayer*) player :(int) voteNominate {
+    [player setVoteNominate:voteNominate];
+}
+
 - (void) sendPeopleInfo {
      NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
      NSError *error;

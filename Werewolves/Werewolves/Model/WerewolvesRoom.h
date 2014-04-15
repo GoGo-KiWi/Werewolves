@@ -33,6 +33,8 @@
 - (WerewolvesPlayer*) getPlayer:(int) playerId;
 - (int) generateRandomRoles;
 - (int) getVoteResult;
+- (void) resetVoteNominate;
+- (void) setVoteNominate:(WerewolvesPlayer*) player :(int) voteNominate;
 
 /*Message send methods*/
 - (void) sendPeopleInfo;
