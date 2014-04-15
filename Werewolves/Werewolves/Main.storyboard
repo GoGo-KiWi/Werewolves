@@ -421,11 +421,19 @@
                                     <segue destination="l8e-3F-cpr" kind="push" identifier="WerewolfSegue" id="pR4-D0-f7b"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYL-Tq-8ij">
+                                <rect key="frame" x="0.0" y="484" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="rBe-J2-8Y8"/>
                     <connections>
+                        <outlet property="resultLabel" destination="ZYL-Tq-8ij" id="8S2-xR-rS3"/>
                         <outlet property="voteResult" destination="uFX-r4-0qf" id="RUM-i4-82H"/>
                     </connections>
                 </viewController>

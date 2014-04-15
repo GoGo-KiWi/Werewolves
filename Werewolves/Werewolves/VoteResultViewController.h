@@ -10,5 +10,6 @@
 
 @interface VoteResultViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *voteResult;
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
 @end
