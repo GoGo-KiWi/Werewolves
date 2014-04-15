@@ -163,7 +163,7 @@
     [self.oracleArray removeAllObjects];
     [self.witchArray removeAllObjects];
     
-    /*
+    
     NSMutableArray *tempArray = [self.playerArray mutableCopy];
     [tempArray removeObjectAtIndex:0];
     // Found a shuffle algorithm from stackoverflow...
@@ -188,9 +188,9 @@
     WerewolvesPlayer *newWitch = [tempArray objectAtIndex:numWolf + numPeasant + 1];
     [newWitch setRole:Witch];
     [self addPlayerIntoRoleArray:newWitch];
-     */
     
     
+    /*
     int* tempArray = malloc(numPlayer*sizeof(int));
     for (int i = 0; i < numPlayer; i++) {
         tempArray[i] = i;
@@ -218,37 +218,7 @@
     }
     
     free(tempArray);
-    
-    
-    /*
-     NSMutableArray* tempArray = [NSMutableArray array];
-     //int* tempArray = malloc(numPlayer*sizeof(int));
-     for (int i = 0; i < numPlayer; i++) {
-     NSNumber* tempInt = [[NSNumber alloc] initWithInt:i];
-     [tempArray addObject:tempInt];
-     }
-     
-     // Suppose index 0 correspons to moderator and we do not need to modify or initlize moderator. We do not change this role
-     // Shuffle position from 1 to last elements
-     for (int i = 2; i < numPlayer; i++) {
-     int swapPos = arc4random() % (i - 1) + 1;
-     NSNumber* tempValue = tempArray[i];
-     tempArray[i] = tempArray[swapPos];
-     tempArray[swapPos] = tempValue;
-     }
-     
-     // Assign in order for different roles excpet for the moderator, whose role should already be initlized
-     [self setRole:_playerArray[[tempArray[numModerator + numOracle - 1] intValue]] :Oracle];
-     [self setRole:_playerArray[[tempArray[numModerator + numOracle + numWitch - 1] intValue]] :Witch];
-     
-     for (int i = numModerator + numOracle + numWitch; i < numModerator + numOracle + numWitch + numWolf; i++) {
-     [self setRole:_playerArray[[tempArray[i] intValue]] :Wolf];
-     }
-     
-     for (int i = numModerator + numOracle + numWitch + numWolf; i < numModerator + numOracle + numWitch + numWolf + numPeasant; i++) {
-     [self setRole:_playerArray[[tempArray[i] intValue]] :Peasant];
-     }
-     */
+    */
     
     return 0;
 }
