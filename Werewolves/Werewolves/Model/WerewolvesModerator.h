@@ -14,4 +14,6 @@
     WerewolvesMessage* attackedByWolf;
 }
 
+@property (strong, nonatomic) WerewolvesRoom *room;
+
 @end

@@ -40,6 +40,7 @@
 		9F25579B18FCB25E0064A705 /* icon_undefined.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F25579A18FCB25E0064A705 /* icon_undefined.png */; };
 		9F6C40A118F0AD27005D3FFC /* icon_app120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */; };
 		9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F7AD35118F0AC27002BBB98 /* icon_app.png */; };
+		9F981DB518FD04E600785BBC /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F981DB418FD04E600785BBC /* launchImage.png */; };
 		E4535BCB18F9C29B000C6F09 /* TurnResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */; };
 		E4535BD118FC524C000C6F09 /* PlayerVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BD018FC524C000C6F09 /* PlayerVoteViewController.m */; };
 		E4535BD418FC56EC000C6F09 /* VoteResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BD318FC56EC000C6F09 /* VoteResultViewController.m */; };
@@ -115,6 +116,7 @@
 		9F25579A18FCB25E0064A705 /* icon_undefined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_undefined.png; sourceTree = "<group>"; };
 		9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app120x120.png; sourceTree = "<group>"; };
 		9F7AD35118F0AC27002BBB98 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
+		9F981DB418FD04E600785BBC /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage.png; sourceTree = "<group>"; };
 		E4535BC918F9C29B000C6F09 /* TurnResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnResultViewController.h; sourceTree = "<group>"; };
 		E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnResultViewController.m; sourceTree = "<group>"; };
 		E4535BCF18FC524C000C6F09 /* PlayerVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerVoteViewController.h; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		3288367F18F099580064428B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9F981DB418FD04E600785BBC /* launchImage.png */,
 				32D17C6718FC695000F874C6 /* frontPage.png */,
 				9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */,
 				9F7AD35118F0AC27002BBB98 /* icon_app.png */,
@@ -210,13 +213,23 @@
 			children = (
 				3859306F18F7270000447089 /* testsendmessageViewController.h */,
 				3859307018F7270000447089 /* testsendmessageViewController.m */,
+				32A55E3F18EB5FC900649610 /* WerewolvesAppDelegate.h */,
+				32A55E4018EB5FC900649610 /* WerewolvesAppDelegate.m */,
 				E4D8CCDE18F22DDE00C82C81 /* Main.storyboard */,
 				388D444818F0A6960067BEA2 /* Peer.h */,
 				388D444918F0A6960067BEA2 /* Peer.m */,
 				388D444A18F0A6960067BEA2 /* PeerHelper.h */,
 				388D444B18F0A6960067BEA2 /* PeerHelper.m */,
-				32A55E3F18EB5FC900649610 /* WerewolvesAppDelegate.h */,
-				32A55E4018EB5FC900649610 /* WerewolvesAppDelegate.m */,
+				32A55E7C18EB668D00649610 /* WerewolvesMessage.h */,
+				32A55E7D18EB668D00649610 /* WerewolvesMessage.m */,
+				32A55E7F18EB681D00649610 /* WerewolvesRoom.h */,
+				32A55E8018EB681D00649610 /* WerewolvesRoom.m */,
+				32A55E6D18EB64B400649610 /* WerewolvesPlayer.h */,
+				32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */,
+				32A55E6A18EB64A200649610 /* WerewolvesModerator.h */,
+				32A55E6B18EB64A200649610 /* WerewolvesModerator.m */,
+				3259F13E18F22EC200982752 /* WerewolvesUtility.h */,
+				3259F13F18F22EC200982752 /* WerewolvesUtility.m */,
 				32A55E4818EB5FC900649610 /* WerewolvesViewController.h */,
 				32A55E4918EB5FC900649610 /* WerewolvesViewController.m */,
 				32C11E0E18F3E0F700A59141 /* CreateRoomViewController.h */,
@@ -227,18 +240,8 @@
 				32498DD918F38B5C00D6D2BD /* AssignRoleViewController.m */,
 				32C11E1018F3E0F700A59141 /* JoinRoomViewController.h */,
 				32C11E1118F3E0F700A59141 /* JoinRoomViewController.m */,
-				3259F13E18F22EC200982752 /* WerewolvesUtility.h */,
-				3259F13F18F22EC200982752 /* WerewolvesUtility.m */,
 				E4535BD218FC56EC000C6F09 /* VoteResultViewController.h */,
 				E4535BD318FC56EC000C6F09 /* VoteResultViewController.m */,
-				32A55E7C18EB668D00649610 /* WerewolvesMessage.h */,
-				32A55E7D18EB668D00649610 /* WerewolvesMessage.m */,
-				32A55E7F18EB681D00649610 /* WerewolvesRoom.h */,
-				32A55E8018EB681D00649610 /* WerewolvesRoom.m */,
-				32A55E6D18EB64B400649610 /* WerewolvesPlayer.h */,
-				32A55E6E18EB64B400649610 /* WerewolvesPlayer.m */,
-				32A55E6A18EB64A200649610 /* WerewolvesModerator.h */,
-				32A55E6B18EB64A200649610 /* WerewolvesModerator.m */,
 				E4D8CD3018F3A85600C82C81 /* TurnWerewolfViewController.h */,
 				E4D8CD3118F3A85600C82C81 /* TurnWerewolfViewController.m */,
 				E4D8CD3418F3A85600C82C81 /* TurnWitchSaveViewController.h */,
@@ -368,6 +371,7 @@
 			files = (
 				3288368918F099580064428B /* icon_witch.png in Resources */,
 				32D17C6818FC695100F874C6 /* frontPage.png in Resources */,
+				9F981DB518FD04E600785BBC /* launchImage.png in Resources */,
 				9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */,
 				3288368518F099580064428B /* 50-percent-gray.jpg in Resources */,
 				3288368618F099580064428B /* icon_oracle.png in Resources */,

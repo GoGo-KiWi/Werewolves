@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "WerewolvesPlayer.h"
 #import "WerewolvesRoom.h"
+
 @class WerewolvesPlayer;
 
 @interface WerewolvesUtility : NSObject

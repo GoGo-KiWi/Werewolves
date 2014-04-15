@@ -84,37 +84,42 @@
 - (void) removePlayerFromRoleArray:(WerewolvesPlayer*) player {
     switch ([player role]) {
         case Moderator:
-            for (WerewolvesPlayer* curPlayer in _moderatorArray) {
-                if (curPlayer == player) {
-                    [_moderatorArray removeObject:curPlayer];
+            for (int i = 0; i < [_moderatorArray count]; i++) {
+                if (_moderatorArray[i] == player) {
+                    [_moderatorArray removeObjectAtIndex:i];
+                    i--;
                 }
             }
             break;
         case Peasant:
-            for (WerewolvesPlayer* curPlayer in _peasantArray) {
-                if (curPlayer == player) {
-                    [_peasantArray removeObject:curPlayer];
+            for (int i = 0; i < [_peasantArray count]; i++) {
+                if (_peasantArray[i] == player) {
+                    [_peasantArray removeObjectAtIndex:i];
+                    i--;
                 }
             }
             break;
         case Wolf:
-            for (WerewolvesPlayer* curPlayer in _wolfArray) {
-                if (curPlayer == player) {
-                    [_wolfArray removeObject:curPlayer];
+            for (int i = 0; i < [_wolfArray count]; i++) {
+                if (_wolfArray[i] == player) {
+                    [_wolfArray removeObjectAtIndex:i];
+                    i--;
                 }
             }
             break;
         case Oracle:
-            for (WerewolvesPlayer* curPlayer in _oracleArray) {
-                if (curPlayer == player) {
-                    [_oracleArray removeObject:curPlayer];
+            for (int i = 0; i < [_oracleArray count]; i++) {
+                if (_oracleArray[i] == player) {
+                    [_oracleArray removeObjectAtIndex:i];
+                    i--;
                 }
             }
             break;
         case Witch:
-            for (WerewolvesPlayer* curPlayer in _witchArray) {
-                if (curPlayer == player) {
-                    [_witchArray removeObject:curPlayer];
+            for (int i = 0; i < [_witchArray count]; i++) {
+                if (_witchArray[i] == player) {
+                    [_witchArray removeObjectAtIndex:i];
+                    i--;
                 }
             }
             break;
@@ -148,7 +153,6 @@
 - (int) generateRandomRoles {
     /* This function randomly generate roles for players and update their array. Return -1 on failure and 0 on success */
     int numPlayer = (int)[_playerArray count];
-    
     if (numPlayer < 5) {
         // Too few player, cannot proceed
         return -1;
@@ -159,9 +163,40 @@
     int numWolf = (numPlayer - numModerator - numOracle - numWitch)/2;
     int numPeasant = numPlayer - numModerator - numOracle - numWitch - numWolf;
     
+    /*
+    [self.peasantArray removeAllObjects];
+    [self.wolfArray removeAllObjects];
+    [self.oracleArray removeAllObjects];
+    [self.witchArray removeAllObjects];
+    
+    NSMutableArray *tempArray = [self.playerArray mutableCopy];
+    [tempArray removeObjectAtIndex:0];
+    // Found a shuffle algorithm from stackoverflow...
+    for (int i = 0; i < tempArray.count; i++) {
+        int randomInt1 = arc4random() % [tempArray count];
+        int randomInt2 = arc4random() % [tempArray count];
+        [tempArray exchangeObjectAtIndex:randomInt1 withObjectAtIndex:randomInt2];
+    }
+    for (int i = 0; i < numWolf; i++) {
+        WerewolvesPlayer *newWolf = [tempArray objectAtIndex:i];
+        [newWolf setRole:Wolf];
+        [self addPlayerIntoRoleArray:newWolf];
+    }
+    for (int i = numWolf; i < numWolf + numPeasant; i++) {
+        WerewolvesPlayer *newPeasant = [tempArray objectAtIndex:i];
+        [newPeasant setRole:Peasant];
+        [self addPlayerIntoRoleArray:newPeasant];
+    }
+    WerewolvesPlayer *newOracle = [tempArray objectAtIndex:numWolf + numPeasant];
+    [newOracle setRole:Oracle];
+    [self addPlayerIntoRoleArray:newOracle];
+    WerewolvesPlayer *newWitch = [tempArray objectAtIndex:numWolf + numPeasant + 1];
+    [newWitch setRole:Witch];
+    [self addPlayerIntoRoleArray:newWitch];
+    */
+    
     
     int* tempArray = malloc(numPlayer*sizeof(int));
-    
     for (int i = 0; i < numPlayer; i++) {
         tempArray[i] = i;
     }
@@ -176,18 +211,19 @@
     }
     
     // Assign in order for different roles excpet for the moderator, whose role should already be initlized
-    [self setRole:_playerArray[numModerator + numOracle - 1] :Oracle];
-    [self setRole:_playerArray[numModerator + numOracle + numWitch - 1] :Witch];
+    [self setRole:_playerArray[tempArray[numModerator + numOracle - 1]] :Oracle];
+    [self setRole:_playerArray[tempArray[numModerator + numOracle + numWitch - 1]] :Witch];
     
     for (int i = numModerator + numOracle + numWitch; i < numModerator + numOracle + numWitch + numWolf; i++) {
-        [self setRole:_playerArray[i] :Wolf];
+        [self setRole:_playerArray[tempArray[i]] :Wolf];
     }
     
     for (int i = numModerator + numOracle + numWitch + numWolf; i < numModerator + numOracle + numWitch + numWolf + numPeasant; i++) {
-        [self setRole:_playerArray[i] :Peasant];
+        [self setRole:_playerArray[tempArray[i]] :Peasant];
     }
     
     free(tempArray);
+    
     
     return 0;
 }
@@ -232,6 +268,16 @@
     else {
         return resultPlayerId;
     }
+}
+
+- (void) resetVoteNominate {
+    for (WerewolvesPlayer* playerPtr in _playerArray) {
+        [playerPtr setVoteNominate:-1];
+    }
+}
+
+- (void) setVoteNominate:(WerewolvesPlayer*) player :(int) voteNominate {
+    [player setVoteNominate:voteNominate];
 }
 
 - (void) sendPeopleInfo {
