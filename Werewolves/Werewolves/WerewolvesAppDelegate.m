@@ -13,7 +13,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    _peer = [[Peer alloc] init];
+    if (_peer == nil) {
+        _peer = [[Peer alloc] init];
+    }
     return YES;
 }
 							

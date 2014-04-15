@@ -12,7 +12,7 @@
 
 + (void) animateTextField: (UITextField*) textField forView: (UIView *) view up: (BOOL) up
 {
-    const int movementDistance = 80; // tweak as needed
+    const int movementDistance = 150; // tweak as needed
     const float movementDuration = 0.3f; // tweak as needed
     
     int movement = (up ? -movementDistance : movementDistance);
