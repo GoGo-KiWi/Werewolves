@@ -522,7 +522,7 @@
                                     <constraint firstAttribute="width" constant="320" id="kXO-dt-KuI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Start" backgroundImage="50-percent-gray.jpg">
+                                <state key="normal" title="Roll For Roles" backgroundImage="50-percent-gray.jpg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
