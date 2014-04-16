@@ -129,4 +129,27 @@
     [self.roleTableView reloadData];
 }
 
+/*Following is for shake roll functions*/
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake) {
+        WerewolvesRoom *room = [WerewolvesRoom getInstance];
+        [room generateRandomRoles];
+        [self.roleTableView reloadData];
+    }
+}
+
 @end

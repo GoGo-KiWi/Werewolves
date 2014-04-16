@@ -17,6 +17,8 @@
         _peer = [[Peer alloc] init];
     }
     
+    application.applicationSupportsShakeToEdit = YES;
+    
     [NSThread sleepForTimeInterval:1.0];
     [_window makeKeyAndVisible];
     return YES;
