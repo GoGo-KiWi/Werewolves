@@ -124,6 +124,7 @@
 }
 
 - (IBAction)reRoll:(id)sender {
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     [room generateRandomRoles];
     [self.roleTableView reloadData];
@@ -146,6 +147,7 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (motion == UIEventSubtypeMotionShake) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         WerewolvesRoom *room = [WerewolvesRoom getInstance];
         [room generateRandomRoles];
         [self.roleTableView reloadData];
