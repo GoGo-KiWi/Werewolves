@@ -16,6 +16,9 @@
     if (_peer == nil) {
         _peer = [[Peer alloc] init];
     }
+    
+    [NSThread sleepForTimeInterval:1.0];
+    [_window makeKeyAndVisible];
     return YES;
 }
 							
