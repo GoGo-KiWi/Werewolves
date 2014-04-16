@@ -70,26 +70,36 @@
     WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
     myMessage.messageType = SendPlayerInfo;
     myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
+    myMessage.text = _txtMessage.text;
     
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
+    /*Code for data transferring test*/
+    if ([[[WerewolvesRoom getInstance] playerArray] count] > 2) {
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
+        
+        [_appDelegate.peer.session sendData:data
+                                    toPeers:allPeers
+                                   withMode:MCSessionSendDataReliable
+                                      error:&error];
+        
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        
+        [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I sent playerArray with size=%d:\n", [[[WerewolvesRoom getInstance] playerArray] count]]]];
+        [_txtMessage setText:@""];
+        [_txtMessage resignFirstResponder];
+    }
     
-    [_appDelegate.peer.session sendData:data
+    
+    
+    /*Code for text chat*/
+    myMessage.messageType = TextChat;
+    NSData *dataToSend = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
+     
+    [_appDelegate.peer.session sendData:dataToSend
                                 toPeers:allPeers
                                withMode:MCSessionSendDataReliable
                                   error:&error];
-    
-    if (error) {
-        NSLog(@"%@", [error localizedDescription]);
-    }
-    /*
-    NSData *dataToSend = [_txtMessage.text dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
-    NSError *error;
-    
-    [_appDelegate.peer.session sendData:dataToSend
-                                     toPeers:allPeers
-                                    withMode:MCSessionSendDataReliable
-                                       error:&error];
     
     if (error) {
         NSLog(@"%@", [error localizedDescription]);
@@ -98,10 +108,7 @@
     [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I wrote:\n%@\n\n", _txtMessage.text]]];
     [_txtMessage setText:@""];
     [_txtMessage resignFirstResponder];
-     */
-    [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I sent playerArray with size=%d:\n", [[[WerewolvesRoom getInstance] playerArray] count]]]];
-    [_txtMessage setText:@""];
-    [_txtMessage resignFirstResponder];
+     
 }
 
 
@@ -125,6 +132,16 @@
     
     if ([receivedMsg messageType] == SendPlayerInfo) {
         [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ send me with playerArray size=%d and the second player's name is %@\n", peerDisplayName, (int)[[receivedMsg playerInfo] count], [[receivedMsg playerInfo][2] playerName]]] waitUntilDone:NO];
+    }
+    
+    if ([receivedMsg messageType] == TextChat) {
+        MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+        NSString *peerDisplayName = peerID.displayName;
+        
+        NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+        NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+        
+        [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ wrote:\n%@\n\n", peerDisplayName, receivedText]] waitUntilDone:NO];
     }
 }
 

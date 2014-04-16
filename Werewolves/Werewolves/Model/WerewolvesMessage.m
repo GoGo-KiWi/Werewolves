@@ -17,6 +17,7 @@
     _senderId = [decoder decodeIntForKey:@"senderId"];
     _receiverId = [decoder decodeIntForKey:@"receiverId"];
     _playerInfo = [decoder decodeObjectForKey:@"playerInfo"];
+    _text = [decoder decodeObjectForKey:@"text"];
     
     return self;
 }
@@ -26,6 +27,7 @@
     [encoder encodeInt:_senderId forKey:@"senderId"];
     [encoder encodeInt:_receiverId forKey:@"receiverId"];
     [encoder encodeObject:_playerInfo forKey:@"playerInfo"];
+    [encoder encodeObject:_text forKey:@"text"];
 }
 
 -(void) dumpMessage:(NSString *)msg {

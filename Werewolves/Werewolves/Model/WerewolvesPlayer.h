@@ -57,6 +57,9 @@
 /*From player to moderator*/
 - (void) sendVoteNominate:(int) playerId;
 
+/*Text Chat*/
+- (void) sendTextChat:(NSString*) msg;
+
 /*Message receive method is didReceiveDataWithNotification*/
 
 /*

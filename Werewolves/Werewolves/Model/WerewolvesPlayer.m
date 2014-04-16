@@ -200,6 +200,28 @@
 
 }
 
+- (void) sendTextChat:(NSString*) msg {
+    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
+    NSError *error;
+    
+    WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
+    myMessage.senderId = _playerId;
+    myMessage.receiverId = -1; // broadcast
+    myMessage.messageType = TextChat;
+    myMessage.playerInfo = _playerArray;
+    myMessage.text = msg;
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
+    [_appDelegate.peer.session sendData:data
+                                toPeers:allPeers
+                               withMode:MCSessionSendDataReliable
+                                  error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+}
+
 - (void) didReceiveDataWithNotification:(NSNotification *)notification{
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
@@ -259,6 +281,9 @@
                 }
                 /*May call other functions to update UI views*/
             }
+            break;
+        case TextChat:
+            /*Display msg onto screen*/
             break;
         default:
             break;

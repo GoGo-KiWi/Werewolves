@@ -21,7 +21,10 @@ enum MessageType {
     SendTerminateResult, /*Which side won*/
     
     /*From player to moderator*/
-    SendVoteNominate /*Player send their own playerId in the playerInfo array object*/
+    SendVoteNominate, /*Player send their own playerId in the playerInfo array object*/
+    
+    /*Chat*/
+    TextChat
 };
 
 @interface WerewolvesMessage : NSObject
@@ -30,6 +33,7 @@ enum MessageType {
 @property int senderId; // THIS PROPERTY MAY BE USELESS!!!!!
 @property int receiverId; // -1 for broadcase. THIS PROPERTY MAY BE USELESS!!!!!!!!
 @property NSMutableArray* playerInfo;
+@property NSString* text;
 
 - (WerewolvesMessage*) initWithCoder:(NSCoder *) decoder;
 - (void)encodeWithCoder:(NSCoder *) encoder;
