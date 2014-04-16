@@ -242,8 +242,11 @@
             if (receivedMsg.receiverId == 1) {
                 /*Wolf won*/
             }
+            else if (receivedMsg.receiverId == 2) {
+                /*villager win*/
+            }
             else {
-                /*Villager win*/
+                /*tie*/
             }
         case SendVoteNominate:
             if (_role == Moderator) {

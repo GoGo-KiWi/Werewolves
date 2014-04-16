@@ -34,6 +34,7 @@
 - (int) getVoteResult;
 - (void) resetVoteNominate;
 - (void) setVoteNominate:(WerewolvesPlayer*) player :(int) voteNominate;
+- (int) checkTerminate;
 
 
 

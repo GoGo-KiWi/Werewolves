@@ -280,6 +280,42 @@
     [player setVoteNominate:voteNominate];
 }
 
+- (int) checkTerminate {
+    /* Return 3 on tie. Return 2 if village win. Return 1 if wolf won. Retrun 0 if game continue*/
+    int numAliveWolf = 0;
+    int numAlivePeasant = 0;
+    
+    for (WerewolvesPlayer* playerPtr in _wolfArray) {
+        if (playerPtr.alive == YES) {
+            numAliveWolf++;
+        }
+    }
+    
+    for (WerewolvesPlayer* playerPtr in _peasantArray) {
+        if (playerPtr.alive == YES) {
+            numAlivePeasant++;
+        }
+    }
+    
+    if (numAlivePeasant > 0 && numAliveWolf > 0) {
+        /*Game continue*/
+        return 0;
+    }
+    
+    if (numAliveWolf > 0) {
+        /*Wolf won*/
+        return 1;
+    }
+    
+    if (numAlivePeasant > 0) {
+        /*Villager win*/
+        return 2;
+    }
+    
+    /*Tie*/
+    return 3;
+}
+
 /*For DEBUG*/
 - (void) printPlayers {
     NSLog(@"hhh");
