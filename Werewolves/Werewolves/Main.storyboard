@@ -1333,6 +1333,9 @@
                                 <state key="normal" title="Chat!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hyC-AH-BkT" kind="push" id="mmU-aD-GOA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1363,5 +1366,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ojg-Qk-98Z"/>
+        <segue reference="mmU-aD-GOA"/>
     </inferredMetricsTieBreakers>
 </document>
