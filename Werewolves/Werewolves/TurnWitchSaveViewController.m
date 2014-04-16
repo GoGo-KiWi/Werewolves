@@ -8,6 +8,7 @@
 
 #import "TurnWitchSaveViewController.h"
 #import "TurnWitchKillViewController.h"
+#import "WerewolvesRoom.h"
 
 @interface TurnWitchSaveViewController ()
 
@@ -51,6 +52,11 @@
 {
     if(saveInfo.selectedSegmentIndex == 0){
         saveInfo.enabled = FALSE;
+    }
+    else{
+        WerewolvesRoom *room = [WerewolvesRoom getInstance];
+        NSMutableArray *playerList = [room playerArray];
+        [playerList[self.killedPlayerID] setAlive:NO];
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

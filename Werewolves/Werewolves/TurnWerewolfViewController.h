@@ -17,6 +17,7 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *killList;
 @property (strong, nonatomic) NSString *killedName;
+@property (assign, nonatomic) int killedID;
 
 //@property(nonatomic,assign)id delegate;
 

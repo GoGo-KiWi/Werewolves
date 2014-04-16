@@ -72,22 +72,24 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView  *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
     self.killedName = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-
+    self.killedID = [indexPath row] + 1;
+    //WerewolvesRoom * room = [WerewolvesRoom getInstance];
+    //NSMutableArray * playerList = [room playerArray];
 }
-/*- (IBAction)checkEmpty:(id)sender {
-    if ([self.killedName length] == 0){
+- (IBAction)checkEmpty:(id)sender {
+  /*  if ([self.killedName length] == 0){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Test Message"
                                                         message:@"This is a test"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
-    }
-}*/
+    }*/
+}
 
 #pragma mark - Navigation
 
@@ -100,6 +102,7 @@
         if ([segue.destinationViewController isMemberOfClass:[TurnWitchSaveViewController class]]) {
             TurnWitchSaveViewController *controller = (TurnWitchSaveViewController *)segue.destinationViewController;
             controller.killedPlayerName = [NSString stringWithFormat:@"%@ is killed.", self.killedName];
+            controller.killedPlayerID = self.killedID;
         }
     }
 }

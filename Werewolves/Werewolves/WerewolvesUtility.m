@@ -56,8 +56,13 @@
             break;
     }
     
-    if (vote){
+    if (vote && [player alive]){
         cell.detailTextLabel.text = [NSString stringWithFormat:@"-> %d",[player voteNominate]];
+    }
+    
+    if ([player alive] == NO){
+        [cell setTextColor:[UIColor grayColor]];
+        [cell setUserInteractionEnabled:NO];
     }
     return cell;
 }

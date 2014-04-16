@@ -66,7 +66,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
     self.killedPlayer2 = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    [playerList[[indexPath row]] setAlive:NO];
+
 }
 
 - (IBAction)resetSelection:(id)sender {

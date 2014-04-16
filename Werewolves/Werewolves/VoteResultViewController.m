@@ -61,6 +61,14 @@
     return cell;
 }
 
+- (IBAction)startNewRound:(id)sender {
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
+    int resultID = [room getVoteResult];
+    [playerList[resultID] setAlive:NO];
+    [room resetVoteNominate];
+}
+
 /*
 #pragma mark - Navigation
 
