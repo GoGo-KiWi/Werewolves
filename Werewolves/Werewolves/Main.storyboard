@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kyy-hh-yPr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kyy-hh-yPr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -582,11 +582,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujv-Ji-aY5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujv-Ji-aY5">
                                 <rect key="frame" x="161" y="518" width="159" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="mQX-sb-yAu"/>
+                                    <constraint firstAttribute="width" constant="159" id="mQX-sb-yAu"/>
                                     <constraint firstAttribute="height" constant="50" id="tKD-D2-azu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -610,7 +610,7 @@
                                     <action selector="reRoll:" destination="mUY-W2-rAO" eventType="touchUpInside" id="UsF-hy-6MW"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-0b-zP8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-0b-zP8">
                                 <rect key="frame" x="0.0" y="66" width="320" height="452"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -624,9 +624,7 @@
                         <constraints>
                             <constraint firstItem="MA9-0b-zP8" firstAttribute="trailing" secondItem="Ujv-Ji-aY5" secondAttribute="trailing" id="27g-98-0YM"/>
                             <constraint firstAttribute="trailing" secondItem="Ujv-Ji-aY5" secondAttribute="trailing" id="FAA-b3-yhU"/>
-                            <constraint firstItem="Ujv-Ji-aY5" firstAttribute="leading" secondItem="ULD-Ff-tVo" secondAttribute="leading" id="Jtw-Aa-6B7"/>
                             <constraint firstItem="MA9-0b-zP8" firstAttribute="top" secondItem="PKb-f1-j5t" secondAttribute="bottom" constant="2" id="Ufy-0T-ao7"/>
-                            <constraint firstItem="MA9-0b-zP8" firstAttribute="leading" secondItem="Ujv-Ji-aY5" secondAttribute="leading" id="eiG-FT-HKQ"/>
                             <constraint firstItem="oO3-pF-97C" firstAttribute="top" secondItem="Ujv-Ji-aY5" secondAttribute="bottom" id="jnK-aE-UNd"/>
                             <constraint firstItem="Ujv-Ji-aY5" firstAttribute="top" secondItem="MA9-0b-zP8" secondAttribute="bottom" id="xT9-Lp-UcB"/>
                         </constraints>
@@ -1364,6 +1362,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pR4-D0-f7b"/>
+        <segue reference="ojg-Qk-98Z"/>
     </inferredMetricsTieBreakers>
 </document>
