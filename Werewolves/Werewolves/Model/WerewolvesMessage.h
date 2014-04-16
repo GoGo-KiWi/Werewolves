@@ -7,19 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WerewolvesPlayer.h"
 
 enum MessageType {
     /* Maybe using a single message to transmit all player info is clearer. by Cary*/
     
     /*From moderator to player*/
-    SendPlayerInfo, /*All players' name, id, life status. Your name, id, role*/
-    CreateVote, /*No follwing info*/
-    SendVoteResult, /*Players' ID and their choosing result*/
-    SendDeathResult, /*Death person's ID*/
+    SendPlayerInfo, /* Use players' info in playerInfo array. Find player's own identity using peerId*/
+    CreateVote,
+    ReVote,
+    SendVoteResult, /*Player display voting result*/
+    SendDeathResult, /*Death person's ID is the receiverId*/
     SendTerminateResult, /*Which side won*/
     
     /*From player to moderator*/
-    SendVoteNominate
+    SendVoteNominate /*Player send their own playerId in the playerInfo array object*/
 };
 
 @interface WerewolvesMessage : NSObject
