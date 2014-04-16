@@ -126,7 +126,7 @@
 - (IBAction)reRoll:(id)sender {
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     [room generateRandomRoles];
-    //[self.roleTableView reloadData];
+    [self.roleTableView reloadData];
 }
 
 @end
