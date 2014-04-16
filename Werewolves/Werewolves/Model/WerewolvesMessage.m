@@ -10,6 +10,24 @@
 
 @implementation WerewolvesMessage
 
+- (WerewolvesMessage*) initWithCoder:(NSCoder *) decoder {
+    self = [super init];
+    
+    _messageType = [decoder decodeIntForKey:@"messageType"];
+    _senderId = [decoder decodeIntForKey:@"senderId"];
+    _receiverId = [decoder decodeIntForKey:@"receiverId"];
+    _playerInfo = [decoder decodeObjectForKey:@"playerInfo"];
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *) encoder {
+    [encoder encodeInt:_messageType forKey:@"messageType"];
+    [encoder encodeInt:_senderId forKey:@"senderId"];
+    [encoder encodeInt:_receiverId forKey:@"receiverId"];
+    [encoder encodeObject:_playerInfo forKey:@"playerInfo"];
+}
+
 -(void) dumpMessage:(NSString *)msg {
     NSLog(@"%@", msg);
 }

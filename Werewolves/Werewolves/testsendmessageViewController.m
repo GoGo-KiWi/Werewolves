@@ -64,6 +64,24 @@
 #pragma mark - Private method implementation
 
 -(void)sendMyMessage{
+    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
+    NSError *error;
+    
+    WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
+    myMessage.messageType = SendPlayerInfo;
+    myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
+    
+    [_appDelegate.peer.session sendData:data
+                                toPeers:allPeers
+                               withMode:MCSessionSendDataReliable
+                                  error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    /*
     NSData *dataToSend = [_txtMessage.text dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;
@@ -80,10 +98,15 @@
     [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I wrote:\n%@\n\n", _txtMessage.text]]];
     [_txtMessage setText:@""];
     [_txtMessage resignFirstResponder];
+     */
+    [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I sent playerArray with size=%d:\n", [[[WerewolvesRoom getInstance] playerArray] count]]]];
+    [_txtMessage setText:@""];
+    [_txtMessage resignFirstResponder];
 }
 
 
 -(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    /*
     MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
     NSString *peerDisplayName = peerID.displayName;
     
@@ -91,6 +114,18 @@
     NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
     [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ wrote:\n%@\n\n", peerDisplayName, receivedText]] waitUntilDone:NO];
+     */
+    
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSString *peerDisplayName = peerID.displayName;
+    
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    //NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
+    
+    if ([receivedMsg messageType] == SendPlayerInfo) {
+        [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ send me with playerArray size=%d and the second player's name is %@\n", peerDisplayName, (int)[[receivedMsg playerInfo] count], [[receivedMsg playerInfo][2] playerName]]] waitUntilDone:NO];
+    }
 }
 
 @end

@@ -41,6 +41,7 @@
 		9F6C40A118F0AD27005D3FFC /* icon_app120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */; };
 		9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F7AD35118F0AC27002BBB98 /* icon_app.png */; };
 		9F981DB518FD04E600785BBC /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F981DB418FD04E600785BBC /* launchImage.png */; };
+		9FA039FF18FE78C6007183E3 /* launchImage2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FA039FE18FE78C6007183E3 /* launchImage2x.png */; };
 		E4535BCB18F9C29B000C6F09 /* TurnResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */; };
 		E4535BD118FC524C000C6F09 /* PlayerVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BD018FC524C000C6F09 /* PlayerVoteViewController.m */; };
 		E4535BD418FC56EC000C6F09 /* VoteResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BD318FC56EC000C6F09 /* VoteResultViewController.m */; };
@@ -117,6 +118,7 @@
 		9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app120x120.png; sourceTree = "<group>"; };
 		9F7AD35118F0AC27002BBB98 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
 		9F981DB418FD04E600785BBC /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage.png; sourceTree = "<group>"; };
+		9FA039FE18FE78C6007183E3 /* launchImage2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage2x.png; sourceTree = "<group>"; };
 		E4535BC918F9C29B000C6F09 /* TurnResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnResultViewController.h; sourceTree = "<group>"; };
 		E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnResultViewController.m; sourceTree = "<group>"; };
 		E4535BCF18FC524C000C6F09 /* PlayerVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerVoteViewController.h; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		3288367F18F099580064428B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9FA039FE18FE78C6007183E3 /* launchImage2x.png */,
 				9F981DB418FD04E600785BBC /* launchImage.png */,
 				32D17C6718FC695000F874C6 /* frontPage.png */,
 				9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */,
@@ -371,6 +374,7 @@
 			files = (
 				3288368918F099580064428B /* icon_witch.png in Resources */,
 				32D17C6818FC695100F874C6 /* frontPage.png in Resources */,
+				9FA039FF18FE78C6007183E3 /* launchImage2x.png in Resources */,
 				9F981DB518FD04E600785BBC /* launchImage.png in Resources */,
 				9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */,
 				3288368518F099580064428B /* 50-percent-gray.jpg in Resources */,

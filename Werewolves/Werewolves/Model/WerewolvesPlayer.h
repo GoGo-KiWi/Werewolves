@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "WerewolvesMessage.h"
+#import "WerewolvesPlayer.h"
 #import "WerewolvesUtility.h"
+#import "WerewolvesAppDelegate.h"
 
 @interface WerewolvesPlayer : NSObject
 {
@@ -26,29 +28,36 @@
 @property NSString* playerName;
 @property enum RoleType role;
 @property int playerId;
-@property int peerId;
+@property MCPeerID* peerId;
 @property int voteNominate; /* playerId dominated by this player*/
 @property NSMutableArray* playerArray;
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
+
+- (WerewolvesPlayer*) initWithCoder:(NSCoder *) decoder;
+- (void)encodeWithCoder:(NSCoder *) encoder;
 
 - (WerewolvesPlayer*) init;
-- (void) registerPlayer: (NSString*)name;
+- (void) registerPlayer:(NSString*)name;
 - (void) joinRoom;
+/*
 - (void) sendMessage: (WerewolvesMessage*) msg;
 - (WerewolvesMessage*) receiveMessage;
-- (void) setVoteNominate:(int) playerID;
-/*
-- (void) setDead;
-- (void) setAlive;
-- (BOOL) isAlve;
 */
-- (void) setPlayerName: (NSString*) name;
-//- (NSString*) getPlayerName;
-/*
-- (void) setRole: (enum RoleType) role;
-- (enum RoleType) getRole;
-*/
-- (void) setPlayerId: (int) playerId;
-//- (int) getPlayerId;
+/*Message send methods*/
+/*From moderator to player*/
+- (void) sendPeopleInfo;
+
+- (void) createVote;
+- (void) reVote;
+- (void) sendVoteResult;
+
+- (void) sendDeathResult:(int) playerId;
+- (void) sendTerminateResult:(int) wolfWin;
+
+/*From player to moderator*/
+- (void) sendVoteNominate:(int) playerId;
+
+/*Message receive method is didReceiveDataWithNotification*/
 
 /*
  TODO

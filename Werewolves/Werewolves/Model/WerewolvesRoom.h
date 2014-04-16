@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "WerewolvesPlayer.h"
-#import "WerewolvesAppDelegate.h"
 
 @class WerewolvesPlayer;
 
@@ -20,7 +19,7 @@
 @property NSMutableArray* oracleArray;
 @property NSMutableArray* witchArray;
 @property NSMutableArray* moderatorArray;
-@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
+
 
 + (WerewolvesRoom*) getInstance;
 
@@ -36,17 +35,7 @@
 - (void) resetVoteNominate;
 - (void) setVoteNominate:(WerewolvesPlayer*) player :(int) voteNominate;
 
-/*Message send methods*/
-- (void) sendPeopleInfo;
 
-- (void) createVote;
-- (void) sendVoteResult;
-
-- (void) sendDeathResult;
-- (void) sendTerminateResult;
-
-/*Message receive methods*/
-- (void) receiveMsg;
 
 /*For DEBUG*/
 /*Print all player list*/
