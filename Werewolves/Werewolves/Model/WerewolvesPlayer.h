@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "WerewolvesMessage.h"
+#import "WerewolvesPlayer.h"
 #import "WerewolvesUtility.h"
+#import "WerewolvesAppDelegate.h"
 
 @interface WerewolvesPlayer : NSObject
 {
@@ -29,6 +31,10 @@
 @property int peerId;
 @property int voteNominate; /* playerId dominated by this player*/
 @property NSMutableArray* playerArray;
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
+
+- (WerewolvesPlayer*) initWithCoder:(NSCoder *) decoder;
+- (void)encodeWithCoder:(NSCoder *) encoder;
 
 - (WerewolvesPlayer*) init;
 - (void) registerPlayer: (NSString*)name;
@@ -49,6 +55,18 @@
 */
 - (void) setPlayerId: (int) playerId;
 //- (int) getPlayerId;
+
+/*Message send methods*/
+- (void) sendPeopleInfo;
+
+- (void) createVote;
+- (void) sendVoteResult;
+
+- (void) sendDeathResult;
+- (void) sendTerminateResult;
+
+/*Message receive methods*/
+- (void) receiveMsg;
 
 /*
  TODO

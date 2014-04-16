@@ -23,15 +23,14 @@ enum MessageType {
 };
 
 @interface WerewolvesMessage : NSObject
-{
-    enum MessageType messageType;
-    NSString* messageContent;
-    /* Should we use player pointers or player ID to distinguish? Maybe ID is better */
-    int senderId;
-    int receiverId;
-    NSMutableArray* playerInfo;
-}
+@property enum MessageType messageType;
+/* Should we use player pointers or player ID to distinguish? Maybe ID is better */
+@property int senderId; // THIS PROPERTY MAY BE USELESS!!!!!
+@property int receiverId; // -1 for broadcase. THIS PROPERTY MAY BE USELESS!!!!!!!!
+@property NSMutableArray* playerInfo;
 
+- (WerewolvesMessage*) initWithCoder:(NSCoder *) decoder;
+- (void)encodeWithCoder:(NSCoder *) encoder;
 /*
  1. Message type:
     Name

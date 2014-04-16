@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WerewolvesUtility.h"
+#import "WerewolvesRoom.h"
 
 @interface FirstViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtMessage;
