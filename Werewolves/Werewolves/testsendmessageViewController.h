@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WerewolvesUtility.h"
+#import "WerewolvesAppDelegate.h"
 #import "WerewolvesRoom.h"
 
 @interface FirstViewController : UIViewController <UITextFieldDelegate>

@@ -58,6 +58,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    WerewolvesRoom *newRoom = [WerewolvesRoom getInstance];
+    WerewolvesAppDelegate *appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSArray *allPeers = appDelegate.peer.session.connectedPeers;
+    WerewolvesPlayer* newPlayer;
+    NSLog(@"The size of connectedPeers is %d", allPeers.count);
+    for (int i = 0; i < [allPeers count]; i++) {
+        NSLog(@"Inside adding actual player loop with i=%d",i);
+        newPlayer = [[WerewolvesPlayer alloc] init];
+        NSLog(@"Inside adding actual player loop with i=%d before get peerID from allPeers",i);
+        MCPeerID* peer = allPeers[i];
+        NSLog(@"Inside adding actual player loop with i=%d after get peerID from allPeers",i);
+        newPlayer.peerId = peer;
+        NSLog(@"Inside adding actual player loop with i=%d after assign peerID and before getPeerName from peerID",i);
+        newPlayer.playerName = peer.displayName;
+        [newRoom addPlayer:newPlayer];
+        NSLog(@"Inside adding actual player loop with i=%d. Over, going to jump out",i);
+    }
+    
     UITableViewCell *cell;
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];

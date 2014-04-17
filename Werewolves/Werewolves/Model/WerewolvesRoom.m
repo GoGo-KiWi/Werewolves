@@ -44,6 +44,13 @@
     return self;
 }
 
+- (void) resetArray {
+    while ([_playerArray count] > 1) {
+        [self removePlayerFromRoleArray:_playerArray[1]];
+        [_playerArray removeObjectAtIndex:1];
+    }
+}
+
 - (void) addPlayer:(WerewolvesPlayer*) player {
     [player setPlayerId:(int)[_playerArray count]];
     [_playerArray addObject:player];
