@@ -105,7 +105,7 @@
         NSLog(@"%@", [error localizedDescription]);
     }
     
-    [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I wrote:\n%@\n\n", _txtMessage.text]]];
+    [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I wrote:\n%@\n\n", myMessage.text]]];
     [_txtMessage setText:@""];
     [_txtMessage resignFirstResponder];
      
