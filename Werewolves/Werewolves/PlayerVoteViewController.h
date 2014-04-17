@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WerewolvesUtility.h"
+#import "WerewolvesRoom.h"
 
 @interface PlayerVoteViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *voteList;
+
+@property (weak, nonatomic) IBOutlet UILabel *sendResult;
+
 @property (assign, nonatomic) int votedPlayer;
 @end

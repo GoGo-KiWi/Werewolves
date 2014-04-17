@@ -24,7 +24,7 @@
     [UIView commitAnimations];
 }
 
-+ (UITableViewCell *) createCellFor: (WerewolvesPlayer *) player forVote: (BOOL) vote
++ (UITableViewCell *) createCellFor: (WerewolvesPlayer *) player forVote: (BOOL) vote forStatus: (BOOL) status
 {
     UITableViewCell *cell;
     if (vote){
@@ -34,8 +34,12 @@
     else{
         cell = [[UITableViewCell alloc]init];
     }
-    
+
     cell.textLabel.text = [NSString stringWithFormat:@"#%d %@", [player playerId], [player playerName]];
+    if (status){
+        cell.imageView.image = [UIImage imageNamed:@"icon_undefined.png"];
+    }
+    else{
     switch ([player role]) {
         case Peasant:
             cell.imageView.image = [UIImage imageNamed:@"icon_village.png"];
@@ -54,6 +58,7 @@
             break;
         default:
             break;
+    }
     }
     
     if (vote && [player alive]){

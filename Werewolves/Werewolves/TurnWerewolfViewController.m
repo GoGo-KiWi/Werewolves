@@ -64,7 +64,7 @@
     int idx = [indexPath row] + 1;
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
-    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO];
+    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:NO];
     if ([playerList[idx] role] == Wolf){
         [cell setTextColor:[UIColor grayColor]];
         [cell setUserInteractionEnabled:NO];

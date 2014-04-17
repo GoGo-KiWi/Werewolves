@@ -98,7 +98,7 @@
     }
     
     player = playerList[[indexPath row]];
-    cell = [WerewolvesUtility createCellFor:player forVote:NO];
+    cell = [WerewolvesUtility createCellFor:player forVote:NO forStatus:NO];
     return cell;
 }
  

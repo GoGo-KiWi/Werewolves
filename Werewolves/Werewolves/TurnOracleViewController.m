@@ -62,7 +62,7 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     
-    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO];
+    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:NO];
     //cell.textLabel.tag = [(NSInteger) [indexPath row]];
     return cell;
 }

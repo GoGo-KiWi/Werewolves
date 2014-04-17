@@ -1,20 +1,20 @@
 //
-//  VoteResultViewController.m
+//  StatusViewController.m
 //  Werewolves
 //
-//  Created by Fiona Yang on 4/14/14.
+//  Created by Fiona Yang on 4/16/14.
 //  Copyright (c) 2014 GoGo-KiWi. All rights reserved.
 //
 
-#import "VoteResultViewController.h"
-#import "WerewolvesUtility.h"
+#import "StatusViewController.h"
 #import "WerewolvesRoom.h"
+#import "WerewolvesUtility.h"
 
-@interface VoteResultViewController ()
+@interface StatusViewController ()
 
 @end
 
-@implementation VoteResultViewController
+@implementation StatusViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,11 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //[WerewolvesUtility createPlayerList: 8];
+
     // Do any additional setup after loading the view.
-    WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    NSMutableArray *playerList = [room playerArray];
-    int resultID = [room getVoteResult];
-    self.resultLabel.text = [NSString stringWithFormat:@"#%d %@ has most votes!", resultID, [playerList[resultID] playerName]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,6 +38,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -57,7 +56,7 @@
     int idx = [indexPath row] + 1;
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
-    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:YES forStatus:NO];
+    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:YES];
     return cell;
 }
 
@@ -68,7 +67,6 @@
     [playerList[resultID] setAlive:NO];
     [room resetVoteNominate];
 }
-
 /*
 #pragma mark - Navigation
 

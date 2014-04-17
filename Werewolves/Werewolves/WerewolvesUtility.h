@@ -22,8 +22,7 @@ enum RoleType
 };
 
 + (void) animateTextField: (UITextField*) textField forView: (UIView *) view up: (BOOL) up;
-//+ (UITableViewCell *) createCellFor: (enum RoleType) role WithName: (NSString *) name;
-+ (UITableViewCell *) createCellFor: (WerewolvesPlayer *) player forVote: (BOOL) vote;
++ (UITableViewCell *) createCellFor: (WerewolvesPlayer *) player forVote: (BOOL) vote forStatus: (BOOL) status;
 + (void) createPlayerList: (int) number;
 
 @end

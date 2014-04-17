@@ -64,7 +64,7 @@
     //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"A" message:[NSString stringWithFormat:@"%d", [playerList count]] delegate:self cancelButtonTitle:@"Delete" otherButtonTitles:@"Cancel", nil];
     //[alert show];
     int idx = [indexPath row] + 1;
-    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO];
+    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:NO];
     return cell;
 }
 

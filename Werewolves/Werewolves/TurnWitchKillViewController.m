@@ -54,7 +54,7 @@
     int idx = [indexPath row] + 1;
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
-    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO];
+    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:NO];
     if ([playerList[idx] role] == Witch){
         [cell setTextColor:[UIColor grayColor]];
         [cell setUserInteractionEnabled:NO];
@@ -69,7 +69,7 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     self.killedPlayer2 = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    [playerList[[indexPath row]] setAlive:NO];
+    [playerList[[indexPath row] + 1] setAlive:NO];
 
 }
 
