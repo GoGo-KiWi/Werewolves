@@ -60,6 +60,7 @@
         if ([segue.destinationViewController isMemberOfClass:[PlayerListViewController class]]) {
             PlayerListViewController *controller = (PlayerListViewController *)segue.destinationViewController;
             controller.roomNameText = [NSString stringWithFormat: @"Room %@", self.roomName.text];
+            controller.navigationItem.hidesBackButton = YES;
             [newRoom printPlayers];
         }
     }    

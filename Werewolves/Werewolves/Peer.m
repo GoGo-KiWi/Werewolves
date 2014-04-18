@@ -21,10 +21,12 @@
 #pragma mark - Public method implementation
 
 -(void)setupPeerAndSessionWithDisplayName:(NSString *)displayName{
-    _peerID = [[MCPeerID alloc] initWithDisplayName:displayName];
-    
-    _session = [[MCSession alloc] initWithPeer:_peerID];
-    _session.delegate = self;
+    if (_session == nil) {
+        _peerID = [[MCPeerID alloc] initWithDisplayName:displayName];
+        
+        _session = [[MCSession alloc] initWithPeer:_peerID];
+        _session.delegate = self;
+    }
 }
 
 
