@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WerewolvesAppDelegate.h"
+#import "WerewolvesUtility.h"
+#import "WerewolvesRoom.h"
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
+
 
 @interface PlayerViewController : UIViewController
-
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 @end

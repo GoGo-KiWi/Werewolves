@@ -30,6 +30,11 @@
     [super viewDidLoad];
     NSLog(@"viewDidLoad");
     // Do any additional setup after loading the view.
+    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +44,7 @@
 }
 
 - (void) didReceiveDataWithNotification:(NSNotification *)notification{
+    NSLog(@"Entered the didReceiveDataWithNotification function!");
     WerewolvesPlayerRoot *myself = [WerewolvesPlayerRoot getInstance];
     [[myself myPlayerInstance] receiveData:notification];
     NSString * roleMessage;
