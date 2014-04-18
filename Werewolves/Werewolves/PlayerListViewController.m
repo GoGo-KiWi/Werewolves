@@ -73,7 +73,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    return [[room playerArray] count];
+    return [[room playerArray] count] - 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
