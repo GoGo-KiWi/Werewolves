@@ -39,7 +39,12 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
-    self.resultLabel.text = [NSString stringWithFormat:@"#%d %@ has most votes!", resultID, [playerList[resultID] playerName]];
+    if (resultID == -1){
+        self.resultLabel.text = @"It's a tie! Please re-vote!";
+    }
+    else{
+        self.resultLabel.text = [NSString stringWithFormat:@"#%d %@ has most votes!", resultID, [playerList[resultID] playerName]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
