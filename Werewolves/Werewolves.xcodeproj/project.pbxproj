@@ -43,6 +43,7 @@
 		9F981DB518FD04E600785BBC /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F981DB418FD04E600785BBC /* launchImage.png */; };
 		9FA039FF18FE78C6007183E3 /* launchImage2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FA039FE18FE78C6007183E3 /* launchImage2x.png */; };
 		E43A5FD218FF5F4000A639A5 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43A5FD118FF5F4000A639A5 /* StatusViewController.m */; };
+		E43A5FD51901A93000A639A5 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43A5FD41901A93000A639A5 /* PlayerViewController.m */; };
 		E4535BCB18F9C29B000C6F09 /* TurnResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */; };
 		E4535BD118FC524C000C6F09 /* PlayerVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BD018FC524C000C6F09 /* PlayerVoteViewController.m */; };
 		E4535BD418FC56EC000C6F09 /* VoteResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4535BD318FC56EC000C6F09 /* VoteResultViewController.m */; };
@@ -122,6 +123,8 @@
 		9FA039FE18FE78C6007183E3 /* launchImage2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage2x.png; sourceTree = "<group>"; };
 		E43A5FD018FF5F4000A639A5 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
 		E43A5FD118FF5F4000A639A5 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
+		E43A5FD31901A93000A639A5 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		E43A5FD41901A93000A639A5 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		E4535BC918F9C29B000C6F09 /* TurnResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnResultViewController.h; sourceTree = "<group>"; };
 		E4535BCA18F9C29B000C6F09 /* TurnResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnResultViewController.m; sourceTree = "<group>"; };
 		E4535BCF18FC524C000C6F09 /* PlayerVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerVoteViewController.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 		32A55E3618EB5FC900649610 /* Werewolves */ = {
 			isa = PBXGroup;
 			children = (
+				E43A5FD31901A93000A639A5 /* PlayerViewController.h */,
+				E43A5FD41901A93000A639A5 /* PlayerViewController.m */,
 				3859306F18F7270000447089 /* testsendmessageViewController.h */,
 				3859307018F7270000447089 /* testsendmessageViewController.m */,
 				32A55E3F18EB5FC900649610 /* WerewolvesAppDelegate.h */,
@@ -423,6 +428,7 @@
 				32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */,
 				32A55E4A18EB5FC900649610 /* WerewolvesViewController.m in Sources */,
 				E4535BD418FC56EC000C6F09 /* VoteResultViewController.m in Sources */,
+				E43A5FD51901A93000A639A5 /* PlayerViewController.m in Sources */,
 				3259F14018F22EC200982752 /* WerewolvesUtility.m in Sources */,
 				32A55E3D18EB5FC900649610 /* main.m in Sources */,
 				32A55E7E18EB668D00649610 /* WerewolvesMessage.m in Sources */,
