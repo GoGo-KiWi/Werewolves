@@ -264,6 +264,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="createPlayerObject:" destination="uFW-W4-e2A" eventType="touchUpInside" id="JAW-D2-N7N"/>
                                     <segue destination="MhZ-zv-0yj" kind="push" identifier="ShowRoleSegue" id="qsz-5Z-GE1"/>
                                 </connections>
                             </button>
@@ -1370,7 +1371,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mmU-aD-GOA"/>
         <segue reference="ojg-Qk-98Z"/>
+        <segue reference="ssf-T3-JmC"/>
     </inferredMetricsTieBreakers>
 </document>

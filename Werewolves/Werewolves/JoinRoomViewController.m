@@ -8,7 +8,7 @@
 
 #import "JoinRoomViewController.h"
 #import "WerewolvesAppDelegate.h"
-#import "WerewolvesPlayer.h"
+#import "WerewolvesPlayerRoot.h"
 #import "PlayerListViewController.h"
 
 @interface JoinRoomViewController ()
@@ -165,6 +165,9 @@
     }
 }
 
+- (IBAction)createPlayerObject:(id)sender {
+    
+}
 
 /*
 #pragma mark - Navigation
