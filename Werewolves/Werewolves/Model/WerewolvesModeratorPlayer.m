@@ -7,7 +7,6 @@
 //
 
 #import "WerewolvesModeratorPlayer.h"
-#import "WerewolvesPlayer.h"
 @implementation WerewolvesModeratorPlayer
 
 

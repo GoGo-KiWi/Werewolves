@@ -37,7 +37,7 @@
 		3859307118F7270000447089 /* testsendmessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3859307018F7270000447089 /* testsendmessageViewController.m */; };
 		389BCED118F5F4B70099B87E /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444918F0A6960067BEA2 /* Peer.m */; };
 		389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444B18F0A6960067BEA2 /* PeerHelper.m */; };
-		38FB59841901A0A500F1D85B /* WerewolvesModeratorPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FB59831901A0A500F1D85B /* WerewolvesModeratorPlayer.m */; };
+		38FB59871901AD0300F1D85B /* WerewolvesModeratorPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FB59861901AD0300F1D85B /* WerewolvesModeratorPlayer.m */; };
 		9F25579B18FCB25E0064A705 /* icon_undefined.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F25579A18FCB25E0064A705 /* icon_undefined.png */; };
 		9F6C40A118F0AD27005D3FFC /* icon_app120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */; };
 		9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F7AD35118F0AC27002BBB98 /* icon_app.png */; };
@@ -116,8 +116,8 @@
 		388D444918F0A6960067BEA2 /* Peer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peer.m; sourceTree = "<group>"; };
 		388D444A18F0A6960067BEA2 /* PeerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerHelper.h; sourceTree = "<group>"; };
 		388D444B18F0A6960067BEA2 /* PeerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerHelper.m; sourceTree = "<group>"; };
-		38FB59821901A0A500F1D85B /* WerewolvesModeratorPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WerewolvesModeratorPlayer.h; sourceTree = SOURCE_ROOT; };
-		38FB59831901A0A500F1D85B /* WerewolvesModeratorPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WerewolvesModeratorPlayer.m; sourceTree = SOURCE_ROOT; };
+		38FB59851901AD0300F1D85B /* WerewolvesModeratorPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WerewolvesModeratorPlayer.h; path = Model/WerewolvesModeratorPlayer.h; sourceTree = "<group>"; };
+		38FB59861901AD0300F1D85B /* WerewolvesModeratorPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WerewolvesModeratorPlayer.m; path = Model/WerewolvesModeratorPlayer.m; sourceTree = "<group>"; };
 		9F25579A18FCB25E0064A705 /* icon_undefined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_undefined.png; sourceTree = "<group>"; };
 		9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app120x120.png; sourceTree = "<group>"; };
 		9F7AD35118F0AC27002BBB98 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
@@ -220,8 +220,8 @@
 		32A55E3618EB5FC900649610 /* Werewolves */ = {
 			isa = PBXGroup;
 			children = (
-				38FB59831901A0A500F1D85B /* WerewolvesModeratorPlayer.m */,
-				38FB59821901A0A500F1D85B /* WerewolvesModeratorPlayer.h */,
+				38FB59851901AD0300F1D85B /* WerewolvesModeratorPlayer.h */,
+				38FB59861901AD0300F1D85B /* WerewolvesModeratorPlayer.m */,
 				3859306F18F7270000447089 /* testsendmessageViewController.h */,
 				3859307018F7270000447089 /* testsendmessageViewController.m */,
 				32A55E3F18EB5FC900649610 /* WerewolvesAppDelegate.h */,
@@ -424,7 +424,7 @@
 				E4D8CD3618F3A85600C82C81 /* TurnWerewolfViewController.m in Sources */,
 				E4D8CCDA18F2297B00C82C81 /* PlayerListCell.m in Sources */,
 				32C11E1218F3E0F700A59141 /* CreateRoomViewController.m in Sources */,
-				38FB59841901A0A500F1D85B /* WerewolvesModeratorPlayer.m in Sources */,
+				38FB59871901AD0300F1D85B /* WerewolvesModeratorPlayer.m in Sources */,
 				E4535BD118FC524C000C6F09 /* PlayerVoteViewController.m in Sources */,
 				32A55E8118EB681D00649610 /* WerewolvesRoom.m in Sources */,
 				32A55E4A18EB5FC900649610 /* WerewolvesViewController.m in Sources */,
