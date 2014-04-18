@@ -222,7 +222,7 @@
     }
 }
 
-- (void) didReceiveDataWithNotification:(NSNotification *)notification{
+- (void) receiveData:(NSNotification *)notification{
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
     

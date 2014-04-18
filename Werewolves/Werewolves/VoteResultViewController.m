@@ -75,7 +75,7 @@
 - (void) didReceiveDataWithNotification:(NSNotification *)notification{
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
-    [playerList[0] didReceiveDataWithNotification:notification];
+    [playerList[0] receiveData:notification];
     [self.voteResult reloadData];
 }
 /*

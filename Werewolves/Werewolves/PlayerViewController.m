@@ -7,7 +7,7 @@
 //
 
 #import "PlayerViewController.h"
-#import "WerewolvesModeratorPlayer.h"
+#import "WerewolvesPlayerRoot.h"
 #import "WerewolvesRoom.h"
 
 @interface PlayerViewController ()
@@ -38,10 +38,10 @@
 }
 
 - (void) didReceiveDataWithNotification:(NSNotification *)notification{
-    WerewolvesModeratorPlayer *myself = [WerewolvesModeratorPlayer getInstance];
-    [myself didReceiveDataWithNotification:notification];
+    WerewolvesPlayerRoot *myself = [WerewolvesPlayerRoot getInstance];
+    [[myself myPlayerInstance] receiveData:notification];
     NSString * roleMessage;
-    switch ([myself role]){
+    switch ([[myself myPlayerInstance] role]){
         case Wolf: roleMessage = @"WOLF"; break;
         case Peasant: roleMessage = @"PEASANT"; break;
         case Witch: roleMessage = @"WITCH"; break;

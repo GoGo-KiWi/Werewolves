@@ -59,6 +59,7 @@
 
 /*Text Chat*/
 - (void) sendTextChat:(NSString*) msg;
+- (void) receiveData:(NSNotification *)notification;
 
 /*Message receive method is didReceiveDataWithNotification*/
 

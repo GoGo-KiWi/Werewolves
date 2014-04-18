@@ -23,9 +23,11 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         WerewolvesPlayer *curPlayer = [[WerewolvesPlayer alloc]init];
+        WerewolvesPlayerRoot *playerRoot = [WerewolvesPlayerRoot getInstance];
         [curPlayer registerPlayer:self.userName];
+        playerRoot.myPlayerInstance = curPlayer;
+        // Custom initialization
     }
     return self;
 }
