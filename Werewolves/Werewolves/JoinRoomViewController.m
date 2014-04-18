@@ -140,7 +140,9 @@
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
     
     if ([receivedMsg messageType] == StartGame) {
-        [self performSegueWithIdentifier:@"ShowRoleSegue" sender:self.startGame];
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self performSegueWithIdentifier: @"ShowRoleSegue" sender: self];
+        });
     }
 }
 
