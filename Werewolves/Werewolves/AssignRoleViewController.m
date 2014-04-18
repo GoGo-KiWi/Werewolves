@@ -55,16 +55,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
     switch (section) {
         case 0:
-            return 3;
+            return [[room peasantArray] count];
             break;
         case 1:
-            return 3;
+            return [[room wolfArray] count];
         case 2:
-            return 1;
+            return [[room oracleArray] count];
         case 3:
-            return 1;
+            return [[room witchArray] count];
         default:
             break;
     }
