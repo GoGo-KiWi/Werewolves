@@ -952,13 +952,6 @@
                                     <action selector="resetSelection:" destination="6bT-Qb-Gdo" eventType="touchUpInside" id="yvb-Ox-4Dl"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon_witch.png" translatesAutoresizingMaskIntoConstraints="NO" id="C9W-8o-aos">
-                                <rect key="frame" x="-32" y="78" width="201" height="109"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="xOh-WR-lwC"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0iQ-ki-cJ3">
                                 <rect key="frame" x="-5" y="216" width="325" height="302"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -976,6 +969,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_witch.png" translatesAutoresizingMaskIntoConstraints="NO" id="UZg-Ft-lNA">
+                                <rect key="frame" x="-31" y="78" width="198" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -983,13 +980,10 @@
                             <constraint firstItem="sg2-f6-hJP" firstAttribute="leading" secondItem="dlg-7M-GOG" secondAttribute="leading" id="9yL-qa-y2R"/>
                             <constraint firstItem="6oZ-jD-lEp" firstAttribute="bottom" secondItem="dlg-7M-GOG" secondAttribute="bottom" id="BFE-I6-CmJ"/>
                             <constraint firstAttribute="trailing" secondItem="VQO-LW-7FT" secondAttribute="trailing" constant="20" symbolic="YES" id="Cq2-gL-nnW"/>
-                            <constraint firstItem="0iQ-ki-cJ3" firstAttribute="top" secondItem="C9W-8o-aos" secondAttribute="bottom" constant="29" id="DAb-PN-VFt"/>
-                            <constraint firstItem="sg2-f6-hJP" firstAttribute="top" secondItem="C9W-8o-aos" secondAttribute="bottom" constant="8" symbolic="YES" id="GJ5-Ez-P3L"/>
                             <constraint firstItem="6oZ-jD-lEp" firstAttribute="top" secondItem="0iQ-ki-cJ3" secondAttribute="bottom" id="LIC-hl-DyO"/>
                             <constraint firstItem="6oZ-jD-lEp" firstAttribute="leading" secondItem="dlg-7M-GOG" secondAttribute="trailing" constant="2" id="LdL-fd-pHO"/>
                             <constraint firstItem="6oZ-jD-lEp" firstAttribute="trailing" secondItem="0iQ-ki-cJ3" secondAttribute="trailing" id="Wdl-vK-ZEd"/>
                             <constraint firstItem="VQO-LW-7FT" firstAttribute="top" secondItem="HuQ-kZ-2oc" secondAttribute="bottom" constant="17" id="ZLq-vQ-Qpe"/>
-                            <constraint firstItem="C9W-8o-aos" firstAttribute="leading" secondItem="kcT-S4-Np5" secondAttribute="leading" constant="-32" id="bYE-MR-T8p"/>
                             <constraint firstAttribute="trailing" secondItem="6oZ-jD-lEp" secondAttribute="trailing" id="i2W-Gd-AyD"/>
                             <constraint firstItem="VQO-LW-7FT" firstAttribute="leading" secondItem="HuQ-kZ-2oc" secondAttribute="leading" id="le6-0g-nOU"/>
                             <constraint firstItem="0iQ-ki-cJ3" firstAttribute="leading" secondItem="kcT-S4-Np5" secondAttribute="leading" constant="-5" id="pHK-gy-O9m"/>
