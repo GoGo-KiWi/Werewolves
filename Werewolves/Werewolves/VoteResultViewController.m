@@ -79,7 +79,9 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
-    [playerList[resultID] setAlive:NO];
+    if (resultID != -1){
+        [playerList[resultID] setAlive:NO];
+    }
     [room resetVoteNominate];
 }
 
