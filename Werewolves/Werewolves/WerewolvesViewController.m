@@ -46,11 +46,15 @@
         if ([segue.destinationViewController isMemberOfClass:[CreateRoomViewController class]]) {
             CreateRoomViewController *controller = (CreateRoomViewController *)segue.destinationViewController;
             controller.userName = self.userName.text;
+            controller.navigationItem.hidesBackButton = YES;
+            [_appDelegate.peer advertiseSelf: true];
         }
     } else if([segue.identifier isEqualToString:@"JoinRoomSegue"]){
         if ([segue.destinationViewController isMemberOfClass:[JoinRoomViewController class]]) {
             JoinRoomViewController *controller = (JoinRoomViewController *)segue.destinationViewController;
             controller.userName = self.userName.text;
+            controller.navigationItem.hidesBackButton = YES;
+            [_appDelegate.peer advertiseSelf: false];
         }
     }
 }
@@ -76,7 +80,7 @@
 
     [_appDelegate.peer setupPeerAndSessionWithDisplayName:userName.text];
     [_appDelegate.peer setupMCBrowser];
-    [_appDelegate.peer advertiseSelf: true];
+    //[_appDelegate.peer advertiseSelf: true];
 
     return YES;
 }
