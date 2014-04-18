@@ -43,6 +43,7 @@
     _playerId = -1;
     _voteNominate = -1;
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+
     return  self;
 }
 
@@ -51,7 +52,8 @@
 }
 
 - (void) sendPeopleInfo {
-    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
+    NSArray *allPeers = self.appDelegate.peer.session.connectedPeers;
+    NSLog(@"enter send people info with connectedPeers size=%d",allPeers.count);
     NSError *error;
     
     WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
