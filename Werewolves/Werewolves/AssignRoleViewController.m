@@ -160,6 +160,7 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     [playerList[0] sendPeopleInfo];
+    NSLog(@"SEND");
 }
 
 @end
