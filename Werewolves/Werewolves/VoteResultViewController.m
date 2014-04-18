@@ -63,6 +63,7 @@
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     int idx = [indexPath row] + 1;
+    NSLog(@"Cell: %d", [indexPath row]);
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:YES forStatus:NO];
