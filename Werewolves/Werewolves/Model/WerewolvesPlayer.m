@@ -195,7 +195,7 @@
                                 toPeers:allPeers
                                withMode:MCSessionSendDataReliable
                                   error:&error];
-    
+    NSLog(@"VOTE SEND");
     if (error) {
         NSLog(@"%@", [error localizedDescription]);
     }

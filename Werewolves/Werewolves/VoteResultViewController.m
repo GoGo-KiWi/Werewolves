@@ -83,7 +83,7 @@
                                           cancelButtonTitle:@"Got it!"
                                           otherButtonTitles:nil];
     
-    [alert show];
+    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
     [self.voteResult reloadData];
 }
 /*
