@@ -10,6 +10,7 @@
 #import "WerewolvesAppDelegate.h"
 #import "WerewolvesUtility.h"
 #import "WerewolvesRoom.h"
+
 @interface PlayerVoteViewController ()
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 
@@ -73,29 +74,7 @@
 }
 
 - (IBAction)sendVote:(id)sender {
-    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
-    NSError *error;
     
-    WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
-    myMessage.messageType = SendVoteNominate;
-    myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
-    
-    /*Code for data transferring test*/
-    if ([[[WerewolvesRoom getInstance] playerArray] count] > 2) {
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
-        
-        [_appDelegate.peer.session sendData:data
-                                    toPeers:allPeers
-                                   withMode:MCSessionSendDataReliable
-                                      error:&error];
-        
-        if (error) {
-            NSLog(@"%@", [error localizedDescription]);
-        }
-        
-       /* [_txtMessage setText:@""];
-        [_txtMessage resignFirstResponder];*/
-    }
 
 }
 

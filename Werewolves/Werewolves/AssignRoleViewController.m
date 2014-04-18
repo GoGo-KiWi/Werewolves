@@ -155,4 +155,10 @@
     }
 }
 
+- (IBAction)sendAssign:(id)sender {
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
+    [playerList[0] sendPeopleInfo];
+}
+
 @end

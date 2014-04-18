@@ -12,6 +12,8 @@
 
 @interface VoteResultViewController ()
 
+@property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
+
 @end
 
 @implementation VoteResultViewController
@@ -70,6 +72,12 @@
     [room resetVoteNominate];
 }
 
+- (void) didReceiveDataWithNotification:(NSNotification *)notification{
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
+    [playerList[0] didReceiveDataWithNotification:notification];
+    [self.voteResult reloadData];
+}
 /*
 #pragma mark - Navigation
 
