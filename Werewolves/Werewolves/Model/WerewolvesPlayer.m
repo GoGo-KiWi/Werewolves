@@ -231,15 +231,16 @@
         case SendPlayerInfo:
             if (_role != Moderator) {
                 // make sure moderator's information will not be changed by other player
+                _playerArray = [receivedMsg playerInfo];
                 for (WerewolvesPlayer* playerPtr in _playerArray) {
                     if ([playerPtr.peerId isEqual:_appDelegate.peer.session.myPeerID]) {
                         _alive = playerPtr.alive;
                         _playerName = playerPtr.playerName;
                         _role = playerPtr.role;
+                        NSLog([NSString stringWithFormat:@"%d", _role]);
                         _playerId = playerPtr.playerId;
                         _peerId = playerPtr.peerId;
                         _voteNominate = playerPtr.voteNominate;
-                        _playerArray = [receivedMsg playerInfo];
                     }
                 }
             }

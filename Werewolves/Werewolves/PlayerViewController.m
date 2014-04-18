@@ -48,22 +48,27 @@
     WerewolvesPlayerRoot *myself = [WerewolvesPlayerRoot getInstance];
     [[myself myPlayerInstance] receiveData:notification];
     NSString * roleMessage;
+    NSLog([NSString stringWithFormat:@"%d", [[myself myPlayerInstance] role]]);
     switch ([[myself myPlayerInstance] role]){
-        case Wolf: roleMessage = @"WOLF"; break;
-        case Peasant: roleMessage = @"PEASANT"; break;
-        case Witch: roleMessage = @"WITCH"; break;
-        case Oracle: roleMessage = @"ORACLE"; break;
-        default: roleMessage = @"ERROR"; break;
+        case Wolf: roleMessage = @"Your role is: WOLF!"; break;
+        case Peasant: roleMessage = @"Your role is: PEASANT!"; break;
+        case Witch: roleMessage = @"Your role is: WITCH!"; break;
+        case Oracle: roleMessage = @"Your role is: ORACLE!"; break;
+        default: roleMessage = @"Your role is: ERROR!";
     }
     
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
-                                                      message:[NSString stringWithFormat: @"Your role is: %@!", roleMessage]
+    NSString *message = [[NSString alloc] initWithFormat:
+                         @"You selected %@",roleMessage];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
+                                                      message:message
                                                      delegate:nil
                                             cancelButtonTitle:@"Got it!"
                                             otherButtonTitles:nil];
     
-    [message show];
-    
+    [alert show];
+    NSLog(@"Finish the didReceiveDataWithNotification function!");
+
 }
 /*
 #pragma mark - Navigation
