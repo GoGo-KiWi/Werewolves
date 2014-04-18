@@ -24,10 +24,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        WerewolvesPlayer *curPlayer = [[WerewolvesPlayer alloc]init];
-        WerewolvesPlayerRoot *playerRoot = [WerewolvesPlayerRoot getInstance];
-        [curPlayer registerPlayer:self.userName];
-        playerRoot.myPlayerInstance = curPlayer;
         // Custom initialization
     }
     return self;
@@ -37,7 +33,10 @@
 {
     [super viewDidLoad];
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+    WerewolvesPlayer *curPlayer = [[WerewolvesPlayer alloc]init];
+    WerewolvesPlayerRoot *playerRoot = [WerewolvesPlayerRoot getInstance];
+    [curPlayer registerPlayer:self.userName];
+    playerRoot.myPlayerInstance = curPlayer;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(peerDidChangeStateWithNotification:)
                                                  name:@"MCDidChangeStateNotification"
