@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"Entered viewDidLoad!");
+    NSLog(@"viewDidLoad");
     // Do any additional setup after loading the view.
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[NSNotificationCenter defaultCenter] addObserver:self

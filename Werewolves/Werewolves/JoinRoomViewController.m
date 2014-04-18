@@ -10,6 +10,7 @@
 #import "WerewolvesAppDelegate.h"
 #import "WerewolvesPlayerRoot.h"
 #import "PlayerListViewController.h"
+#import "PlayerViewController.h"
 
 @interface JoinRoomViewController ()
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
@@ -103,11 +104,9 @@
     return cell;
 }
 
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60.0;
 }
-
 
 #pragma mark - Private method implementation
 
@@ -142,13 +141,13 @@
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
     
     if ([receivedMsg messageType] == StartGame) {
-        
+        [self performSegueWithIdentifier:@"ShowRoleSegue" sender:self.startGame];
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"PlayerListSegue"]){
+    if ([segue.identifier isEqualToString:@"PlayerListSegue"]){
         if ([segue.destinationViewController isMemberOfClass:[PlayerListViewController class]]) {
             NSArray *allClients = self.appDelegate.peer.session.connectedPeers;
             NSError *error;
@@ -163,6 +162,10 @@
                 NSLog(@"%@", [error localizedDescription]);
             }
             NSLog(@"SEND");
+        }
+    } else if ([segue.identifier isEqualToString:@"ShowRoleSegue"]) {
+        if ([segue.destinationViewController isMemberOfClass:[PlayerViewController class]]) {
+            PlayerViewController *controller = (PlayerViewController *)segue.destinationViewController;
         }
     }
 }
