@@ -227,19 +227,22 @@
 - (void) receiveData:(NSNotification *)notification{
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
-    
+    NSLog(@"Received messageType is %d",[receivedMsg messageType]);
+    NSLog(@"My peerID is %d",_appDelegate.peer.session.myPeerID);
     switch ([receivedMsg messageType]) {
         /* On the player's end */
         case SendPlayerInfo:
-            if (_role != Moderator) {
+            if (true) {
                 // make sure moderator's information will not be changed by other player
                 _playerArray = [receivedMsg playerInfo];
+                NSLog([NSString stringWithFormat:@"playerArray: %d", [_playerArray count]]);
                 for (WerewolvesPlayer* playerPtr in _playerArray) {
+                    NSLog(@"Enter for loop with peerID=%d",playerPtr.peerId);
                     if ([playerPtr.peerId isEqual:_appDelegate.peer.session.myPeerID]) {
                         _alive = playerPtr.alive;
                         _playerName = playerPtr.playerName;
                         _role = playerPtr.role;
-                        NSLog([NSString stringWithFormat:@"%d", _role]);
+                        NSLog(@"Role assigned!");
                         _playerId = playerPtr.playerId;
                         _peerId = playerPtr.peerId;
                         _voteNominate = playerPtr.voteNominate;

@@ -11,7 +11,6 @@
 #import "WerewolvesRoom.h"
 
 @interface PlayerViewController ()
-
 @end
 
 @implementation PlayerViewController
@@ -28,9 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"viewDidLoad");
-    // Do any additional setup after loading the view.
+    WerewolvesPlayerRoot * player = [WerewolvesPlayerRoot getInstance];
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [player myPlayerInstance].peerId = _appDelegate.peer.session.myPeerID;
+    NSLog(@"Update peer ID: %d", _appDelegate.peer.session.myPeerID);
+    // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
