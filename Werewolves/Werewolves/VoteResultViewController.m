@@ -31,6 +31,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
+    
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
@@ -58,6 +63,7 @@
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     int idx = [indexPath row] + 1;
+    NSLog(@"Cell: %d", [indexPath row]);
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:YES forStatus:NO];
@@ -83,7 +89,7 @@
                                           cancelButtonTitle:@"Got it!"
                                           otherButtonTitles:nil];
     
-    [alert show];
+    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
     [self.voteResult reloadData];
 }
 /*

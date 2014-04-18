@@ -50,15 +50,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    WerewolvesRoom * room = [WerewolvesRoom getInstance];
+    return [[room playerArray] count] - 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     int idx = [indexPath row] + 1;
-    WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    NSMutableArray *playerList = [room playerArray];
+    WerewolvesPlayerRoot *player = [WerewolvesPlayerRoot getInstance];
+    NSMutableArray * playerList = [[player myPlayerInstance] playerArray];
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:YES];
     if ([playerList[idx] role] == Wolf){
         [cell setTextColor:[UIColor grayColor]];
@@ -70,14 +71,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
-    self.votedPlayer = [indexPath row];
+    self.votedPlayer = [indexPath row] + 1;
     
 }
 
 - (IBAction)sendVote:(id)sender {
     WerewolvesPlayerRoot * player = [WerewolvesPlayerRoot getInstance];
     [[player myPlayerInstance] sendVoteNominate:self.votedPlayer];
-    NSLog(@"SEND");
+    //NSLog(@"SEND");
 }
 
 /*

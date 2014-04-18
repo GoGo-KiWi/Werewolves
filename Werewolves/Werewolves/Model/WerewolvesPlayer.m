@@ -195,7 +195,7 @@
                                 toPeers:allPeers
                                withMode:MCSessionSendDataReliable
                                   error:&error];
-    
+    NSLog(@"VOTE SEND");
     if (error) {
         NSLog(@"%@", [error localizedDescription]);
     }
@@ -278,13 +278,16 @@
                 /*tie*/
             }
         case SendVoteNominate:
+            NSLog(@"Entered sendVoteNominate with nominate=%d and senderId=%d",receivedMsg.receiverId, receivedMsg.senderId);
             if (_role == Moderator) {
+                NSLog(@"Entered if in sendVoteNominate");
                 // Make sure only the moderator uses this information
                 for (WerewolvesPlayer* playerPtr in [[WerewolvesRoom getInstance] playerArray]) {
+                    NSLog(@"In For loop, playerPtr.playerId=%d",playerPtr.playerId);
                     if (playerPtr.playerId == receivedMsg.senderId) {
                         [playerPtr setVoteNominate:receivedMsg.receiverId];
                     }
-                    break;
+                    //break;
                 }
                 /*May call other functions to update UI views*/
             }
