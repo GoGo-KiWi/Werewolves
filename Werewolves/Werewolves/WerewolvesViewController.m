@@ -9,7 +9,6 @@
 #import "WerewolvesViewController.h"
 #import "WerewolvesUtility.h"
 #import "WerewolvesAppDelegate.h"
-#import "CreateRoomViewController.h"
 #import "JoinRoomViewController.h"
 
 @interface WerewolvesViewController ()
@@ -43,8 +42,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"CreateRoomSegue"]){
-        if ([segue.destinationViewController isMemberOfClass:[CreateRoomViewController class]]) {
-            CreateRoomViewController *controller = (CreateRoomViewController *)segue.destinationViewController;
+        if ([segue.destinationViewController isMemberOfClass:[JoinRoomViewController class]]) {
+            WerewolvesRoom *newRoom = [WerewolvesRoom getInstance];
+            [WerewolvesUtility createPlayerList: 8];
+            JoinRoomViewController *controller = (JoinRoomViewController *)segue.destinationViewController;
             controller.userName = self.userName.text;
             controller.navigationItem.hidesBackButton = YES;
             [_appDelegate.peer advertiseSelf: true];
