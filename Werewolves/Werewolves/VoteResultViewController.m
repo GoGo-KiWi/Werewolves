@@ -76,6 +76,14 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     [playerList[0] receiveData:notification];
+    NSString * message = [NSString stringWithFormat:@"Vote received!"];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Got it!"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
     [self.voteResult reloadData];
 }
 /*

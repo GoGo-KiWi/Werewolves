@@ -9,6 +9,7 @@
 #import "PlayerVoteViewController.h"
 #import "WerewolvesAppDelegate.h"
 #import "WerewolvesUtility.h"
+#import "WerewolvesPlayerRoot.h"
 #import "WerewolvesRoom.h"
 
 @interface PlayerVoteViewController ()
@@ -74,8 +75,9 @@
 }
 
 - (IBAction)sendVote:(id)sender {
-    
-
+    WerewolvesPlayerRoot * player = [WerewolvesPlayerRoot getInstance];
+    [[player myPlayerInstance] sendVoteNominate:self.votedPlayer];
+    NSLog(@"SEND");
 }
 
 /*
