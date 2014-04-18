@@ -7,7 +7,6 @@
 //
 
 #import "testsendmessageViewController.h"
-#import "WerewolvesAppDelegate.h"
 
 @interface FirstViewController ()
 

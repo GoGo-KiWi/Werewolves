@@ -259,6 +259,7 @@
                 /*show message that YOU ARE KILLED*/
                 _alive = NO;
             }
+            _playerArray = receivedMsg.playerInfo;
             break;
         case SendTerminateResult:
             if (receivedMsg.receiverId == 1) {

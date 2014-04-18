@@ -54,11 +54,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"DeviceListSegue"]){
+        WerewolvesRoom *newRoom = [WerewolvesRoom getInstance];
+        
         [WerewolvesUtility createPlayerList: 8];
         if ([segue.destinationViewController isMemberOfClass:[PlayerListViewController class]]) {
             PlayerListViewController *controller = (PlayerListViewController *)segue.destinationViewController;
             controller.roomNameText = [NSString stringWithFormat: @"Room %@", self.roomName.text];
-            WerewolvesRoom *newRoom = [WerewolvesRoom getInstance];
             [newRoom printPlayers];
         }
     }    
