@@ -39,7 +39,6 @@
 		389BCED218F5F4BD0099B87E /* PeerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D444B18F0A6960067BEA2 /* PeerHelper.m */; };
 		9F25579B18FCB25E0064A705 /* icon_undefined.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F25579A18FCB25E0064A705 /* icon_undefined.png */; };
 		9F6C40A118F0AD27005D3FFC /* icon_app120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */; };
-		9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F7AD35118F0AC27002BBB98 /* icon_app.png */; };
 		9F981DB518FD04E600785BBC /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F981DB418FD04E600785BBC /* launchImage.png */; };
 		9FA039FF18FE78C6007183E3 /* launchImage2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FA039FE18FE78C6007183E3 /* launchImage2x.png */; };
 		E43A5FD218FF5F4000A639A5 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43A5FD118FF5F4000A639A5 /* StatusViewController.m */; };
@@ -120,7 +119,6 @@
 		388D444B18F0A6960067BEA2 /* PeerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerHelper.m; sourceTree = "<group>"; };
 		9F25579A18FCB25E0064A705 /* icon_undefined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_undefined.png; sourceTree = "<group>"; };
 		9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app120x120.png; sourceTree = "<group>"; };
-		9F7AD35118F0AC27002BBB98 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
 		9F981DB418FD04E600785BBC /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage.png; sourceTree = "<group>"; };
 		9FA039FE18FE78C6007183E3 /* launchImage2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage2x.png; sourceTree = "<group>"; };
 		E43A5FD018FF5F4000A639A5 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				9F981DB418FD04E600785BBC /* launchImage.png */,
 				32D17C6718FC695000F874C6 /* frontPage.png */,
 				9F6C40A018F0AD27005D3FFC /* icon_app120x120.png */,
-				9F7AD35118F0AC27002BBB98 /* icon_app.png */,
 				3288368018F099580064428B /* 50-percent-gray.jpg */,
 				9F25579A18FCB25E0064A705 /* icon_undefined.png */,
 				3288368118F099580064428B /* icon_oracle.png */,
@@ -392,7 +389,6 @@
 				32D17C6818FC695100F874C6 /* frontPage.png in Resources */,
 				9FA039FF18FE78C6007183E3 /* launchImage2x.png in Resources */,
 				9F981DB518FD04E600785BBC /* launchImage.png in Resources */,
-				9F7AD35218F0AC27002BBB98 /* icon_app.png in Resources */,
 				3288368518F099580064428B /* 50-percent-gray.jpg in Resources */,
 				3288368618F099580064428B /* icon_oracle.png in Resources */,
 				E4D8CCDF18F22DDE00C82C81 /* Main.storyboard in Resources */,
