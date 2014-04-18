@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WerewolvesPlayer.h"
+#import "WerewolvesMessage.h"
+#import "WerewolvesModeratorPlayer.h"
 #import "WerewolvesUtility.h"
 #import "WerewolvesAppDelegate.h"
 
