@@ -13,6 +13,7 @@ enum MessageType {
     /* Maybe using a single message to transmit all player info is clearer. by Cary*/
     
     /*From moderator to player*/
+    StartGame,
     SendPlayerInfo, /* Use players' info in playerInfo array. Find player's own identity using peerId*/
     CreateVote,
     ReVote,

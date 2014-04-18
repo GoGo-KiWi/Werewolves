@@ -9,6 +9,7 @@
 #import "JoinRoomViewController.h"
 #import "WerewolvesAppDelegate.h"
 #import "WerewolvesPlayer.h"
+#import "PlayerListViewController.h"
 
 @interface JoinRoomViewController ()
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
@@ -37,6 +38,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(peerDidChangeStateWithNotification:)
                                                  name:@"MCDidChangeStateNotification"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
                                                object:nil];
     _arrConnectedDevices = [[NSMutableArray alloc] init];
     
@@ -126,6 +131,40 @@
        // [_txtName setEnabled:peersExist];
     }
 }
+
+-(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSString *peerDisplayName = peerID.displayName;
+    
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
+    
+    if ([receivedMsg messageType] == StartGame) {
+        
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"PlayerListSegue"]){
+        if ([segue.destinationViewController isMemberOfClass:[PlayerListViewController class]]) {
+            NSArray *allClients = self.appDelegate.peer.session.connectedPeers;
+            NSError *error;
+            WerewolvesMessage *startMsg = [[WerewolvesMessage alloc]init];
+            startMsg.messageType = StartGame;
+            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:startMsg];
+            [self.appDelegate.peer.session sendData:data
+                                            toPeers:allClients
+                                           withMode:MCSessionSendDataReliable
+                                              error:&error];
+            if (error) {
+                NSLog(@"%@", [error localizedDescription]);
+            }
+            NSLog(@"SEND");
+        }
+    }
+}
+
 
 /*
 #pragma mark - Navigation
