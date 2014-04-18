@@ -55,10 +55,10 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:NO];
-    if ([playerList[idx] role] == Witch){
+    /*if ([playerList[idx] role] == Witch){
         [cell setTextColor:[UIColor grayColor]];
         [cell setUserInteractionEnabled:NO];
-    }
+    }*/
     //cell.textLabel.tag = [(NSInteger) [indexPath row]];
     return cell;
 }
@@ -89,6 +89,9 @@
             controller.killedPlayer1 = self.killedPlayer1;
             if ([self.killedPlayer2 length] == 0){
                 self.killedPlayer2 = @"None";
+            }
+            else{
+                [self.witchPlayerList setAllowsSelection:NO];
             }
             controller.killedPlayer2 = [NSString stringWithFormat:@"%@ is killed.", self.killedPlayer2];
         }

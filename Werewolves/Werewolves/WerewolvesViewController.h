@@ -12,5 +12,6 @@
 @interface WerewolvesViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
+//@property (weak, nonatomic) IBOutlet UIButton *nextView;
 
 @end

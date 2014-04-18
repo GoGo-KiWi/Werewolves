@@ -121,7 +121,7 @@
         <!--Turn Werewolf View Controller-->
         <scene sceneID="MqX-WO-OKl">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="l8e-3F-cpr" customClass="TurnWerewolfViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="werewolf" modalTransitionStyle="crossDissolve" id="l8e-3F-cpr" customClass="TurnWerewolfViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Gw-Yv-aOR"/>
                         <viewControllerLayoutGuide type="bottom" id="JzH-Qz-NUf"/>
@@ -130,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intruction:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4C-as-T4n">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Intruction:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4C-as-T4n">
                                 <rect key="frame" x="111" y="93" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -141,7 +141,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Werewolves start killing." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="189" translatesAutoresizingMaskIntoConstraints="NO" id="MWk-Fk-LiO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Werewolves start killing." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="189" translatesAutoresizingMaskIntoConstraints="NO" id="MWk-Fk-LiO">
                                 <rect key="frame" x="111" y="113" width="189" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -152,7 +152,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Gdf-JM-rtg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Gdf-JM-rtg">
                                 <rect key="frame" x="0.0" y="201" width="320" height="317"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,7 +161,7 @@
                                     <outlet property="delegate" destination="l8e-3F-cpr" id="fic-FX-xjg"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xd4-kK-dha">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xd4-kK-dha">
                                 <rect key="frame" x="0.0" y="180" width="320" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -185,13 +185,16 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled" title="Select To Continue">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="checkEmpty:" destination="l8e-3F-cpr" eventType="touchUpInside" id="Lqm-Ne-0a6"/>
                                     <action selector="playerSelected" destination="l8e-3F-cpr" eventType="editingChanged" id="Eat-Al-Nuy"/>
-                                    <segue destination="FPN-xl-taB" kind="push" identifier="WitchSaveSegue" id="q9m-zO-X4l"/>
+                                    <segue destination="FPN-xl-taB" kind="push" identifier="WitchSaveSegue" id="Gst-XT-TUb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_werewolf.png" translatesAutoresizingMaskIntoConstraints="NO" id="p66-gW-Lly">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_werewolf.png" translatesAutoresizingMaskIntoConstraints="NO" id="p66-gW-Lly">
                                 <rect key="frame" x="20" y="78" width="83" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -227,6 +230,7 @@
                     <navigationItem key="navigationItem" id="163-KN-1Rh"/>
                     <connections>
                         <outlet property="killList" destination="Gdf-JM-rtg" id="iDq-fC-yqd"/>
+                        <outlet property="nextView" destination="kBB-oQ-1C8" id="jy2-0v-PZW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxM-PB-P0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -305,7 +309,7 @@
         <!--Turn Witch Save View Controller-->
         <scene sceneID="QfY-sY-KTT">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="FPN-xl-taB" customClass="TurnWitchSaveViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TurnWitchSave" modalTransitionStyle="crossDissolve" id="FPN-xl-taB" customClass="TurnWitchSaveViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TXh-1A-OyB"/>
                         <viewControllerLayoutGuide type="bottom" id="AoY-yE-1Hb"/>
@@ -399,15 +403,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uFX-r4-0qf">
-                                <rect key="frame" x="0.0" y="92" width="320" height="384"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ndT-S9-a7V" id="Tg3-N7-0YL"/>
-                                    <outlet property="delegate" destination="ndT-S9-a7V" id="rOD-EO-U27"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voting Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGl-eN-Vb8">
                                 <rect key="frame" x="0.0" y="65" width="320" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -456,6 +451,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="geO-24-y0B">
+                                <rect key="frame" x="0.0" y="92" width="320" height="384"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ndT-S9-a7V" id="4So-N8-jXn"/>
+                                    <outlet property="delegate" destination="ndT-S9-a7V" id="ztg-mS-8it"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -471,7 +475,6 @@
                     <navigationItem key="navigationItem" id="rBe-J2-8Y8"/>
                     <connections>
                         <outlet property="resultLabel" destination="ZYL-Tq-8ij" id="8S2-xR-rS3"/>
-                        <outlet property="voteResult" destination="uFX-r4-0qf" id="RUM-i4-82H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8S-Gl-Pvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1176,7 +1179,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frontPage.png" translatesAutoresizingMaskIntoConstraints="NO" id="y9e-gS-Zdo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="frontPage.png" translatesAutoresizingMaskIntoConstraints="NO" id="y9e-gS-Zdo">
                                 <rect key="frame" x="40" y="105" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -1329,6 +1332,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="mmU-aD-GOA"/>
-        <segue reference="ojg-Qk-98Z"/>
+        <segue reference="pR4-D0-f7b"/>
     </inferredMetricsTieBreakers>
 </document>

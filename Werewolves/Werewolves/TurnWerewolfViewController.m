@@ -16,7 +16,7 @@
 @end
 
 @implementation TurnWerewolfViewController
-@synthesize killList;
+@synthesize killList, nextView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [nextView setEnabled:NO];
     // Do any additional setup after loading the view.
 }
 
@@ -65,10 +66,10 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:NO];
-    if ([playerList[idx] role] == Wolf){
+    /*if ([playerList[idx] role] == Wolf){
         [cell setTextColor:[UIColor grayColor]];
         [cell setUserInteractionEnabled:NO];
-    }
+    }*/
     return cell;
 }
 
@@ -77,18 +78,25 @@
     //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
     self.killedName = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     self.killedID = [indexPath row] + 1;
+    [nextView setEnabled:YES];
     //WerewolvesRoom * room = [WerewolvesRoom getInstance];
     //NSMutableArray * playerList = [room playerArray];
 }
 - (IBAction)checkEmpty:(id)sender {
-  /*  if ([self.killedName length] == 0){
+    if ([self.killedName length] == 0){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Test Message"
                                                         message:@"This is a test"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
-    }*/
+
+        //[self.navigationController popViewControllerAnimated:YES];
+        /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"werewolf"];
+        [self.navigationController ];
+        [self.navigationController pushViewController:vc animated:NO];*/
+    }
 }
 
 #pragma mark - Navigation

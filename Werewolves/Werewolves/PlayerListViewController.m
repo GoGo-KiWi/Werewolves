@@ -46,9 +46,8 @@
         NSLog(@"Inside adding actual player loop with i=%d after assign peerID and before getPeerName from peerID",i);
         newPlayer.playerName = peer.displayName;
         NSLog(@"Inside adding actual player loop with i=%d. Over, going to jump out",i);
+        [newRoom addPlayer:newPlayer];
     }
-    [newRoom addPlayer:newPlayer];
-
     // Do any additional setup after loading the view.
     self.navigationItem.title = self.roomNameText;
 }

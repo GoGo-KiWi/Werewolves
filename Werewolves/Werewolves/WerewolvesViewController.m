@@ -28,9 +28,10 @@
     userName.clearButtonMode = UITextFieldViewModeWhileEditing;
     [self.view addSubview:userName];
     userName.delegate = self;
-
+    
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[_appDelegate peer] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
+    //[self.nextView setEnabled:NO];
 }
 
 - (void)didReceiveMemoryWarning
