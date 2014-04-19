@@ -16,7 +16,9 @@
 @interface PlayerViewController : UIViewController <UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *roleTableView;
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
+@property (weak, nonatomic) IBOutlet UIButton *showHideButton;
 @property (strong, nonatomic) NSString *roleName;
 @property (weak, nonatomic) IBOutlet UIButton *voteButton;
 
+- (IBAction)checkRole:(id)sender;
 @end
