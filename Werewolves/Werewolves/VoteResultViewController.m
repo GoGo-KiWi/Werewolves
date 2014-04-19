@@ -93,14 +93,14 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     [playerList[0] receiveData:notification];
-    NSString * message = [NSString stringWithFormat:@"Vote received!"];
+    /*NSString * message = [NSString stringWithFormat:@"Vote received!"];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
                                                     message:message
                                                    delegate:nil
                                           cancelButtonTitle:@"Got it!"
                                           otherButtonTitles:nil];
     
-    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];*/
     [self.voteResult reloadData];
 }
 
@@ -124,8 +124,8 @@
      */
     
     [room resetVoteNominate];
+    [_voteResult reloadData];
 }
-
 
 /*
 #pragma mark - Navigation
