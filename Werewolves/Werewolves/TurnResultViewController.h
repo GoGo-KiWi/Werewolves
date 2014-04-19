@@ -13,4 +13,6 @@
 @property (strong, nonatomic) NSString *killedPlayer2;
 @property (weak, nonatomic) IBOutlet UILabel *killedLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *killedLabel2;
+@property (assign, nonatomic) int killedPlayerID1;
+@property (assign, nonatomic) int killedPlayerID2;
 @end

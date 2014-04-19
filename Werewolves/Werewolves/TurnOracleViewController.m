@@ -76,6 +76,8 @@
             TurnResultViewController *controller = (TurnResultViewController *)segue.destinationViewController;
             controller.killedPlayer1 = self.killedPlayer1;
             controller.killedPlayer2 = self.killedPlayer2;
+            controller.killedPlayerID1 = self.killedPlayerID1;
+            controller.killedPlayerID2 = self.killedPlayerID2;
         }
     }
 }

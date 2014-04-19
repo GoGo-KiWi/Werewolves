@@ -42,6 +42,7 @@
 {
     if(saveInfo.selectedSegmentIndex == 0){
         self.killedPlayerName = @"None is killed.";
+        self.killedPlayerID = -1;
 	}
     else{
         self.killedPlayerName = playerKilledInfo.text;
@@ -64,6 +65,7 @@
         if ([segue.destinationViewController isMemberOfClass:[TurnWitchKillViewController class]]) {
             TurnWitchKillViewController *controller = (TurnWitchKillViewController *)segue.destinationViewController;
             controller.killedPlayer1 = self.killedPlayerName;
+            controller.killedPlayerID1 = self.killedPlayerID;
         }
     }
 }

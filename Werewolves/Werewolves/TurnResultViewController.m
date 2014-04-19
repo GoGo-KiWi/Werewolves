@@ -7,7 +7,7 @@
 //
 
 #import "TurnResultViewController.h"
-
+#import "WerewolvesRoom.h"
 @interface TurnResultViewController ()
 
 @end
@@ -47,8 +47,12 @@
             self.killedLabel2.text = self.killedPlayer2;
         }    // Do any additional setup after loading the view.
     }
+    
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
+    [playerList[0] sendDeathResult:_killedPlayerID1];
 }
-
+ 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
