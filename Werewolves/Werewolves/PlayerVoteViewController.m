@@ -105,7 +105,7 @@
         
         [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
     NSLog(@"Finish the didReceiveDataWithNotification function!");
-    
+    [_voteList reloadData];
 }
 
 
