@@ -55,8 +55,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    WerewolvesRoom * room = [WerewolvesRoom getInstance];
-    return [[room playerArray] count] - 1;
+    WerewolvesPlayerRoot *player = [WerewolvesPlayerRoot getInstance];
+    NSMutableArray * playerList = [[player myPlayerInstance] playerArray];
+    return [playerList count] - 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

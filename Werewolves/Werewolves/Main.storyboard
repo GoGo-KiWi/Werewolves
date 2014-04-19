@@ -1378,7 +1378,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ojg-Qk-98Z"/>
         <segue reference="ssf-T3-JmC"/>
+        <segue reference="ojg-Qk-98Z"/>
     </inferredMetricsTieBreakers>
 </document>
