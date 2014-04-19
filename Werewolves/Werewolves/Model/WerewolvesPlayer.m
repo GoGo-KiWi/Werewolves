@@ -290,7 +290,7 @@
                 // Make sure only the moderator uses this information
                 for (WerewolvesPlayer* playerPtr in [[WerewolvesRoom getInstance] playerArray]) {
                     NSLog(@"In For loop, playerPtr.playerId=%d",playerPtr.playerId);
-                    if (playerPtr.playerId == receivedMsg.senderId) {
+                    if (playerPtr.playerId == receivedMsg.senderId && playerPtr.alive == YES) {
                         [playerPtr setVoteNominate:receivedMsg.receiverId];
                     }
                     //break;
