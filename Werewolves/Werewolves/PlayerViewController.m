@@ -68,19 +68,16 @@
             break;
         default:
             roleMessage = @"Your role is: ERROR!";
+            
+            roleMessage = [NSString stringWithFormat:@"Your role is %@!", self.roleName];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
+                                                            message:roleMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Got it!"
+                                                  otherButtonTitles:nil];
+            
+            [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
     }
-    
-    NSString *message = [[NSString alloc] initWithFormat:
-                         @"You selected %@",roleMessage];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
-                                                      message:message
-                                                     delegate:nil
-                                              cancelButtonTitle:@"Got it!"
-                                              otherButtonTitles:nil];
-    
-        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
-    }
-    NSLog(@"Finish the didReceiveDataWithNotification function!");
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [self.roleTableView reloadData];
     });
