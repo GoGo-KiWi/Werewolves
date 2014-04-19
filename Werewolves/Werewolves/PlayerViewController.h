@@ -15,4 +15,6 @@
 
 @interface PlayerViewController : UIViewController
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
+@property (strong, nonatomic) NSString *roleName;
+
 @end
