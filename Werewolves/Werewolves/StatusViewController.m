@@ -50,7 +50,7 @@
 {
     WerewolvesPlayerRoot *player = [WerewolvesPlayerRoot getInstance];
     NSMutableArray * playerList = [[player myPlayerInstance] playerArray];
-    return [playerList count];
+    return [playerList count] - 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
