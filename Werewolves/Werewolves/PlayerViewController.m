@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Enter viewDidLoad in PlayerViewController");
     WerewolvesPlayerRoot * player = [WerewolvesPlayerRoot getInstance];
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     [player myPlayerInstance].peerId = _appDelegate.peer.session.myPeerID;
@@ -37,6 +38,7 @@
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
+    NSLog(@"Leaving viewDidLoad in PlayerViewController");
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +52,9 @@
     WerewolvesPlayerRoot *myself = [WerewolvesPlayerRoot getInstance];
     [[myself myPlayerInstance] receiveData:notification];
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    NSLog(@"Succesfully decoded the receviedData!");
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
+    
     if ([receivedMsg messageType] == SendDeathResult) {
         NSString *deathResult1 = @"", *deathResult2 = @"";
         if ([receivedMsg senderId] != -1){
@@ -68,7 +72,7 @@
         
         [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
     }
-    else{
+    else if ([receivedMsg messageType] == SendPlayerInfo) {
         NSString * roleMessage;
         NSLog([NSString stringWithFormat:@"%d", [[myself myPlayerInstance] role]]);
         switch ([[myself myPlayerInstance] role]){
@@ -93,6 +97,7 @@
 }
 
 - (IBAction)checkRole:(id)sender {
+    NSLog(@"Enter checkRole in PlayerViewController");
     NSString *roleMessage = [NSString stringWithFormat:@"Your role is %@!", self.roleName];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remeber!"
                                                     message:roleMessage
@@ -101,6 +106,7 @@
                                           otherButtonTitles:nil];
     
     [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    NSLog(@"Leaving checkRole in PlayerViewController");
 }
 /*
 #pragma mark - Navigation

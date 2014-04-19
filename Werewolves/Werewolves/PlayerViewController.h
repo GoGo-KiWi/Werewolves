@@ -16,6 +16,6 @@
 @interface PlayerViewController : UIViewController
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 @property (strong, nonatomic) NSString *roleName;
-//@property (weak, nonatomic) IBOutlet UIButton *voteButton;
+@property (weak, nonatomic) IBOutlet UIButton *voteButton;
 
 @end
