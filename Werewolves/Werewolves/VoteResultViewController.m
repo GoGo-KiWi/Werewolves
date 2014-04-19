@@ -84,7 +84,7 @@
     int resultID = [room getVoteResult];
     if (resultID != -1){
         [playerList[resultID] setAlive:NO];
-        [room.playerArray[0] sendDeathResult:resultID];
+        [room.playerArray[0] sendDeathResult:resultID:-1];
     }
     [room resetVoteNominate];
 }

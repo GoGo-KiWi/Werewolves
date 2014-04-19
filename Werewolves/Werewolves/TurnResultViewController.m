@@ -50,7 +50,7 @@
     
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
-    [playerList[0] sendDeathResult:_killedPlayerID1];
+    [playerList[0] sendDeathResult:_killedPlayerID1:_killedPlayerID2];
 }
  
 - (void)didReceiveMemoryWarning

@@ -48,24 +48,45 @@
     NSLog(@"Entered the didReceiveDataWithNotification function!");
     WerewolvesPlayerRoot *myself = [WerewolvesPlayerRoot getInstance];
     [[myself myPlayerInstance] receiveData:notification];
-    NSString * roleMessage;
-    NSLog([NSString stringWithFormat:@"%d", [[myself myPlayerInstance] role]]);
-    switch ([[myself myPlayerInstance] role]){
-        case Wolf: self.roleName = @"WOLF"; break;
-        case Peasant: self.roleName = @"PEASANT"; break;
-        case Witch: self.roleName = @"WITCH"; break;
-        case Oracle: self.roleName = @"ORACLE"; break;
-        default: self.roleName = @"ERROR";
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
+    if ([receivedMsg messageType] == SendDeathResult) {
+        NSString *deathResult1 = @"", *deathResult2 = @"";
+        if ([receivedMsg senderId] != -1){
+            deathResult1 = [[[myself myPlayerInstance] playerArray][[receivedMsg senderId]] playerName];
+        }
+        if ([receivedMsg receiverId] != -1){
+            deathResult2 = [[[myself myPlayerInstance] playerArray][[receivedMsg receiverId]] playerName];
+        }
+        NSString *message = [NSString stringWithFormat:@"%@\r%@", deathResult1, deathResult2];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Players killed:"
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Got it!"
+                                              otherButtonTitles:nil];
+        
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
     }
+    else{
+        NSString * roleMessage;
+        NSLog([NSString stringWithFormat:@"%d", [[myself myPlayerInstance] role]]);
+        switch ([[myself myPlayerInstance] role]){
+            case Wolf: self.roleName = @"WOLF"; break;
+            case Peasant: self.roleName = @"PEASANT"; break;
+            case Witch: self.roleName = @"WITCH"; break;
+            case Oracle: self.roleName = @"ORACLE"; break;
+            default: self.roleName = @"ERROR";
+        }
     
-    roleMessage = [NSString stringWithFormat:@"Your role is %@!", self.roleName];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
+        roleMessage = [NSString stringWithFormat:@"Your role is %@!", self.roleName];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
                                                       message:roleMessage
                                                      delegate:nil
-                                            cancelButtonTitle:@"Got it!"
-                                            otherButtonTitles:nil];
+                                              cancelButtonTitle:@"Got it!"
+                                              otherButtonTitles:nil];
     
-    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    }
     NSLog(@"Finish the didReceiveDataWithNotification function!");
 
 }

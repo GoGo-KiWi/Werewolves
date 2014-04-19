@@ -52,11 +52,11 @@
  */
 - (void) sendVoteResult;
 
-- (void) sendDeathResult:(int) playerId;
+- (void) sendDeathResult:(int) playerId:(int) playerId2;
 - (void) sendTerminateResult:(int) wolfWin;
 
 /*From player to moderator*/
-- (void) sendVoteNominate:(int) playerId1:(int) playerId2;
+- (void) sendVoteNominate:(int) playerId1;
 
 /*Text Chat*/
 - (void) sendTextChat:(NSString*) msg;
