@@ -78,10 +78,13 @@
 
 - (IBAction)startNewRound:(id)sender {
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    [room.playerArray[0] sendVoteResult];
+    
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
     if (resultID != -1){
         [playerList[resultID] setAlive:NO];
+        [room.playerArray[0] sendDeathResult:resultID];
     }
     [room resetVoteNominate];
 }
@@ -102,7 +105,9 @@
 }
 
 - (IBAction)revote:(id)sender{
-    
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    [room.playerArray[0] sendVoteResult];
+    /*
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;
     
@@ -111,11 +116,14 @@
     myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
-        
+    
     [_appDelegate.peer.session sendData:data
                                     toPeers:allPeers
                                    withMode:MCSessionSendDataReliable
                                       error:&error];
+     */
+    
+    [room resetVoteNominate];
 }
 
 

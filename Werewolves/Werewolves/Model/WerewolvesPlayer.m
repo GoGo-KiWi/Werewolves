@@ -73,6 +73,7 @@
     }
 }
 
+/*
 - (void) createVote {
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;
@@ -115,6 +116,7 @@
         NSLog(@"%@", [error localizedDescription]);
     }
 }
+ */
 
 - (void) sendVoteResult {
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
@@ -250,12 +252,14 @@
                 }
             }
             break;
+            /*
         case CreateVote:
-            /* Go to vote UI*/
+            // Go to vote UI
             break;
         case ReVote:
-            /* Remind the player to vote again*/
+            // Remind the player to vote again
             break;
+             */
         case SendVoteResult:
              _playerArray = [receivedMsg playerInfo];
             /* Check vote nominate list and display corresponding information*/

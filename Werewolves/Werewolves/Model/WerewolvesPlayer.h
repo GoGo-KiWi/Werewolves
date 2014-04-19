@@ -46,9 +46,10 @@
 /*Message send methods*/
 /*From moderator to player*/
 - (void) sendPeopleInfo;
-
+/*
 - (void) createVote;
 - (void) reVote;
+ */
 - (void) sendVoteResult;
 
 - (void) sendDeathResult:(int) playerId;
