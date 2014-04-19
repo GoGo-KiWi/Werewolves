@@ -14,6 +14,7 @@
 @end
 
 @implementation PlayerViewController
+//@synthesize voteButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

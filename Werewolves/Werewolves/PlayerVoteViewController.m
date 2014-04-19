@@ -31,6 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
     // Do any additional setup after loading the view.
 }
 
@@ -80,6 +85,29 @@
     [[player myPlayerInstance] sendVoteNominate:self.votedPlayer];
     //NSLog(@"SEND");
 }
+
+- (void) didReceiveDataWithNotification:(NSNotification *)notification{
+    NSLog(@"Entered the didReceiveDataWithNotification function!");
+    WerewolvesPlayerRoot *myself = [WerewolvesPlayerRoot getInstance];
+    [[myself myPlayerInstance] receiveData:notification];
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
+        NSString *deathResult = @"";
+        if ([receivedMsg senderId] != -1){
+            deathResult = [[[myself myPlayerInstance] playerArray][[receivedMsg senderId]] playerName];
+        }
+       
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voting Result"
+                                                        message:deathResult
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Got it!"
+                                              otherButtonTitles:nil];
+        
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    NSLog(@"Finish the didReceiveDataWithNotification function!");
+    
+}
+
 
 /*
 #pragma mark - Navigation
