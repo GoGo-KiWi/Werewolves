@@ -139,13 +139,13 @@
     }
 }
 
-- (void) sendDeathResult:(int) playerId {
+- (void) sendDeathResult:(int) playerId1:(int) playerId2 {
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;
     
     WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
-    myMessage.senderId = _playerId;
-    myMessage.receiverId = playerId; // playerId is the dead player's id
+    myMessage.senderId = playerId1; // playerId1 is the first dead player's id
+    myMessage.receiverId = playerId2; // playerId2 is the second dead player's id
     myMessage.messageType = SendDeathResult;
     myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
     
@@ -265,10 +265,12 @@
             /* Check vote nominate list and display corresponding information*/
             break;
         case SendDeathResult:
-            if (receivedMsg.receiverId == _playerId) {
+            if ((receivedMsg.receiverId > 0 && receivedMsg.receiverId == _playerId) ||
+                (receivedMsg.senderId > 0 && receivedMsg.senderId == _playerId)) {
                 /*show message that YOU ARE KILLED*/
                 _alive = NO;
             }
+            /*Pop some message say playerId1 and playerId2 is dead*/
             _playerArray = receivedMsg.playerInfo;
             break;
         case SendTerminateResult:

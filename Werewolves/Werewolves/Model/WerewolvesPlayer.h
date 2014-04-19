@@ -56,7 +56,7 @@
 - (void) sendTerminateResult:(int) wolfWin;
 
 /*From player to moderator*/
-- (void) sendVoteNominate:(int) playerId;
+- (void) sendVoteNominate:(int) playerId1:(int) playerId2;
 
 /*Text Chat*/
 - (void) sendTextChat:(NSString*) msg;
