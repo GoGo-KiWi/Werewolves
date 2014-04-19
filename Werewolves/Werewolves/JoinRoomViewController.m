@@ -144,7 +144,6 @@
     if ([receivedMsg messageType] == StartGame) {
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self performSegueWithIdentifier: @"ShowRoleSegue" sender: self];
-            NSLog(@"Leaving didReceivedDataWithNotificaiton in JoinRoomViewController");
         });
     }
     /*

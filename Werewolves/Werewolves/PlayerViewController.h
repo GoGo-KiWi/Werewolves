@@ -13,7 +13,8 @@
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 
-@interface PlayerViewController : UIViewController
+@interface PlayerViewController : UIViewController <UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *roleTableView;
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 @property (strong, nonatomic) NSString *roleName;
 @property (weak, nonatomic) IBOutlet UIButton *voteButton;
