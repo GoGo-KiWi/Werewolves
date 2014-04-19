@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
@@ -99,6 +100,25 @@
     [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
     [self.voteResult reloadData];
 }
+
+- (IBAction)revote:(id)sender{
+    
+    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
+    NSError *error;
+    
+    WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
+    myMessage.messageType = SendVoteResult;
+    myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
+        
+    [_appDelegate.peer.session sendData:data
+                                    toPeers:allPeers
+                                   withMode:MCSessionSendDataReliable
+                                      error:&error];
+}
+
+
 /*
 #pragma mark - Navigation
 
