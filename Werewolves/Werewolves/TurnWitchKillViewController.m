@@ -70,6 +70,7 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     self.killedPlayer2 = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    self.killedPlayerID2 = [indexPath row] + 1;
     [playerList[[indexPath row] + 1] setAlive:NO];
 
 }
@@ -90,11 +91,14 @@
             controller.killedPlayer1 = self.killedPlayer1;
             if ([self.killedPlayer2 length] == 0){
                 self.killedPlayer2 = @"None";
+                self.killedPlayerID2 = -1;
             }
             else{
                 [self.witchPlayerList setAllowsSelection:NO];
             }
             controller.killedPlayer2 = [NSString stringWithFormat:@"%@ is killed.", self.killedPlayer2];
+            controller.killedPlayerID1 = self.killedPlayerID1;
+            controller.killedPlayerID2 = self.killedPlayerID2;
         }
     }
 }

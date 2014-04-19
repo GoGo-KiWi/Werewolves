@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
@@ -39,7 +40,12 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
-    self.resultLabel.text = [NSString stringWithFormat:@"#%d %@ has most votes!", resultID, [playerList[resultID] playerName]];
+    if (resultID == -1){
+        self.resultLabel.text = @"It's a tie! Please re-vote!";
+    }
+    else{
+        self.resultLabel.text = [NSString stringWithFormat:@"#%d %@ has most votes!", resultID, [playerList[resultID] playerName]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,9 +78,14 @@
 
 - (IBAction)startNewRound:(id)sender {
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    [room.playerArray[0] sendVoteResult];
+    
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
-    [playerList[resultID] setAlive:NO];
+    if (resultID != -1){
+        [playerList[resultID] setAlive:NO];
+        [room.playerArray[0] sendDeathResult:resultID:-1];
+    }
     [room resetVoteNominate];
 }
 
@@ -82,16 +93,40 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     [playerList[0] receiveData:notification];
-    NSString * message = [NSString stringWithFormat:@"Vote received!"];
+    /*NSString * message = [NSString stringWithFormat:@"Vote received!"];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
                                                     message:message
                                                    delegate:nil
                                           cancelButtonTitle:@"Got it!"
                                           otherButtonTitles:nil];
     
-    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];*/
     [self.voteResult reloadData];
 }
+
+- (IBAction)revote:(id)sender{
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    [room.playerArray[0] sendVoteResult];
+    /*
+    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
+    NSError *error;
+    
+    WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
+    myMessage.messageType = SendVoteResult;
+    myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
+    
+    [_appDelegate.peer.session sendData:data
+                                    toPeers:allPeers
+                                   withMode:MCSessionSendDataReliable
+                                      error:&error];
+     */
+    
+    [room resetVoteNominate];
+    [_voteResult reloadData];
+}
+
 /*
 #pragma mark - Navigation
 

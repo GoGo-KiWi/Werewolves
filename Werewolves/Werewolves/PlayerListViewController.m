@@ -37,16 +37,26 @@
     WerewolvesPlayer* newPlayer;
     NSLog(@"The size of connectedPeers is %d", allPeers.count);
     for (int i = 0; i < [allPeers count]; i++) {
-        NSLog(@"Inside adding actual player loop with i=%d",i);
-        newPlayer = [[WerewolvesPlayer alloc] init];
-        NSLog(@"Inside adding actual player loop with i=%d before get peerID from allPeers",i);
-        MCPeerID* peer = allPeers[i];
-        NSLog(@"Inside adding actual player loop with i=%d after get peerID from allPeers",i);
-        newPlayer.peerId = peer;
-        NSLog(@"Inside adding actual player loop with i=%d after assign peerID and before getPeerName from peerID",i);
-        newPlayer.playerName = peer.displayName;
-        NSLog(@"Inside adding actual player loop with i=%d. Over, going to jump out",i);
-        [newRoom addPlayer:newPlayer];
+        //NSLog(@"Inside adding actual player loop with i=%d",i);
+        BOOL isNew = YES;
+        for (int j = 0; j < newRoom.playerArray.count; j++) {
+            if ([newRoom.playerArray[j] peerId] == allPeers[i]) {
+                isNew = NO;
+            }
+        }
+        
+        if (isNew) {
+            NSLog(@"Inside adding actual player loop with i=%d",i);
+            newPlayer = [[WerewolvesPlayer alloc] init];
+            NSLog(@"Inside adding actual player loop with i=%d before get peerID from allPeers",i);
+            MCPeerID* peer = allPeers[i];
+            NSLog(@"Inside adding actual player loop with i=%d after get peerID from allPeers",i);
+            newPlayer.peerId = peer;
+            NSLog(@"Inside adding actual player loop with i=%d after assign peerID and before getPeerName from peerID",i);
+            newPlayer.playerName = peer.displayName;
+            NSLog(@"Inside adding actual player loop with i=%d. Over, going to jump out",i);
+            [newRoom addPlayer:newPlayer];
+        }
     }
     // Do any additional setup after loading the view.
     self.navigationItem.title = self.roomNameText;

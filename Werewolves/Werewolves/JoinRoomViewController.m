@@ -133,10 +133,12 @@
 }
 
 -(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    NSLog(@"Entered didReceivedDataWithNotificaiton in JoinRoomViewController");
     MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
     NSString *peerDisplayName = peerID.displayName;
     
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    NSLog(@"Success in getting received data from didReceivedDataWithNotificaiton in JoinRoomViewController");
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
     
     if ([receivedMsg messageType] == StartGame) {
@@ -144,6 +146,11 @@
             [self performSegueWithIdentifier: @"ShowRoleSegue" sender: self];
         });
     }
+    /*
+    if ([receivedMsg messageType] == StartGame) {
+        [self performSegueWithIdentifier:@"ShowRoleSegue" sender:self.startGame];
+    }*/
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -167,6 +174,7 @@
     } else if ([segue.identifier isEqualToString:@"ShowRoleSegue"]) {
         if ([segue.destinationViewController isMemberOfClass:[PlayerViewController class]]) {
             PlayerViewController *controller = (PlayerViewController *)segue.destinationViewController;
+            NSLog(@"Leaving =0=0=0= in JoinRoomViewController");
         }
     }
 }

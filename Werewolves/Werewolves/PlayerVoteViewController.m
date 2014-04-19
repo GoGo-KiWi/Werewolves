@@ -31,6 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
     // Do any additional setup after loading the view.
 }
 
@@ -60,7 +65,7 @@
     int idx = [indexPath row] + 1;
     WerewolvesPlayerRoot *player = [WerewolvesPlayerRoot getInstance];
     NSMutableArray * playerList = [[player myPlayerInstance] playerArray];
-    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:YES];
+    cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:YES forStatus:YES];
     if ([playerList[idx] role] == Wolf){
         [cell setTextColor:[UIColor grayColor]];
         [cell setUserInteractionEnabled:NO];
@@ -80,6 +85,29 @@
     [[player myPlayerInstance] sendVoteNominate:self.votedPlayer];
     //NSLog(@"SEND");
 }
+
+- (void) didReceiveDataWithNotification:(NSNotification *)notification{
+    NSLog(@"Entered the didReceiveDataWithNotification function!");
+    WerewolvesPlayerRoot *myself = [WerewolvesPlayerRoot getInstance];
+    [[myself myPlayerInstance] receiveData:notification];
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
+        NSString *deathResult = @"";
+        if ([receivedMsg senderId] != -1){
+            deathResult = [[[myself myPlayerInstance] playerArray][[receivedMsg senderId]] playerName];
+        }
+       
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voting Result"
+                                                        message:deathResult
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Got it!"
+                                              otherButtonTitles:nil];
+        
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    NSLog(@"Finish the didReceiveDataWithNotification function!");
+    [_voteList reloadData];
+}
+
 
 /*
 #pragma mark - Navigation

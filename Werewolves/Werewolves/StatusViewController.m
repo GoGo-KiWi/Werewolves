@@ -9,6 +9,7 @@
 #import "StatusViewController.h"
 #import "WerewolvesRoom.h"
 #import "WerewolvesUtility.h"
+#import "WerewolvesPlayerRoot.h"
 
 @interface StatusViewController ()
 
@@ -47,26 +48,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    WerewolvesPlayerRoot *player = [WerewolvesPlayerRoot getInstance];
+    NSMutableArray * playerList = [[player myPlayerInstance] playerArray];
+    return [playerList count] - 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     int idx = [indexPath row] + 1;
-    WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    NSMutableArray *playerList = [room playerArray];
+    WerewolvesPlayerRoot *player = [WerewolvesPlayerRoot getInstance];
+    NSMutableArray * playerList = [[player myPlayerInstance] playerArray];
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:NO forStatus:YES];
     return cell;
 }
 
-- (IBAction)startNewRound:(id)sender {
+/*- (IBAction)startNewRound:(id)sender {
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
     [playerList[resultID] setAlive:NO];
     [room resetVoteNominate];
-}
+}*/
 /*
 #pragma mark - Navigation
 

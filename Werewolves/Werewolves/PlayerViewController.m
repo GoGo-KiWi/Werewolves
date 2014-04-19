@@ -14,6 +14,7 @@
 @end
 
 @implementation PlayerViewController
+//@synthesize voteButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Enter viewDidLoad in PlayerViewController");
     WerewolvesPlayerRoot * player = [WerewolvesPlayerRoot getInstance];
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     [player myPlayerInstance].peerId = _appDelegate.peer.session.myPeerID;
@@ -36,6 +38,7 @@
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
+    NSLog(@"Leaving viewDidLoad in PlayerViewController");
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,15 +75,29 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
                                                       message:message
                                                      delegate:nil
-                                            cancelButtonTitle:@"Got it!"
-                                            otherButtonTitles:nil];
+                                              cancelButtonTitle:@"Got it!"
+                                              otherButtonTitles:nil];
     
-    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    }
     NSLog(@"Finish the didReceiveDataWithNotification function!");
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [self.roleTableView reloadData];
     });
 
+}
+
+- (IBAction)checkRole:(id)sender {
+    NSLog(@"Enter checkRole in PlayerViewController");
+    NSString *roleMessage = [NSString stringWithFormat:@"Your role is %@!", self.roleName];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remeber!"
+                                                    message:roleMessage
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Got it!"
+                                          otherButtonTitles:nil];
+    
+    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    NSLog(@"Leaving checkRole in PlayerViewController");
 }
 /*
 #pragma mark - Navigation
