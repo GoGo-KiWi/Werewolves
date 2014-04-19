@@ -41,7 +41,7 @@
 - (IBAction)saveAction:(id)sender
 {
     if(saveInfo.selectedSegmentIndex == 0){
-        self.killedPlayerName = @"None is killed";
+        self.killedPlayerName = @"None is killed.";
 	}
     else{
         self.killedPlayerName = playerKilledInfo.text;

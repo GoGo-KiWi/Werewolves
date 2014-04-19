@@ -27,9 +27,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.killedLabel1.text = self.killedPlayer1;
-    self.killedLabel2.text = self.killedPlayer2;
-    // Do any additional setup after loading the view.
+    if ([self.killedPlayer1 isEqualToString:@"None is killed."] &&
+        [self.killedPlayer2 isEqualToString:@"None is killed."]){
+        self.killedLabel1.text = self.killedPlayer1;
+        self.killedLabel2.text = @"";
+    }
+    else{
+        if ([self.killedPlayer1 isEqualToString:@"None is killed."]){
+            self.killedLabel1.text = @"";
+        }
+        else{
+            self.killedLabel1.text = self.killedPlayer1;
+        }
+    
+        if ([self.killedPlayer2 isEqualToString:@"None is killed."]){
+            self.killedLabel2.text = @"";
+        }
+        else{
+            self.killedLabel2.text = self.killedPlayer2;
+        }    // Do any additional setup after loading the view.
+    }
 }
 
 - (void)didReceiveMemoryWarning
