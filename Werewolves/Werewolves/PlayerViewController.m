@@ -51,18 +51,16 @@
     NSString * roleMessage;
     NSLog([NSString stringWithFormat:@"%d", [[myself myPlayerInstance] role]]);
     switch ([[myself myPlayerInstance] role]){
-        case Wolf: roleMessage = @"Your role is: WOLF!"; break;
-        case Peasant: roleMessage = @"Your role is: PEASANT!"; break;
-        case Witch: roleMessage = @"Your role is: WITCH!"; break;
-        case Oracle: roleMessage = @"Your role is: ORACLE!"; break;
-        default: roleMessage = @"Your role is: ERROR!";
+        case Wolf: self.roleName = @"WOLF"; break;
+        case Peasant: self.roleName = @"PEASANT"; break;
+        case Witch: self.roleName = @"WITCH"; break;
+        case Oracle: self.roleName = @"ORACLE"; break;
+        default: self.roleName = @"ERROR";
     }
     
-    NSString *message = [[NSString alloc] initWithFormat:
-                         @"You selected %@",roleMessage];
-    
+    roleMessage = [NSString stringWithFormat:@"Your role is %@!", self.roleName];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
-                                                      message:message
+                                                      message:roleMessage
                                                      delegate:nil
                                             cancelButtonTitle:@"Got it!"
                                             otherButtonTitles:nil];
@@ -70,6 +68,17 @@
     [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
     NSLog(@"Finish the didReceiveDataWithNotification function!");
 
+}
+
+- (IBAction)checkRole:(id)sender {
+    NSString *roleMessage = [NSString stringWithFormat:@"Your role is %@!", self.roleName];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remeber!"
+                                                    message:roleMessage
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Got it!"
+                                          otherButtonTitles:nil];
+    
+    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
 }
 /*
 #pragma mark - Navigation
