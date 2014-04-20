@@ -628,6 +628,7 @@
                                 <connections>
                                     <action selector="sendVote:" destination="sjY-F3-U0h" eventType="touchUpInside" id="sOl-ng-tQC"/>
                                     <action selector="voteAction:" destination="sjY-F3-U0h" eventType="touchUpInside" id="EVl-Ic-0qd"/>
+                                    <segue destination="MhZ-zv-0yj" kind="push" id="6tW-jq-BK3"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BG2-9j-J9d">
@@ -1175,7 +1176,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mmU-aD-GOA"/>
         <segue reference="pR4-D0-f7b"/>
+        <segue reference="mmU-aD-GOA"/>
+        <segue reference="6tW-jq-BK3"/>
     </inferredMetricsTieBreakers>
 </document>
