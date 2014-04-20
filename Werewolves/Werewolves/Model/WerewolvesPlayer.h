@@ -30,6 +30,8 @@
 @property int playerId;
 @property MCPeerID* peerId;
 @property int voteNominate; /* playerId dominated by this player*/
+@property BOOL witchHasSave;
+@property BOOL witchHasKill;
 @property NSMutableArray* playerArray;
 @property (nonatomic, strong) WerewolvesAppDelegate *appDelegate;
 

@@ -42,6 +42,8 @@
     _role = UndefinedRole;
     _playerId = -1;
     _voteNominate = -1;
+    _witchHasSave = NO;
+    _witchHasKill = NO;
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
 
     return  self;

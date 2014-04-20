@@ -30,6 +30,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    WerewolvesRoom* room = [WerewolvesRoom getInstance];
+    WerewolvesPlayer* moderator = room.playerArray[0];
+    
+    if (moderator.witchHasKill == YES) {
+        [self.witchPlayerList setAllowsSelection:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,11 +73,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
-    WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    NSMutableArray *playerList = [room playerArray];
+    //WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    //NSMutableArray *playerList = [room playerArray];
     self.killedPlayer2 = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     self.killedPlayerID2 = [indexPath row] + 1;
-    [playerList[[indexPath row] + 1] setAlive:NO];
+    //[playerList[[indexPath row] + 1] setAlive:NO];
 
 }
 
@@ -85,6 +91,9 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    WerewolvesRoom* room = [WerewolvesRoom getInstance];
+    WerewolvesPlayer* moderator = room.playerArray[0];
+    
     if([segue.identifier isEqualToString:@"OracleTurnSegue"]){
         if ([segue.destinationViewController isMemberOfClass:[TurnOracleViewController class]]) {
             TurnOracleViewController *controller = (TurnOracleViewController *)segue.destinationViewController;
@@ -95,6 +104,12 @@
             }
             else{
                 [self.witchPlayerList setAllowsSelection:NO];
+                moderator.witchHasKill = YES;
+                for (WerewolvesPlayer* playerPtr in moderator.playerArray) {
+                    if (playerPtr.playerId == self.killedPlayerID2) {
+                        [playerPtr setAlive:NO];
+                    }
+                }
             }
             controller.killedPlayer2 = [NSString stringWithFormat:@"%@ is killed.", self.killedPlayer2];
             controller.killedPlayerID1 = self.killedPlayerID1;

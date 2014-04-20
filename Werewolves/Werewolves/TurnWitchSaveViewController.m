@@ -21,6 +21,13 @@
 {
     [super viewDidLoad];
     self.playerKilledInfo.text = self.killedPlayerName;
+    
+    WerewolvesRoom* room = [WerewolvesRoom getInstance];
+    WerewolvesPlayer* moderator = room.playerArray[0];
+    
+    if (moderator.witchHasSave == YES) {
+        [self.saveInfo setEnabled:NO];
+    }
     //label = [[UILabel alloc] init];
     //playerKilledInfo.frame = CGRectMake(10, 10, 300, 40);
     //[self.view addSubview:playerKilledInfo];
@@ -53,7 +60,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (self.saveInfo.selectedSegmentIndex == 0){
-        self.saveInfo.enabled = FALSE;
+        WerewolvesRoom* room = [WerewolvesRoom getInstance];
+        WerewolvesPlayer* moderator = room.playerArray[0];
+        moderator.witchHasSave = YES;
+        
+        //self.saveInfo.enabled = FALSE;
         self.killedPlayerName = @"None is killed.";
         self.killedPlayerID = -1;
     } else {
