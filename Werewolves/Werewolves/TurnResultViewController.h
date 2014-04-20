@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface TurnResultViewController : UIViewController
+
 @property (strong, nonatomic) NSString *killedPlayer1;
 @property (strong, nonatomic) NSString *killedPlayer2;
 @property (weak, nonatomic) IBOutlet UITextView *killedLabel;
 @property (assign, nonatomic) int killedPlayerID1;
 @property (assign, nonatomic) int killedPlayerID2;
+
 @end
