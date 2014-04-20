@@ -96,10 +96,10 @@
 
 - (IBAction)startNewRound:(id)sender {
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    [room.playerArray[0] sendVoteResult];
     
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
+    [room.playerArray[0] sendVoteResult:resultID];
     if (resultID != -1){
         [playerList[resultID] setAlive:NO];
         [room.playerArray[0] sendDeathResult:resultID:-1];
@@ -109,7 +109,7 @@
 
 - (IBAction)revote:(id)sender{
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    [room.playerArray[0] sendVoteResult];
+    [room.playerArray[0] sendRevoteResult];
     /*
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;

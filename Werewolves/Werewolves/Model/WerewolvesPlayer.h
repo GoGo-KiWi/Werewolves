@@ -52,7 +52,8 @@
 - (void) createVote;
 - (void) reVote;
  */
-- (void) sendVoteResult;
+- (void) sendRevoteResult;
+- (void) sendVoteResult:(int) playerId;
 
 - (void) sendDeathResult:(int) playerId:(int) playerId2;
 - (void) sendTerminateResult:(int) wolfWin;

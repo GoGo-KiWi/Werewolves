@@ -105,21 +105,38 @@
         deathResult = [[[myself myPlayerInstance] playerArray][[receivedMsg senderId]] playerName];
         [self.bottomLabel setTitle:@"Okay" forState:UIControlStateNormal];
         [self.bottomLabel setEnabled:YES];
-    } else {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voting Result:"
+                                                        message:deathResult
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Got it!"
+                                              otherButtonTitles:nil];
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self.voteList reloadData];
+        });
+    } else if ([receivedMsg receiverId] == -1 && [receivedMsg messageType] != SendDeathResult){
         deathResult = @"It's a tie! Please re-vote!";
         [self.bottomLabel setEnabled:NO];
         [self.bottomLabel setTitle:@"Select to Vote" forState:UIControlStateDisabled];
         [self.voteList setAllowsSelection:YES];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voting Result:"
+                                                        message:deathResult
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Got it!"
+                                              otherButtonTitles:nil];
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self.voteList reloadData];
+        });
     }
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voting Result:"
-                                                    message:deathResult
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Got it!"
-                                          otherButtonTitles:nil];
-    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
-    dispatch_async(dispatch_get_main_queue(), ^(void) {
-        [self.voteList reloadData];
-    });
+    else {
+        [self.bottomLabel setEnabled:NO];
+        [self.bottomLabel setTitle:@"Select to Vote" forState:UIControlStateDisabled];
+        [self.voteList setAllowsSelection:YES];
+    }
+    
 }
 
 /*

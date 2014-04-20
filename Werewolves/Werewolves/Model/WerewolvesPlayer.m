@@ -120,13 +120,34 @@
 }
  */
 
-- (void) sendVoteResult {
+- (void) sendRevoteResult {
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;
     
     WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
     myMessage.senderId = _playerId;
-    myMessage.receiverId = - 1; // -1 means send to every one
+    myMessage.receiverId = -1; // -1 means no one die this round of vore
+    myMessage.messageType = SendVoteResult;
+    myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
+    [_appDelegate.peer.session sendData:data
+                                toPeers:allPeers
+                               withMode:MCSessionSendDataReliable
+                                  error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+}
+
+- (void) sendVoteResult:(int) playerId {
+    NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
+    NSError *error;
+    
+    WerewolvesMessage *myMessage = [[WerewolvesMessage alloc] init];
+    myMessage.senderId = _playerId;
+    myMessage.receiverId = playerId; // the one die this round of vote
     myMessage.messageType = SendVoteResult;
     myMessage.playerInfo = [[WerewolvesRoom getInstance] playerArray];
     
