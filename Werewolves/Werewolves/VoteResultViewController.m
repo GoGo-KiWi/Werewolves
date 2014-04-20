@@ -67,13 +67,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    UITableViewCell *cell;
     int idx = [indexPath row] + 1;
     NSLog(@"Cell: %d", [indexPath row]);
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:YES forStatus:NO];
     return cell;
+}
+
+- (void) didReceiveDataWithNotification:(NSNotification *)notification{
+    WerewolvesRoom *room = [WerewolvesRoom getInstance];
+    NSMutableArray *playerList = [room playerArray];
+    [playerList[0] receiveData:notification];
+    /*NSString * message = [NSString stringWithFormat:@"Vote received!"];
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
+     message:message
+     delegate:nil
+     cancelButtonTitle:@"Got it!"
+     otherButtonTitles:nil];
+     
+     [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];*/
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [self.voteResult reloadData];
+    });
 }
 
 - (IBAction)startNewRound:(id)sender {
@@ -87,21 +104,6 @@
         [room.playerArray[0] sendDeathResult:resultID:-1];
     }
     [room resetVoteNominate];
-}
-
-- (void) didReceiveDataWithNotification:(NSNotification *)notification{
-    WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    NSMutableArray *playerList = [room playerArray];
-    [playerList[0] receiveData:notification];
-    /*NSString * message = [NSString stringWithFormat:@"Vote received!"];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Role Assigned!"
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Got it!"
-                                          otherButtonTitles:nil];
-    
-    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];*/
-    [self.voteResult reloadData];
 }
 
 - (IBAction)revote:(id)sender{
@@ -124,7 +126,9 @@
      */
     
     [room resetVoteNominate];
-    [_voteResult reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [self.voteResult reloadData];
+    });
 }
 
 /*

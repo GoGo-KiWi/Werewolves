@@ -124,11 +124,9 @@
                 [_arrConnectedDevices removeObjectAtIndex:indexOfPeer];
             }
         }
-        [_roomList reloadData];
-        
-        //BOOL peersExist = ([[_appDelegate.peer.session connectedPeers] count] == 0);
-       // [_btnDisconnect setEnabled:!peersExist];
-       // [_txtName setEnabled:peersExist];
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [_roomList reloadData];
+        });
     }
 }
 
@@ -146,11 +144,6 @@
             [self performSegueWithIdentifier: @"ShowRoleSegue" sender: self];
         });
     }
-    /*
-    if ([receivedMsg messageType] == StartGame) {
-        [self performSegueWithIdentifier:@"ShowRoleSegue" sender:self.startGame];
-    }*/
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

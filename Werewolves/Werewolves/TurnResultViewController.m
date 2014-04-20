@@ -13,7 +13,7 @@
 @end
 
 @implementation TurnResultViewController
-@synthesize killedLabel1, killedLabel2;
+@synthesize killedLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +27,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *killedInfo = @"";
+    self.killedLabel.textColor = [UIColor lightGrayColor];
+    if (![self.killedPlayer1 isEqualToString:@"None is killed."]) {
+        killedInfo = [NSString stringWithFormat:@"%@\n%@", killedInfo, self.killedPlayer1];
+    }
+    if (![self.killedPlayer2 isEqualToString:@"None is killed."]) {
+        killedInfo = [NSString stringWithFormat:@"%@\n%@", killedInfo, self.killedPlayer2];
+    }
+    if ([killedInfo isEqualToString:@""]) {
+        killedInfo = @"Nobody";
+    }
+    self.killedLabel.text = [NSString stringWithFormat:@"Dead players:\n%@", killedInfo];
+    /*
     if ([self.killedPlayer1 isEqualToString:@"None is killed."] &&
         [self.killedPlayer2 isEqualToString:@"None is killed."]){
         self.killedLabel1.text = self.killedPlayer1;
@@ -47,6 +60,7 @@
             self.killedLabel2.text = self.killedPlayer2;
         }    // Do any additional setup after loading the view.
     }
+     */
     
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
