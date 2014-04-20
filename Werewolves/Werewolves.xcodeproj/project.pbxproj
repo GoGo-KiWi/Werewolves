@@ -352,7 +352,7 @@
 				ORGANIZATIONNAME = "GoGo-KiWi";
 				TargetAttributes = {
 					32A55E2C18EB5FC900649610 = {
-						DevelopmentTeam = T9PP9Y9ZEA;
+						DevelopmentTeam = SUAY2KMCEU;
 					};
 					32A55E5018EB5FC900649610 = {
 						TestTargetID = 32A55E2C18EB5FC900649610;
