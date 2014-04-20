@@ -37,7 +37,8 @@
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
-    [self.navigationItem.backBarButtonItem setEnabled:NO];
+    [self.bottomLabel setEnabled:NO];
+    [self.bottomLabel setTitle:@"Select To Vote" forState:UIControlStateDisabled];
     // Do any additional setup after loading the view.
 }
 
@@ -78,17 +79,19 @@
 {
     //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
     self.votedPlayer = [indexPath row] + 1;
+    [self.bottomLabel setEnabled:YES];
+    [self.bottomLabel setTitle:@"Vote" forState:UIControlStateNormal];
+    /*
     if ([self.bottomLabel.titleLabel.text isEqualToString:@"Select to Vote"]) {
-        [self.bottomLabel setTitle:@"Vote" forState:UIControlStateNormal];
-        [self.bottomLabel setEnabled:YES];
     }
+     */
 }
 
 - (IBAction)sendVote:(id)sender {
     WerewolvesPlayerRoot * player = [WerewolvesPlayerRoot getInstance];
     [[player myPlayerInstance] sendVoteNominate:self.votedPlayer];
-    [self.bottomLabel setTitle:@"Vote Sent" forState:UIControlStateNormal];
     [self.bottomLabel setEnabled:NO];
+    [self.bottomLabel setTitle:@"Vote Sent" forState:UIControlStateDisabled];
     [self.voteList setAllowsSelection:NO];
 }
 
@@ -98,14 +101,14 @@
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
     NSString *deathResult = @"";
-    if ([receivedMsg senderId] > 0){
+    if ([receivedMsg senderId] == -1){
         deathResult = [[[myself myPlayerInstance] playerArray][[receivedMsg senderId]] playerName];
         [self.bottomLabel setTitle:@"Okay" forState:UIControlStateNormal];
         [self.bottomLabel setEnabled:YES];
     } else {
         deathResult = @"It's a tie! Please re-vote!";
         [self.bottomLabel setEnabled:NO];
-        [self.bottomLabel setTitle:@"Select to Vote" forState:UIControlStateNormal];
+        [self.bottomLabel setTitle:@"Select to Vote" forState:UIControlStateDisabled];
         [self.voteList setAllowsSelection:YES];
     }
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voting Result:"

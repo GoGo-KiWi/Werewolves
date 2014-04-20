@@ -228,6 +228,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Werewolves" id="163-KN-1Rh"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="killList" destination="Gdf-JM-rtg" id="iDq-fC-yqd"/>
@@ -265,7 +266,7 @@
                                     <action selector="browseForDevices:" destination="uFW-W4-e2A" eventType="touchDown" id="Gh6-Hd-KXV"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="E4N-us-dCL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="E4N-us-dCL">
                                 <rect key="frame" x="0.0" y="123" width="320" height="445"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -309,7 +310,7 @@
             </objects>
             <point key="canvasLocation" x="146" y="1207"/>
         </scene>
-        <!--Turn Witch Save View Controller-->
+        <!--Turn Witch Save View Controller - Witch-->
         <scene sceneID="QfY-sY-KTT">
             <objects>
                 <viewController storyboardIdentifier="TurnWitchSave" modalTransitionStyle="crossDissolve" id="FPN-xl-taB" customClass="TurnWitchSaveViewController" sceneMemberID="viewController">
@@ -380,7 +381,7 @@
                             <constraint firstAttribute="trailing" secondItem="RsJ-bj-MyZ" secondAttribute="trailing" id="sX8-tP-rfp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="W0g-Zi-urI"/>
+                    <navigationItem key="navigationItem" title="Witch" id="W0g-Zi-urI"/>
                     <connections>
                         <outlet property="playerKilledInfo" destination="WtF-Km-rcv" id="uzg-A0-aUX"/>
                         <outlet property="saveInfo" destination="4bf-ly-nsD" id="hzs-sR-QE9"/>
@@ -518,7 +519,7 @@
                                     <segue destination="mUY-W2-rAO" kind="push" identifier="AssignRoleSegue" id="5pE-S8-cmq"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qBd-Dr-HcX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qBd-Dr-HcX">
                                 <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -576,9 +577,13 @@
                                     <segue destination="l8e-3F-cpr" kind="push" identifier="WolfTurnSegue" id="ojg-Qk-98Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zu-QH-QcU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zu-QH-QcU">
                                 <rect key="frame" x="0.0" y="518" width="159" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="oNY-y5-TYC"/>
+                                    <constraint firstAttribute="height" constant="50" id="tlq-DF-GBA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Re-roll" backgroundImage="50-percent-gray.jpg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -588,7 +593,7 @@
                                     <action selector="reRoll:" destination="mUY-W2-rAO" eventType="touchUpInside" id="Bac-RC-ikY"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-0b-zP8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-0b-zP8">
                                 <rect key="frame" x="0.0" y="66" width="320" height="452"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -601,9 +606,11 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MA9-0b-zP8" firstAttribute="trailing" secondItem="Ujv-Ji-aY5" secondAttribute="trailing" id="27g-98-0YM"/>
+                            <constraint firstItem="0Zu-QH-QcU" firstAttribute="leading" secondItem="ULD-Ff-tVo" secondAttribute="leading" id="8UG-q8-RJi"/>
                             <constraint firstAttribute="trailing" secondItem="Ujv-Ji-aY5" secondAttribute="trailing" id="FAA-b3-yhU"/>
                             <constraint firstItem="MA9-0b-zP8" firstAttribute="top" secondItem="PKb-f1-j5t" secondAttribute="bottom" constant="2" id="Ufy-0T-ao7"/>
                             <constraint firstItem="oO3-pF-97C" firstAttribute="top" secondItem="Ujv-Ji-aY5" secondAttribute="bottom" id="jnK-aE-UNd"/>
+                            <constraint firstItem="oO3-pF-97C" firstAttribute="top" secondItem="0Zu-QH-QcU" secondAttribute="bottom" id="mNh-l7-umA"/>
                             <constraint firstItem="Ujv-Ji-aY5" firstAttribute="top" secondItem="MA9-0b-zP8" secondAttribute="bottom" id="xT9-Lp-UcB"/>
                         </constraints>
                     </view>
@@ -628,23 +635,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9q-lk-vMl">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9q-lk-vMl">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fLT-uw-cru"/>
+                                    <constraint firstAttribute="width" constant="320" id="ged-Ra-9r1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Vote" backgroundImage="50-percent-gray.jpg">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="disabled" title="Select to Vote"/>
+                                <state key="highlighted" title="Select To Vote"/>
                                 <connections>
                                     <action selector="sendVote:" destination="sjY-F3-U0h" eventType="touchUpInside" id="sOl-ng-tQC"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BG2-9j-J9d">
-                                <rect key="frame" x="0.0" y="65" width="320" height="455"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BG2-9j-J9d">
+                                <rect key="frame" x="0.0" y="65" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -654,6 +664,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BG2-9j-J9d" firstAttribute="leading" secondItem="fAy-F6-nty" secondAttribute="leading" id="0TO-g2-t75"/>
+                            <constraint firstItem="1Q7-JX-0Gs" firstAttribute="top" secondItem="S9q-lk-vMl" secondAttribute="bottom" id="Cz9-HK-DJs"/>
+                            <constraint firstAttribute="trailing" secondItem="BG2-9j-J9d" secondAttribute="trailing" id="GZl-E1-tzc"/>
+                            <constraint firstItem="BG2-9j-J9d" firstAttribute="top" secondItem="See-yf-eBc" secondAttribute="bottom" constant="1" id="a9f-t5-Htf"/>
+                            <constraint firstAttribute="trailing" secondItem="S9q-lk-vMl" secondAttribute="trailing" id="fU5-Wx-5g0"/>
+                            <constraint firstItem="S9q-lk-vMl" firstAttribute="top" secondItem="BG2-9j-J9d" secondAttribute="bottom" id="miR-HN-wIN"/>
+                            <constraint firstItem="S9q-lk-vMl" firstAttribute="leading" secondItem="fAy-F6-nty" secondAttribute="leading" id="wCQ-Hc-kaa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Voting" id="UTj-kO-hq4"/>
                     <connections>
@@ -683,7 +702,9 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Lqu-wZ-4pl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Us5-0b-iAD"/>
                                     <constraint firstAttribute="width" constant="320" id="WFC-mh-z18"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="f5D-TM-bxh"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Waiting for your role">
@@ -693,10 +714,13 @@
                                     <action selector="checkRole:" destination="MhZ-zv-0yj" eventType="touchUpInside" id="YwP-j6-Cdp"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zax-V1-bxR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zax-V1-bxR">
                                 <rect key="frame" x="0.0" y="113" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="H7X-gm-MHa"/>
+                                </constraints>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -710,7 +734,15 @@
                         <constraints>
                             <constraint firstItem="WZz-PH-yFV" firstAttribute="leading" secondItem="U7w-v6-XoB" secondAttribute="leading" id="162-2i-bgP"/>
                             <constraint firstItem="WZz-PH-yFV" firstAttribute="top" secondItem="U7w-v6-XoB" secondAttribute="top" constant="63" id="Ksy-Ln-QkR"/>
+                            <constraint firstItem="Zax-V1-bxR" firstAttribute="top" secondItem="WZz-PH-yFV" secondAttribute="bottom" id="Qbj-zK-XUk"/>
+                            <constraint firstItem="WZz-PH-yFV" firstAttribute="leading" secondItem="U7w-v6-XoB" secondAttribute="leading" id="SIP-qg-PRd"/>
+                            <constraint firstItem="Zax-V1-bxR" firstAttribute="top" secondItem="WZz-PH-yFV" secondAttribute="bottom" id="dDN-eQ-hSJ"/>
+                            <constraint firstItem="WZz-PH-yFV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="U7w-v6-XoB" secondAttribute="top" constant="63" id="eiG-8R-l5v"/>
+                            <constraint firstAttribute="bottom" secondItem="Zax-V1-bxR" secondAttribute="bottom" id="ejW-f8-a3S"/>
+                            <constraint firstItem="Zax-V1-bxR" firstAttribute="leading" secondItem="U7w-v6-XoB" secondAttribute="leading" id="fwO-ch-p8M"/>
                             <constraint firstAttribute="trailing" secondItem="WZz-PH-yFV" secondAttribute="trailing" id="jaj-nV-Fo3"/>
+                            <constraint firstAttribute="trailing" secondItem="Zax-V1-bxR" secondAttribute="trailing" id="xqI-8v-y0b"/>
+                            <constraint firstAttribute="trailing" secondItem="WZz-PH-yFV" secondAttribute="trailing" id="z3u-Kz-Csm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Role Description" id="xUa-ih-ebt">
@@ -741,7 +773,7 @@
             </objects>
             <point key="canvasLocation" x="557" y="1207"/>
         </scene>
-        <!--Turn Witch Kill View Controller-->
+        <!--Turn Witch Kill View Controller - Witch-->
         <scene sceneID="Itd-cU-Gmk">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="6bT-Qb-Gdo" customClass="TurnWitchKillViewController" sceneMemberID="viewController">
@@ -847,7 +879,7 @@
                             <constraint firstItem="6oZ-jD-lEp" firstAttribute="baseline" secondItem="dlg-7M-GOG" secondAttribute="baseline" id="xl0-UT-Dsc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="x5P-0E-J6w"/>
+                    <navigationItem key="navigationItem" title="Witch" id="x5P-0E-J6w"/>
                     <connections>
                         <outlet property="resetSelection" destination="dlg-7M-GOG" id="UPs-7v-leh"/>
                         <outlet property="witchPlayerList" destination="0iQ-ki-cJ3" id="FTD-4b-S1x"/>
@@ -857,7 +889,7 @@
             </objects>
             <point key="canvasLocation" x="971" y="515"/>
         </scene>
-        <!--Turn Oracle View Controller-->
+        <!--Turn Oracle View Controller - Oracle-->
         <scene sceneID="MOJ-wk-Akc">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="TSK-ab-P4O" customClass="TurnOracleViewController" sceneMemberID="viewController">
@@ -935,7 +967,7 @@
                             <constraint firstItem="Rod-oi-nT0" firstAttribute="leading" secondItem="Yc0-XR-308" secondAttribute="leading" id="odH-rk-Pba"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nNg-O6-wWG"/>
+                    <navigationItem key="navigationItem" title="Oracle" id="nNg-O6-wWG"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="playerList" destination="SU6-ct-FxF" id="niG-BA-joR"/>
@@ -1095,7 +1127,7 @@
                                     <segue destination="JOf-pj-xuq" kind="push" identifier="PlayerListSegue" id="5DK-1S-1nA"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-9i-bCx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-9i-bCx">
                                 <rect key="frame" x="0.0" y="66" width="320" height="452"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1150,14 +1182,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c41-0y-hPQ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="85N-9O-v5c">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="V50-cZ-lIY" id="r0P-l1-fVo"/>
-                                    <outlet property="delegate" destination="V50-cZ-lIY" id="Pzu-lZ-H5o"/>
-                                </connections>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1183,7 +1212,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mmU-aD-GOA"/>
-        <segue reference="ojg-Qk-98Z"/>
+        <segue reference="pR4-D0-f7b"/>
+        <segue reference="ssf-T3-JmC"/>
     </inferredMetricsTieBreakers>
 </document>

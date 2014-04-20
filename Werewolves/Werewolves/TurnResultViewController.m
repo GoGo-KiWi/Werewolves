@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem.backBarButtonItem setEnabled:NO];
     NSString *killedInfo = @"";
     self.killedLabel.textColor = [UIColor lightGrayColor];
     if (![self.killedPlayer1 isEqualToString:@"None is killed."]) {

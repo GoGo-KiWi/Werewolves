@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem.backBarButtonItem setEnabled:NO];
     [nextView setEnabled:NO];
     // Do any additional setup after loading the view.
 }

@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem.backBarButtonItem setEnabled:NO];
     NSLog(@"Enter viewDidLoad in PlayerViewController");
     WerewolvesPlayerRoot * player = [WerewolvesPlayerRoot getInstance];
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
