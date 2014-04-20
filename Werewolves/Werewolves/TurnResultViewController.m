@@ -67,6 +67,32 @@
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     [playerList[0] sendDeathResult:_killedPlayerID1:_killedPlayerID2];
+    UIAlertView *alertView;
+    switch ([room checkTerminate]) {
+        case 0:
+            // continue
+            break;
+        case 1:
+            // wolf win
+            alertView = [[UIAlertView alloc] initWithTitle:@"Game Result:"
+                                                   message:@"Wolf Win!!!"
+                                                  delegate:nil
+                                         cancelButtonTitle:@"Got it!"
+                                         otherButtonTitles:nil];
+            [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+            break;
+        case 2:
+            // villager win
+            alertView = [[UIAlertView alloc] initWithTitle:@"Game Result:"
+                                                   message:@"Villagers Win!!!"
+                                                  delegate:nil
+                                         cancelButtonTitle:@"Got it!"
+                                         otherButtonTitles:nil];
+            [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+            break;
+        default:
+            break;
+    }
 }
  
 - (void)didReceiveMemoryWarning

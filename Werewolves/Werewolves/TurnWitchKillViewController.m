@@ -31,6 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     WerewolvesRoom* room = [WerewolvesRoom getInstance];
+    _playerArray = room.playerArray;
     WerewolvesPlayer* moderator = room.playerArray[0];
     
     if (moderator.witchHasKill == YES) {
@@ -77,7 +78,7 @@
     //NSMutableArray *playerList = [room playerArray];
     self.killedPlayer2 = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     self.killedPlayerID2 = [indexPath row] + 1;
-    //[playerList[[indexPath row] + 1] setAlive:NO];
+    //[_playerArray[[indexPath row] + 1] setAlive:NO];
 
 }
 
@@ -105,11 +106,8 @@
             else{
                 [self.witchPlayerList setAllowsSelection:NO];
                 moderator.witchHasKill = YES;
-                for (WerewolvesPlayer* playerPtr in moderator.playerArray) {
-                    if (playerPtr.playerId == self.killedPlayerID2) {
-                        [playerPtr setAlive:NO];
-                    }
-                }
+                NSLog(@"Tell me! Your playerId2=%d", self.killedPlayerID2);
+                [_playerArray[self.killedPlayerID2] setAlive:NO];
             }
             controller.killedPlayer2 = [NSString stringWithFormat:@"%@ is killed.", self.killedPlayer2];
             controller.killedPlayerID1 = self.killedPlayerID1;

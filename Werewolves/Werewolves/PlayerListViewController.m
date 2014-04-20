@@ -100,7 +100,17 @@
 
 - (IBAction)assignRoles:(id)sender {
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
-    [room generateRandomRoles];
+    int success = [room generateRandomRoles];
+    if (success<0) {
+        // Not enough player
+        UIAlertView *alertView;
+        alertView = [[UIAlertView alloc] initWithTitle:@"Not enough player!"
+                                               message:@"Not enough players. We need a minimum of 5 people to start a game!"
+                                              delegate:nil
+                                     cancelButtonTitle:@"Got it!"
+                                     otherButtonTitles:nil];
+        [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    }
 }
 
 /*

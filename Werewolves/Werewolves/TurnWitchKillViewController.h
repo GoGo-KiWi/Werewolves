@@ -16,5 +16,6 @@
 @property (strong, nonatomic) NSString *killedPlayer2;
 @property (assign, nonatomic) int killedPlayerID1;
 @property (assign, nonatomic) int killedPlayerID2;
+@property NSMutableArray* playerArray;
 
 @end

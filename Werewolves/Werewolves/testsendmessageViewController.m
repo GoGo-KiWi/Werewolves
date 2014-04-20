@@ -72,6 +72,7 @@
     myMessage.text = _txtMessage.text;
     
     /*Code for data transferring test*/
+    /*
     if ([[[WerewolvesRoom getInstance] playerArray] count] > 2) {
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:myMessage];
         
@@ -87,8 +88,9 @@
         [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I sent playerArray with size=%d:\n", [[[WerewolvesRoom getInstance] playerArray] count]]]];
         [_txtMessage setText:@""];
         [_txtMessage resignFirstResponder];
+        
     }
-    
+    */
     
     
     /*Code for text chat*/
@@ -129,10 +131,11 @@
     //NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
     
+    /*
     if ([receivedMsg messageType] == SendPlayerInfo) {
         [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ send me with playerArray size=%d and the second player's name is %@\n", peerDisplayName, (int)[[receivedMsg playerInfo] count], [[receivedMsg playerInfo][2] playerName]]] waitUntilDone:NO];
     }
-    
+    */
     if ([receivedMsg messageType] == TextChat) {
         NSString *receivedText = [receivedMsg text];
         
