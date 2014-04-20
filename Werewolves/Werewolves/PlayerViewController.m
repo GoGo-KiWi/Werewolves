@@ -93,8 +93,11 @@
                                                        delegate:nil
                                               cancelButtonTitle:@"Got it!"
                                               otherButtonTitles:nil];
-        
         [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    } else if ([receivedMsg messageType] == StartVote) {
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self performSegueWithIdentifier: @"GotoVoteSegue" sender: self];
+        });
     }
     NSLog(@"Finish the didReceiveDataWithNotification function!");
 

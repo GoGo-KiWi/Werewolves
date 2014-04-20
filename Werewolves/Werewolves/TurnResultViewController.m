@@ -8,6 +8,8 @@
 
 #import "TurnResultViewController.h"
 #import "WerewolvesRoom.h"
+#import "WerewolvesAppDelegate.h"
+
 @interface TurnResultViewController ()
 
 @end
@@ -30,10 +32,10 @@
     NSString *killedInfo = @"";
     self.killedLabel.textColor = [UIColor lightGrayColor];
     if (![self.killedPlayer1 isEqualToString:@"None is killed."]) {
-        killedInfo = [NSString stringWithFormat:@"%@\n%@", killedInfo, self.killedPlayer1];
+        killedInfo = [NSString stringWithFormat:@"%@\n\t%@", killedInfo, self.killedPlayer1];
     }
     if (![self.killedPlayer2 isEqualToString:@"None is killed."]) {
-        killedInfo = [NSString stringWithFormat:@"%@\n%@", killedInfo, self.killedPlayer2];
+        killedInfo = [NSString stringWithFormat:@"%@\n\t%@", killedInfo, self.killedPlayer2];
     }
     if ([killedInfo isEqualToString:@""]) {
         killedInfo = @"Nobody";
@@ -73,15 +75,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.identifier isEqualToString:@"VoteTurnSegue"]){
+        WerewolvesAppDelegate *appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSArray *allClients = appDelegate.peer.session.connectedPeers;
+        NSError *error;
+        WerewolvesMessage *startMsg = [[WerewolvesMessage alloc]init];
+        startMsg.messageType = StartVote;
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:startMsg];
+        [appDelegate.peer.session sendData:data
+                                   toPeers:allClients
+                                  withMode:MCSessionSendDataReliable
+                                     error:&error];
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end

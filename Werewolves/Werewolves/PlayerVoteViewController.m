@@ -31,11 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem.backBarButtonItem setEnabled:NO];
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
+    [self.navigationItem.backBarButtonItem setEnabled:NO];
     // Do any additional setup after loading the view.
 }
 
@@ -43,9 +45,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)voteAction:(id)sender {
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -67,10 +66,11 @@
     WerewolvesPlayerRoot *player = [WerewolvesPlayerRoot getInstance];
     NSMutableArray * playerList = [[player myPlayerInstance] playerArray];
     cell = [WerewolvesUtility createCellFor:playerList[idx] forVote:YES forStatus:YES];
+    /*
     if ([playerList[idx] role] == Wolf){
-        [cell setTextColor:[UIColor grayColor]];
         [cell setUserInteractionEnabled:NO];
     }
+     */
     return cell;
 }
 
@@ -78,37 +78,46 @@
 {
     //[delegate playerKilled:[NSString stringWithFormat:@"# %ld", (long) indexPath.row]];
     self.votedPlayer = [indexPath row] + 1;
-    
+    if ([self.bottomLabel.titleLabel.text isEqualToString:@"Select to Vote"]) {
+        [self.bottomLabel setTitle:@"Vote" forState:UIControlStateNormal];
+        [self.bottomLabel setEnabled:YES];
+    }
 }
 
 - (IBAction)sendVote:(id)sender {
     WerewolvesPlayerRoot * player = [WerewolvesPlayerRoot getInstance];
     [[player myPlayerInstance] sendVoteNominate:self.votedPlayer];
-    //NSLog(@"SEND");
+    [self.bottomLabel setTitle:@"Vote Sent" forState:UIControlStateNormal];
+    [self.bottomLabel setEnabled:NO];
+    [self.voteList setAllowsSelection:NO];
 }
 
 - (void) didReceiveDataWithNotification:(NSNotification *)notification{
-    NSLog(@"Entered the didReceiveDataWithNotification function!");
     WerewolvesPlayerRoot *myself = [WerewolvesPlayerRoot getInstance];
     [[myself myPlayerInstance] receiveData:notification];
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     WerewolvesMessage *receivedMsg = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
-        NSString *deathResult = @"";
-        if ([receivedMsg senderId] != -1){
-            deathResult = [[[myself myPlayerInstance] playerArray][[receivedMsg senderId]] playerName];
-        }
-       
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voting Result"
-                                                        message:deathResult
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Got it!"
-                                              otherButtonTitles:nil];
-        
-        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
-    NSLog(@"Finish the didReceiveDataWithNotification function!");
-    [_voteList reloadData];
+    NSString *deathResult = @"";
+    if ([receivedMsg senderId] > 0){
+        deathResult = [[[myself myPlayerInstance] playerArray][[receivedMsg senderId]] playerName];
+        [self.bottomLabel setTitle:@"Okay" forState:UIControlStateNormal];
+        [self.bottomLabel setEnabled:YES];
+    } else {
+        deathResult = @"It's a tie! Please re-vote!";
+        [self.bottomLabel setEnabled:NO];
+        [self.bottomLabel setTitle:@"Select to Vote" forState:UIControlStateNormal];
+        [self.voteList setAllowsSelection:YES];
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Voting Result:"
+                                                    message:deathResult
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Got it!"
+                                          otherButtonTitles:nil];
+    [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [self.voteList reloadData];
+    });
 }
-
 
 /*
 #pragma mark - Navigation

@@ -17,5 +17,5 @@
 @property (strong, nonatomic) NSString *killedPlayerName;
 @property (assign, nonatomic) int killedPlayerID;
 
-- (IBAction)saveAction:(id)sender;
+//- (IBAction)saveAction:(id)sender;
 @end

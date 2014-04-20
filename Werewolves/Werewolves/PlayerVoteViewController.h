@@ -12,8 +12,6 @@
 
 @interface PlayerVoteViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *voteList;
-
-@property (weak, nonatomic) IBOutlet UILabel *sendResult;
-
+@property (weak, nonatomic) IBOutlet UIButton *bottomLabel;
 @property (assign, nonatomic) int votedPlayer;
 @end

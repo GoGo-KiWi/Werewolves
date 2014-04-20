@@ -27,7 +27,7 @@
     /*[saveInfo addTarget:self
             action:@selector(pickOne:)
             forControlEvents:UIControlEventValueChanged];*/
-	[self.view addSubview:saveInfo];
+	//[self.view addSubview:saveInfo];
     // Do any additional setup after loading the view.
 }
 
@@ -37,7 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+/*
 - (IBAction)saveAction:(id)sender
 {
     if(saveInfo.selectedSegmentIndex == 0){
@@ -48,13 +48,15 @@
         self.killedPlayerName = playerKilledInfo.text;
     }
 }
+ */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if(saveInfo.selectedSegmentIndex == 0){
-        saveInfo.enabled = FALSE;
-    }
-    else{
+    if (self.saveInfo.selectedSegmentIndex == 0){
+        self.saveInfo.enabled = FALSE;
+        self.killedPlayerName = @"None is killed.";
+        self.killedPlayerID = -1;
+    } else {
         WerewolvesRoom *room = [WerewolvesRoom getInstance];
         NSMutableArray *playerList = [room playerArray];
         [playerList[self.killedPlayerID] setAlive:NO];

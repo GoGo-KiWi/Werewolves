@@ -15,6 +15,7 @@ enum MessageType {
     /*From moderator to player*/
     StartGame,
     SendPlayerInfo, /* Use players' info in playerInfo array. Find player's own identity using peerId*/
+    StartVote,
     /*
     CreateVote,
     ReVote,*/

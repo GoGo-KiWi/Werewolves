@@ -343,9 +343,6 @@
                                     <segment title="Not Save"/>
                                 </segments>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="saveAction:" destination="FPN-xl-taB" eventType="valueChanged" id="cbr-l3-1ph"/>
-                                </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1 is killed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtF-Km-rcv">
                                 <rect key="frame" x="20" y="200" width="280" height="30"/>
@@ -587,6 +584,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="reRoll:" destination="mUY-W2-rAO" eventType="touchUpInside" id="Bac-RC-ikY"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-0b-zP8">
                                 <rect key="frame" x="0.0" y="66" width="320" height="452"/>
@@ -628,7 +628,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9q-lk-vMl">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9q-lk-vMl">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -638,10 +638,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled" title="Select to Vote"/>
                                 <connections>
                                     <action selector="sendVote:" destination="sjY-F3-U0h" eventType="touchUpInside" id="sOl-ng-tQC"/>
-                                    <action selector="voteAction:" destination="sjY-F3-U0h" eventType="touchUpInside" id="EVl-Ic-0qd"/>
-                                    <segue destination="MhZ-zv-0yj" kind="push" id="6tW-jq-BK3"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BG2-9j-J9d">
@@ -649,14 +648,18 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="sjY-F3-U0h" id="yhX-fD-uaI"/>
-                                    <outlet property="delegate" destination="sjY-F3-U0h" id="X4Q-GZ-VMi"/>
+                                    <outlet property="dataSource" destination="sjY-F3-U0h" id="mvY-v5-uyg"/>
+                                    <outlet property="delegate" destination="sjY-F3-U0h" id="5Hr-kj-Ffr"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Voting" id="UTj-kO-hq4"/>
+                    <connections>
+                        <outlet property="bottomLabel" destination="S9q-lk-vMl" id="nCS-qe-eSk"/>
+                        <outlet property="voteList" destination="BG2-9j-J9d" id="FhA-tW-tDv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAQ-Ya-gmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -690,7 +693,7 @@
                                     <action selector="checkRole:" destination="MhZ-zv-0yj" eventType="touchUpInside" id="YwP-j6-Cdp"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zax-V1-bxR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zax-V1-bxR">
                                 <rect key="frame" x="0.0" y="113" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -727,6 +730,7 @@
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="roleTableView" destination="Zax-V1-bxR" id="8Xj-71-k4z"/>
                         <outlet property="showHideButton" destination="WZz-PH-yFV" id="jBg-Kp-Yne"/>
@@ -1162,7 +1166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XC5-JB-Qbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1369" y="1207"/>
+            <point key="canvasLocation" x="971" y="1935"/>
         </scene>
     </scenes>
     <resources>
@@ -1179,8 +1183,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pR4-D0-f7b"/>
         <segue reference="mmU-aD-GOA"/>
-        <segue reference="6tW-jq-BK3"/>
+        <segue reference="ojg-Qk-98Z"/>
     </inferredMetricsTieBreakers>
 </document>
