@@ -44,7 +44,7 @@
     if([segue.identifier isEqualToString:@"CreateRoomSegue"]){
         if ([segue.destinationViewController isMemberOfClass:[JoinRoomViewController class]]) {
             WerewolvesRoom *newRoom = [WerewolvesRoom getInstance];
-            [WerewolvesUtility createPlayerList: 8];
+            [WerewolvesUtility createPlayerList: 5]; /*Creating dummpy players. Should delete in final code*/
             JoinRoomViewController *controller = (JoinRoomViewController *)segue.destinationViewController;
             controller.userName = self.userName.text;
             controller.navigationItem.hidesBackButton = YES;

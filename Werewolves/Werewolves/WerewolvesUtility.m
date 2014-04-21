@@ -62,7 +62,12 @@
     }
     
     if (vote && [player alive]){
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"-> %d",[player voteNominate]];
+        if ([player voteNominate] == -1){
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"Not voted yet"];
+        }
+        else{
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"-> %d",[player voteNominate]];
+        }
     }
     
     if ([player alive] == NO){
@@ -81,7 +86,7 @@
         NSString * tempName = [[NSString alloc] initWithFormat:@"Player %d", i + 1];
         //[tempPlayer setPlayerName:tempName];
         [tempPlayer setPlayerName:tempName];
-        [tempPlayer setVoteNominate:3];
+        [tempPlayer setVoteNominate:-1];
         //[tempPlayer setPlayerId:i];
         [room addPlayer:tempPlayer];
     }

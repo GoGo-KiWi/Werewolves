@@ -37,7 +37,6 @@
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
-    
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     NSMutableArray *playerList = [room playerArray];
     int resultID = [room getVoteResult];
@@ -91,6 +90,14 @@
      [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];*/
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [self.voteResult reloadData];
+        int resultID = [room getVoteResult];
+        if (resultID == -1){
+            self.resultLabel.text = @"It's a tie! Please re-vote!";
+        }
+        else{
+            self.resultLabel.text = [NSString stringWithFormat:@"#%d %@ has most votes!", resultID, [playerList[resultID] playerName]];
+        }
+
     });
 }
 
@@ -110,6 +117,7 @@
 - (IBAction)revote:(id)sender{
     WerewolvesRoom *room = [WerewolvesRoom getInstance];
     [room.playerArray[0] sendRevoteResult];
+    NSMutableArray *playerList = [room playerArray];
     /*
     NSArray *allPeers = _appDelegate.peer.session.connectedPeers;
     NSError *error;
@@ -129,6 +137,13 @@
     [room resetVoteNominate];
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [self.voteResult reloadData];
+        int resultID = [room getVoteResult];
+        if (resultID == -1){
+            self.resultLabel.text = @"It's a tie! Please re-vote!";
+        }
+        else{
+            self.resultLabel.text = [NSString stringWithFormat:@"#%d %@ has most votes!", resultID, [playerList[resultID] playerName]];
+        }
     });
 }
 
