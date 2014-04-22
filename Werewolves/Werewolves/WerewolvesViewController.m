@@ -30,6 +30,8 @@
     
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[_appDelegate peer] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
+    
+    [_appDelegate.peer setupMCBrowser];
     //[self.nextView setEnabled:NO];
 }
 
@@ -42,8 +44,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([userName.text isEqualToString:@""] ) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Proceed"
-                                                        message:@"Must enter a valid name to continue!"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Name Invalid"
+                                                        message:@"Will use device name!"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -93,8 +95,8 @@
         [_appDelegate.peer setupMCBrowser];
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Proceed"
-                                                        message:@"Must enter a valid name to continue!"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Name Invalid"
+                                                        message:@"Please enter a valid name!"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
