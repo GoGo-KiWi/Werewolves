@@ -29,9 +29,10 @@
     userName.delegate = self;
     
     _appDelegate = (WerewolvesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    /*
     [[_appDelegate peer] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
-    
     [_appDelegate.peer setupMCBrowser];
+     */
     //[self.nextView setEnabled:NO];
 }
 
@@ -50,6 +51,13 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+        
+        [[_appDelegate peer] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
+        [_appDelegate.peer setupMCBrowser];
+    }
+    else {
+        [_appDelegate.peer setupPeerAndSessionWithDisplayName:userName.text];
+        [_appDelegate.peer setupMCBrowser];
     }
     
     if([segue.identifier isEqualToString:@"CreateRoomSegue"]){
