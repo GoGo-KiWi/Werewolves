@@ -91,6 +91,15 @@
                                          otherButtonTitles:nil];
             [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
             break;
+        case 3:
+            // tie
+            alertView = [[UIAlertView alloc] initWithTitle:@"Game Result:"
+                                                   message:@"Tie!"
+                                                  delegate:nil
+                                         cancelButtonTitle:@"Got it!"
+                                         otherButtonTitles:nil];
+            [alertView performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:false];
+            break;
         default:
             break;
     }
