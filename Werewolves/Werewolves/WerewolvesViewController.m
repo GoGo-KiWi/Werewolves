@@ -41,6 +41,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([userName.text isEqualToString:@""] ) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Proceed"
+                                                        message:@"Must enter a valid name to continue!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
     if([segue.identifier isEqualToString:@"CreateRoomSegue"]){
         if ([segue.destinationViewController isMemberOfClass:[JoinRoomViewController class]]) {
             WerewolvesRoom *newRoom = [WerewolvesRoom getInstance];
@@ -78,9 +87,20 @@
     
     [_appDelegate.peer.advertiser stop];
     _appDelegate.peer.advertiser = nil;
-
-    [_appDelegate.peer setupPeerAndSessionWithDisplayName:userName.text];
-    [_appDelegate.peer setupMCBrowser];
+    
+    if ([userName.text isEqualToString:@""] == NO ) {
+        [_appDelegate.peer setupPeerAndSessionWithDisplayName:userName.text];
+        [_appDelegate.peer setupMCBrowser];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Proceed"
+                                                        message:@"Must enter a valid name to continue!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
     //[_appDelegate.peer advertiseSelf: true];
 
     return YES;
